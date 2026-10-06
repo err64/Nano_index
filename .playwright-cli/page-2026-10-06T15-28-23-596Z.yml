@@ -1,0 +1,291 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - generic [ref=f3e5]:
+        - generic [ref=f3e6]:
+          - link "MotionSite MotionSite.ai" [ref=f3e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f3e8]
+            - generic [ref=f3e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f3e12]
+        - generic [ref=f3e13]:
+          - generic [ref=f3e14]:
+            - link "Templates" [ref=f3e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f3e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f3e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f3e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f3e19]:
+            - button "Toggle theme" [ref=f3e20] [cursor=pointer]
+            - link "Log in" [ref=f3e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f3e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f3e29]
+  - main [ref=f3e30]:
+    - generic [ref=f3e31]:
+      - generic [ref=f3e32]:
+        - navigation [ref=f3e33]:
+          - link "Home" [ref=f3e34] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f3e35]: /
+          - link "Templates" [ref=f3e36] [cursor=pointer]:
+            - /url: /templates
+          - generic [ref=f3e37]: /
+          - generic [ref=f3e38]: SaaS
+        - generic [ref=f3e39]:
+          - heading "22+ SaaS AI Website Prompts & Templates" [level=1] [ref=f3e40]
+          - paragraph [ref=f3e41]: Explore 22+ production-ready SaaS AI website prompts, templates, UI sections, and components for your next project.
+      - generic [ref=f3e43]:
+        - combobox [ref=f3e47] [cursor=pointer]:
+          - option "Daily Mix"
+          - option "Recent" [selected]
+          - option "Popular"
+        - generic [ref=f3e48]:
+          - generic [ref=f3e51]:
+            - generic [ref=f3e52] [cursor=pointer]:
+              - img "Aventis" [ref=f3e53]
+              - button "6" [ref=f3e55]
+            - generic [ref=f3e59]:
+              - generic [ref=f3e60]:
+                - heading "Aventis" [level=3] [ref=f3e61] [cursor=pointer]
+                - generic [ref=f3e62]: Luxury
+              - button "Copy Prompt" [ref=f3e64] [cursor=pointer]
+          - generic [ref=f3e71]:
+            - generic [ref=f3e72] [cursor=pointer]:
+              - img "Vaultix" [ref=f3e73]
+              - button "1" [ref=f3e75]
+            - generic [ref=f3e79]:
+              - generic [ref=f3e80]:
+                - heading "Vaultix" [level=3] [ref=f3e81] [cursor=pointer]
+                - generic [ref=f3e82]: Finance
+              - button "Copy Prompt" [ref=f3e84] [cursor=pointer]
+          - generic [ref=f3e90]:
+            - generic [ref=f3e91] [cursor=pointer]:
+              - img "HomeIQ" [ref=f3e92]
+              - button "5" [ref=f3e94]
+            - generic [ref=f3e98]:
+              - generic [ref=f3e99]:
+                - heading "HomeIQ" [level=3] [ref=f3e100] [cursor=pointer]
+                - generic [ref=f3e101]: SaaS
+              - button "Copy Prompt" [ref=f3e103] [cursor=pointer]
+          - generic [ref=f3e109]:
+            - generic [ref=f3e110] [cursor=pointer]:
+              - img "BEAMQ Hero" [ref=f3e111]
+              - button "10" [ref=f3e113]
+            - generic [ref=f3e117]:
+              - generic [ref=f3e118]:
+                - heading "BEAMQ Hero" [level=3] [ref=f3e119] [cursor=pointer]
+                - generic [ref=f3e120]: Hero
+              - button "Copy Prompt" [ref=f3e122] [cursor=pointer]
+          - generic [ref=f3e129]:
+            - generic [ref=f3e130] [cursor=pointer]:
+              - img "Pricing - Radiant" [ref=f3e131]
+              - button "0" [ref=f3e133]
+            - generic [ref=f3e137]:
+              - generic [ref=f3e138]:
+                - heading "Pricing - Radiant" [level=3] [ref=f3e139] [cursor=pointer]
+                - generic [ref=f3e140]: Pricing
+              - button "Copy Prompt" [ref=f3e142] [cursor=pointer]
+          - generic [ref=f3e148]:
+            - generic [ref=f3e149] [cursor=pointer]:
+              - img "Pricing - Stacked" [ref=f3e150]
+              - button "0" [ref=f3e152]
+            - generic [ref=f3e156]:
+              - generic [ref=f3e157]:
+                - heading "Pricing - Stacked" [level=3] [ref=f3e158] [cursor=pointer]
+                - generic [ref=f3e159]: Pricing
+              - button "Copy Prompt" [ref=f3e161] [cursor=pointer]
+          - generic [ref=f3e167]:
+            - generic [ref=f3e168] [cursor=pointer]:
+              - img "Services - Corporate Edge" [ref=f3e169]
+              - button "5" [ref=f3e171]
+            - generic [ref=f3e175]:
+              - generic [ref=f3e176]:
+                - heading "Services - Corporate Edge" [level=3] [ref=f3e177] [cursor=pointer]
+                - generic [ref=f3e178]: Features
+              - button "Copy Prompt" [ref=f3e180] [cursor=pointer]
+          - generic [ref=f3e187]:
+            - generic [ref=f3e188] [cursor=pointer]:
+              - img "Pricing - Predictable" [ref=f3e189]
+              - button "2" [ref=f3e191]
+            - generic [ref=f3e195]:
+              - generic [ref=f3e196]:
+                - heading "Pricing - Predictable" [level=3] [ref=f3e197] [cursor=pointer]
+                - generic [ref=f3e198]: Pricing
+              - button "Copy Prompt" [ref=f3e200] [cursor=pointer]
+          - generic [ref=f3e207]:
+            - generic [ref=f3e208] [cursor=pointer]:
+              - img "Features - Kinetic" [ref=f3e209]
+              - button "2" [ref=f3e211]
+            - generic [ref=f3e215]:
+              - generic [ref=f3e216]:
+                - heading "Features - Kinetic" [level=3] [ref=f3e217] [cursor=pointer]
+                - generic [ref=f3e218]: Features
+              - button "Copy Prompt" [ref=f3e220] [cursor=pointer]
+          - generic [ref=f3e227]:
+            - generic [ref=f3e228] [cursor=pointer]:
+              - img "Testimonials - Dual Marquee" [ref=f3e229]
+              - button "2" [ref=f3e231]
+            - generic [ref=f3e235]:
+              - generic [ref=f3e236]:
+                - heading "Testimonials - Dual Marquee" [level=3] [ref=f3e237] [cursor=pointer]
+                - generic [ref=f3e238]: Testimonials
+              - button "Copy Prompt" [ref=f3e240] [cursor=pointer]
+          - generic [ref=f3e247]:
+            - generic [ref=f3e248] [cursor=pointer]:
+              - img "Services - Empower" [ref=f3e249]
+              - button "1" [ref=f3e251]
+            - generic [ref=f3e255]:
+              - generic [ref=f3e256]:
+                - heading "Services - Empower" [level=3] [ref=f3e257] [cursor=pointer]
+                - generic [ref=f3e258]: Features
+              - button "Copy Prompt" [ref=f3e260] [cursor=pointer]
+          - generic [ref=f3e266]:
+            - generic [ref=f3e267] [cursor=pointer]:
+              - img "Pricing - Cosmic" [ref=f3e268]
+              - button "1" [ref=f3e270]
+            - generic [ref=f3e274]:
+              - generic [ref=f3e275]:
+                - heading "Pricing - Cosmic" [level=3] [ref=f3e276] [cursor=pointer]
+                - generic [ref=f3e277]: Pricing
+              - button "Copy Prompt" [ref=f3e279] [cursor=pointer]
+          - generic [ref=f3e286]:
+            - generic [ref=f3e287] [cursor=pointer]:
+              - img "Features - Flow" [ref=f3e288]
+              - button "0" [ref=f3e290]
+            - generic [ref=f3e294]:
+              - generic [ref=f3e295]:
+                - heading "Features - Flow" [level=3] [ref=f3e296] [cursor=pointer]
+                - generic [ref=f3e297]: Features
+              - button "Copy Prompt" [ref=f3e299] [cursor=pointer]
+          - generic [ref=f3e306]:
+            - generic [ref=f3e307] [cursor=pointer]:
+              - img "FAQ - Insights" [ref=f3e308]
+              - button "2" [ref=f3e310]
+            - generic [ref=f3e314]:
+              - generic [ref=f3e315]:
+                - heading "FAQ - Insights" [level=3] [ref=f3e316] [cursor=pointer]
+                - generic [ref=f3e317]: Faq
+              - button "Copy Prompt" [ref=f3e319] [cursor=pointer]
+          - generic [ref=f3e326]:
+            - generic [ref=f3e327] [cursor=pointer]:
+              - img "Services - Horizontal" [ref=f3e328]
+              - button "1" [ref=f3e330]
+            - generic [ref=f3e334]:
+              - generic [ref=f3e335]:
+                - heading "Services - Horizontal" [level=3] [ref=f3e336] [cursor=pointer]
+                - generic [ref=f3e337]: Features
+              - button "Copy Prompt" [ref=f3e339] [cursor=pointer]
+          - generic [ref=f3e345]:
+            - generic [ref=f3e346] [cursor=pointer]:
+              - img "Pricing - Brutalist" [ref=f3e347]
+              - button "3" [ref=f3e349]
+            - generic [ref=f3e353]:
+              - generic [ref=f3e354]:
+                - heading "Pricing - Brutalist" [level=3] [ref=f3e355] [cursor=pointer]
+                - generic [ref=f3e356]: Pricing
+              - button "Copy Prompt" [ref=f3e358] [cursor=pointer]
+          - generic [ref=f3e365]:
+            - generic [ref=f3e366] [cursor=pointer]:
+              - img "Intelligence" [ref=f3e367]
+              - button "18" [ref=f3e369]
+            - generic [ref=f3e373]:
+              - generic [ref=f3e374]:
+                - heading "Intelligence" [level=3] [ref=f3e375] [cursor=pointer]
+                - generic [ref=f3e376]: Technology
+              - button "Copy Prompt" [ref=f3e378] [cursor=pointer]
+          - generic [ref=f3e384]:
+            - generic [ref=f3e385] [cursor=pointer]:
+              - img "Outbox" [ref=f3e386]
+              - button "13" [ref=f3e388]
+            - generic [ref=f3e392]:
+              - generic [ref=f3e393]:
+                - heading "Outbox" [level=3] [ref=f3e394] [cursor=pointer]
+                - generic [ref=f3e395]: SaaS
+              - button "Copy Prompt" [ref=f3e397] [cursor=pointer]
+          - generic [ref=f3e404]:
+            - generic [ref=f3e405] [cursor=pointer]:
+              - img "WorldView SaaS" [ref=f3e406]
+              - button "12" [ref=f3e408]
+            - generic [ref=f3e412]:
+              - generic [ref=f3e413]:
+                - heading "WorldView SaaS" [level=3] [ref=f3e414] [cursor=pointer]
+                - generic [ref=f3e415]: SaaS
+              - button "Copy Prompt" [ref=f3e417] [cursor=pointer]
+          - generic [ref=f3e423]:
+            - generic [ref=f3e424] [cursor=pointer]:
+              - img "Pixzen" [ref=f3e425]
+              - button "26" [ref=f3e427]
+            - generic [ref=f3e431]:
+              - generic [ref=f3e432]:
+                - heading "Pixzen" [level=3] [ref=f3e433] [cursor=pointer]
+                - generic [ref=f3e434]: SaaS
+              - button "Copy Prompt" [ref=f3e436] [cursor=pointer]
+          - generic [ref=f3e443]:
+            - generic [ref=f3e444] [cursor=pointer]:
+              - img "Aura Hero" [ref=f3e445]
+              - button "8" [ref=f3e447]
+            - generic [ref=f3e451]:
+              - generic [ref=f3e452]:
+                - heading "Aura Hero" [level=3] [ref=f3e453] [cursor=pointer]
+                - generic [ref=f3e454]: Hero
+              - button "Copy Prompt" [ref=f3e456] [cursor=pointer]
+          - generic [ref=f3e463]:
+            - generic [ref=f3e464] [cursor=pointer]:
+              - img "Magnetic cursor" [ref=f3e465]
+              - button "14" [ref=f3e467]
+            - generic [ref=f3e471]:
+              - generic [ref=f3e472]:
+                - heading "Magnetic cursor" [level=3] [ref=f3e473] [cursor=pointer]
+                - generic [ref=f3e474]: Hero
+              - button "Copy Prompt" [ref=f3e476] [cursor=pointer]
+  - contentinfo [ref=f3e481]:
+    - generic [ref=f3e482]:
+      - generic [ref=f3e483]:
+        - generic [ref=f3e484]:
+          - link "MotionSite MotionSite.ai" [ref=f3e485] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f3e486]
+            - generic [ref=f3e487]: MotionSite.ai
+          - paragraph [ref=f3e488]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f3e489]:
+          - heading "Resources" [level=4] [ref=f3e490]
+          - list [ref=f3e491]:
+            - listitem [ref=f3e492]:
+              - link "Templates" [ref=f3e493] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f3e494]:
+              - link "Sections" [ref=f3e495] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f3e496]:
+              - link "Backgrounds" [ref=f3e497] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f3e498]:
+              - link "How to Use" [ref=f3e499] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f3e500]:
+              - link "Blog" [ref=f3e501] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f3e502]:
+          - heading "Company" [level=4] [ref=f3e503]
+          - list [ref=f3e504]:
+            - listitem [ref=f3e505]:
+              - link "About" [ref=f3e506] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e507]:
+              - link "Contact" [ref=f3e508] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f3e509]:
+              - link "Terms of Service" [ref=f3e510] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f3e511]:
+              - link "Privacy Policy" [ref=f3e512] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f3e513]:
+        - paragraph [ref=f3e514]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f3e516] [cursor=pointer]
+  - alert [ref=f3e523]

@@ -1,0 +1,14 @@
+# Veriforge 官网 · Caddy 反向代理（自动 HTTPS / Let's Encrypt）
+# 用法：将 veriforge.example.com 替换为真实域名后 `caddy run` 或 `caddy start`
+veriforge.example.com {
+	encode zstd gzip
+
+	# TLS 由 Caddy 自动签发与续期；HSTS 交由应用响应头统一输出
+	reverse_proxy 127.0.0.1:8080
+
+	header {
+		# 应用已输出 CSP / nosniff / Referrer-Policy / X-Frame-Options
+		# 此处仅补充反代层的连接安全提示
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	}
+}

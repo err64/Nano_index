@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>内容后台 · Veriforge</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="container header-in">
+    <span class="brand">
+      <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+      <span>
+        <span class="brand-name">Veriforge 内容后台</span>
+        <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+      </span>
+    </span>
+    <button id="logout-btn" class="btn btn-sm is-hidden" type="button">退出登录</button>
+  </div>
+</header>
+
+<main id="main" class="container section">
+
+  <!-- 登录 -->
+  <section id="login-view" aria-labelledby="login-h">
+    <h1 id="login-h">登录内容后台</h1>
+    <p class="lede">输入环境变量 ADMIN_TOKEN 对应的访问令牌。连续失败 5 次将限速 1 分钟。</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="login-token">访问令牌</label>
+        <input id="login-token" type="password" required autocomplete="current-password">
+      </div>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" type="submit">登录</button>
+      </div>
+      <p class="form-status" id="login-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- 编辑器 -->
+  <section id="editor-view" class="is-hidden" aria-labelledby="editor-h">
+    <h1 id="editor-h" class="sr-only">内容编辑</h1>
+    <p class="lede">编辑内容 JSON 后保存，系统自动校验并重建静态页面，刷新前台立即生效。</p>
+    <div class="tabs" role="tablist" aria-label="内容类型" id="content-tabs"></div>
+    <div id="content-panels"></div>
+    <div class="ctaband admin-ctaband">
+      <p class="lead-note">保存流程：客户端 JSON 校验 → 服务端校验 → 重建 dist → 返回构建日志。</p>
+      <div class="hero-ctas mt-0">
+        <button class="btn" id="rebuild-btn" type="button">手动重建站点</button>
+      </div>
+    </div>
+    <p class="form-status" id="op-status" role="status" aria-live="polite"></p>
+  </section>
+
+</main>
+<script src="/admin/admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">产品与服务</span>
+      </nav>
+      <h1 id="ph-h">一个 Harness，五个子系统，从任务进来到 PR 回去。</h1>
+      <p class="lede">开源社区版覆盖全部核心能力；企业服务面向私有化部署与试点陪跑。所有功能单机即可运行，SQLite 之外零中间件。</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="arch-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="arch-h">执行与裁决分离的架构</h2>
+        <p>自然语言需求经采集引擎编译为冻结契约；Worker 在隔离工作区执行；Harness 全程持有状态、预算与验证；完成即证据落库，交付管道异步接力。</p>
+      </div>
+      <div class="bento reveal">
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#tree-structure"></use></svg></div>
+          <h3>确定性状态机（FSM）</h3>
+          <p>INIT 到 READY_FOR_REVIEW 的每一步都由强类型合法迁移表驱动。FAST_VERIFY 失败只能进 REPAIR，永远无法越级到完成；终态不可逆，进程崩溃后以全新 runId 恢复。</p>
+        </article>
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#shield-check"></use></svg></div>
+          <h3>防篡改验证引擎</h3>
+          <p>BASELINE / FAST / FULL 三级阶梯控制验证成本；PROTECTED 阶段强制恢复 Base Commit 原始测试；SYNTHESIZE 以 RED/GREEN 双向验证新测试的有效性。弱化检测器静态扫描 .skip、.only 与断言删除。</p>
+        </article>
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#cpu"></use></svg></div>
+          <h3>多 Runtime 与模型路由</h3>
+          <p>Codex CLI 与 Claude Code 通过统一异步事件流契约接入，启动前自动能力探测，跨平台进程树终止保护。ModelRouter 按任务复杂度打分调度模型，超成本预算硬停机。</p>
+        </article>
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#database"></use></svg></div>
+          <h3>生产控制平面</h3>
+          <p>SQLite 租赁队列免中间件实现分布式调度，心跳续租防抢占，磁盘水位准入；Transaction Outbox 保证终态与交付请求原子落库，GitHub PR 幂等创建并精确比对 CI headSha。</p>
+        </article>
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#lock-key"></use></svg></div>
+          <h3>安全与可观测</h3>
+          <p>默认回环绑定，RBAC Token 鉴权，Webhook HMAC 验签防重放，出网 URL Guard 拦截 SSRF 与 DNS 重绑定；事件存储只增不改，在线 WAL 热备份带完整性检查。</p>
+        </article>
+        <article class="card span-3">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#chat-circle-dots"></use></svg></div>
+          <h3>需求采集闭环</h3>
+          <p>自然语言对话澄清需求，人工确认锁定后服务端编译为不可变契约；启动运行只传需求 ID，客户端无法中途篡改代码路径与安全规则。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="svc-h">服务体系</h2>
+        <p>核心引擎全部开源。我们销售的不是许可，而是把验证体系落地到你的仓库所需的工程服务。</p>
+      </div>
+      <div class="bento">
+        <article class="card span-2 reveal">
+          <span class="chip chip-ok">开源 · MIT</span>
+          <h3>社区版</h3>
+          <p>全部核心能力：FSM、验证阶梯、调度池、控制台、CLI。自行部署，社区渠道答疑。</p>
+          <p class="card-link"><a class="link-more" href="/help#quickstart">立即上手<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+        </article>
+        <article class="card card-hot span-2 reveal">
+          <span class="chip chip-accent">推荐</span>
+          <h3>部署支持</h3>
+          <p>私有化安装、任务契约模板设计、验证命令与门禁策略调优、与现有 Git 平台及 CI 的对接，含运维交接。</p>
+          <p class="card-link"><a class="link-more" href="/about#contact">咨询方案<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+        </article>
+        <article class="card span-2 reveal">
+          <span class="chip">试点陪跑</span>
+          <h3>试点合作</h3>
+          <p>选定 1 至 3 个真实仓库的缺陷清偿场景，共同定义试点指标与翻转条件，用数据决定是否扩大范围。</p>
+          <p class="card-link"><a class="link-more" href="/about#contact">申请试点<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="spec-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="spec-h">技术规格</h2>
+      </div>
+      <div class="bento">
+        <div class="card span-2 reveal">
+          <h3>运行环境</h3>
+          <p>Node.js 22.13 至 24（内置 node:sqlite，无原生编译依赖）<br>pnpm 10+ / Git 2.30+ / 可选 Docker</p>
+        </div>
+        <div class="card span-2 reveal">
+          <h3>运行时依赖</h3>
+          <p>仅 4 个轻量库：commander、picomatch、pino、zod。Web 控制台由纯 Node HTTP 实现，零 Web 框架。</p>
+        </div>
+        <div class="card span-2 reveal">
+          <h3>质量防护网</h3>
+          <p>70+ 测试文件、450+ 用例，覆盖状态机穷举、反作弊真实数据流、并发租赁与交付对账；ubuntu 与 windows 双平台 CI。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">部署到你的内网，只需要一台机器。</h2>
+          <p>Docker 一键编排，数据本地 SQLite 落盘，凭据全程不进入模型上下文。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="/about#contact">获取部署方案</a>
+          <a class="btn" href="/help">查看文档</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

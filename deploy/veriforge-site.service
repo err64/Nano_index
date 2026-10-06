@@ -1,0 +1,26 @@
+[Unit]
+Description=Veriforge official site (static + admin CMS)
+After=network.target
+
+[Service]
+Type=simple
+# 生产环境请使用 EnvironmentFile 注入以下变量：
+#   PORT=8080
+#   HOST=127.0.0.1
+#   SITE_URL=https://veriforge.example.com
+#   ADMIN_TOKEN=<长随机令牌>
+#   HTTPS=1
+User=www-data
+WorkingDirectory=/opt/veriforge-site
+ExecStart=/usr/bin/node /opt/veriforge-site/server.js
+EnvironmentFile=/opt/veriforge-site/.env
+Restart=on-failure
+RestartSec=3
+# 加固
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/veriforge-site/dist /opt/veriforge-site/src/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Veriforge">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b222c"/>
+      <stop offset="1" stop-color="#0b0d10"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="140" y1="356" x2="392" y2="164" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f4581c"/>
+      <stop offset="0.38" stop-color="#ff8c2e"/>
+      <stop offset="0.74" stop-color="#ffc46a"/>
+      <stop offset="1" stop-color="#ffedcf"/>
+    </linearGradient>
+    <radialGradient id="heat" cx="0.42" cy="0.6" r="0.62">
+      <stop offset="0" stop-color="#ff7a1f" stop-opacity="0.20"/>
+      <stop offset="0.55" stop-color="#ff7a1f" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#ff7a1f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <!-- tile -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#tile)"/>
+  <rect x="9.5" y="9.5" width="493" height="493" rx="110.5" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="3"/>
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#heat)"/>
+
+  <!-- forged seal hexagon -->
+  <polygon points="256,76 417.6,169 417.6,355 256,448 94.4,355 94.4,169"
+           fill="none" stroke="#ff9e36" stroke-opacity="0.22" stroke-width="3"/>
+
+  <!-- check glow -->
+  <path d="M146 258 L222 338 L372 174" fill="none" stroke="#ff7a1f" stroke-width="62"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.30" filter="url(#glow)"/>
+
+  <!-- forged check -->
+  <path d="M146 258 L222 338 L372 174" fill="none" stroke="url(#steel)" stroke-width="48"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- sparks fanning out from the strike at the tip -->
+  <circle cx="408" cy="136" r="7" fill="#ffd685"/>
+  <circle cx="440" cy="156" r="4.5" fill="#ff9e42"/>
+  <circle cx="420" cy="102" r="3.5" fill="#ffedcf"/>
+  <rect x="446" y="120" width="8" height="8" transform="rotate(45 450 124)" fill="#ffb95c"/>
+</svg>

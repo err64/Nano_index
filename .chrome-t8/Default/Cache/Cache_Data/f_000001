@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>帮助中心 · 快速上手与常见问题 | Veriforge</title>
+<meta name="description" content="五分钟本地跑通 Veriforge：克隆、演示、控制台、接入真实模型，以及防作弊机制、故障排查等常见问题解答。">
+<link rel="canonical" href="https://veriforge.nanofactory.dev/help">
+<meta name="theme-color" content="#090d12">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Veriforge">
+<meta property="og:title" content="帮助中心 · 快速上手与常见问题 | Veriforge">
+<meta property="og:description" content="五分钟本地跑通 Veriforge：克隆、演示、控制台、接入真实模型，以及防作弊机制、故障排查等常见问题解答。">
+<meta property="og:url" content="https://veriforge.nanofactory.dev/help">
+<meta property="og:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="帮助中心 · 快速上手与常见问题 | Veriforge">
+<meta name="twitter:description" content="五分钟本地跑通 Veriforge：克隆、演示、控制台、接入真实模型，以及防作弊机制、故障排查等常见问题解答。">
+<meta name="twitter:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"hello@nanofactory.dev"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://veriforge.nanofactory.dev/"},{"@type":"ListItem","position":2,"name":"帮助中心","item":"https://veriforge.nanofactory.dev/help"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"运行 Veriforge 需要什么环境？","acceptedAnswer":{"@type":"Answer","text":"Node.js 22.13 至 24（内置 node:sqlite，无需任何原生编译）、pnpm 10 以上与 Git 2.30 以上。容器部署提供 Dockerfile 与生产编排样例。"}},{"@type":"Question","name":"如何在不接入任何大模型的情况下体验完整流程？","acceptedAnswer":{"@type":"Answer","text":"运行 pnpm build && pnpm demo。演示使用 Scripted Runtime 在本地确定性执行：构建真实 Git Worktree、运行真实验证命令、产出真实证据，全程不调用外部模型服务，约 6 秒完成。"}},{"@type":"Question","name":"如何防止模型通过修改或跳过测试来伪造通过？","acceptedAnswer":{"@type":"Answer","text":"三层防线：一是受保护验证，全量验证前用 git restore 将测试目录强制恢复到基线状态再执行；二是弱化检测器，静态扫描新增 .skip、.only、xfail 与断言批量删除；三是完成门禁，任何未受检验的 Diff 一律产生 CRITICAL 级发现并阻断交付。"}},{"@type":"Question","name":"支持哪些 Coding Runtime？可以换模型吗？","acceptedAnswer":{"@type":"Answer","text":"内置 Codex CLI 与 Claude Code 适配器（能力探测、JSONL 事件流、进程树终止保护），以及用于离线演示与测试的 Scripted Runtime。模型由 ModelRouter 按任务复杂度动态路由，超出成本预算自动硬停机。新 Runtime 只需实现统一的异步事件流接口。"}},{"@type":"Question","name":"任务失败或进程崩溃后会发生什么？","acceptedAnswer":{"@type":"Answer","text":"修复循环受迭代数、运行时长与成本三重预算约束；同一失败指纹连续出现两次即注入「假设已证伪」提示，三次无进展判定 BLOCKED。进程失联由调度器按租约超时分类归属，旧 runId 永不复用，任务以全新 runId 重新排队。终态不可逆，历史完整留痕。"}},{"@type":"Question","name":"如何接入 GitHub 自动创建 PR？","acceptedAnswer":{"@type":"Answer","text":"Worker 达成 READY_FOR_REVIEW 时，交付请求与终态在同一 SQLite 事务落库（Transaction Outbox），随后由独立管道推送分支并创建 PR。网络超时不盲目重试：DELIVERY_UNKNOWN 状态先按稳定分支名与精确 headSha 对账，确保永不产生重复 PR。"}},{"@type":"Question","name":"源代码和凭据的安全性如何保障？","acceptedAnswer":{"@type":"Answer","text":"服务默认只绑定 127.0.0.1，对外开放必须显式配置并启用 RBAC 角色令牌；凭据仅存在于 Harness 进程，经环境变量白名单过滤后才进入子进程；出网通知经 URL Guard 校验（拒绝回环、内网段、云元数据端点与 DNS 重绑定）；Webhook 以 HMAC 验签并防重放。"}},{"@type":"Question","name":"数据如何备份与清理？","acceptedAnswer":{"@type":"Answer","text":"内置 db backup（基于 VACUUM INTO 的在线无锁热备份，自动生成 sha256 清单并保留最近 7 份）、db check（完整性检查）与 db prune（按保留天数清理只增历史，支持 --dry-run 预览）。"}},{"@type":"Question","name":"开源协议是什么？可以商用吗？","acceptedAnswer":{"@type":"Answer","text":"MIT 许可证，允许商用、修改与二次分发。核心引擎全部开源，我们销售的是部署支持与试点陪跑服务，不是许可。"}}]}</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="container header-in">
+    <a class="brand" href="/" aria-label="Veriforge 首页">
+      <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+      <span>
+        <span class="brand-name">Veriforge</span>
+        <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+      </span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/news" data-nav="news">新闻动态</a>
+      <a href="/about" data-nav="about">关于我们</a>
+      <a href="/help" data-nav="help" aria-current="page">帮助中心</a>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="/about#contact">申请试点</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">打开菜单</span>
+      <svg class="ico ico-menu" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg>
+      <svg class="ico ico-close" aria-hidden="true"><use href="/assets/img/icons.svg#x"></use></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">帮助中心</span>
+      </nav>
+      <h1 id="ph-h">五分钟，看到第一条完整的验证链。</h1>
+      <p class="lede">从克隆到控制台，四步完成。整个过程不调用任何外部模型服务，Scripted Runtime 在本地确定性执行。</p>
+    </div>
+  </section>
+
+  <section class="section" id="quickstart" aria-labelledby="qs-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="qs-h">快速上手</h2>
+        <p>环境要求：Node.js 22.13 至 24、pnpm 10+、Git 2.30+。</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <h3>克隆并安装</h3>
+          <p>获取仓库并安装依赖，全部构建在本地完成。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-1" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-1"><span class="prompt">$ </span><span class="cmd">git clone &lt;repo-url&gt; && cd NANOFACTORY && pnpm install && pnpm build</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>运行端到端演示</h3>
+          <p>内置一个带增值税缺陷的演示工程。脚本会构建真实 Git Worktree、执行验证阶梯并输出完整状态机轨迹，约 6 秒结束。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-2" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-2"><span class="prompt">$ </span><span class="cmd">pnpm demo</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>打开控制台</h3>
+          <p>在可视化界面查看需求采集、运行轨迹、证据与审计，默认监听 <code>127.0.0.1:7788</code>。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-3" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-3"><span class="prompt">$ </span><span class="cmd">pnpm web</span><span class="cmt">  # 然后访问 http://127.0.0.1:7788</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>接入真实模型</h3>
+          <p>把演示工程换成你的任务契约，用 <code>--runtime codex</code> 或 <code>--runtime claude-code</code> 驱动真实模型。契约字段、预算与验证命令见示例文件。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-4" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-4"><span class="prompt">$ </span><span class="cmd">node dist/cli/run-task.js run examples/task.example.json --runtime codex --json</span></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="faq-h">常见问题</h2>
+      </div>
+      <div class="acc reveal">
+        
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-0" id="faq-b-0">
+        <span>运行 Veriforge 需要什么环境？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-0" role="region" aria-labelledby="faq-b-0">
+      <p>Node.js 22.13 至 24（内置 node:sqlite，无需任何原生编译）、pnpm 10 以上与 Git 2.30 以上。容器部署提供 Dockerfile 与生产编排样例。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-1" id="faq-b-1">
+        <span>如何在不接入任何大模型的情况下体验完整流程？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-1" role="region" aria-labelledby="faq-b-1">
+      <p>运行 pnpm build &amp;&amp; pnpm demo。演示使用 Scripted Runtime 在本地确定性执行：构建真实 Git Worktree、运行真实验证命令、产出真实证据，全程不调用外部模型服务，约 6 秒完成。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-2" id="faq-b-2">
+        <span>如何防止模型通过修改或跳过测试来伪造通过？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-2" role="region" aria-labelledby="faq-b-2">
+      <p>三层防线：一是受保护验证，全量验证前用 git restore 将测试目录强制恢复到基线状态再执行；二是弱化检测器，静态扫描新增 .skip、.only、xfail 与断言批量删除；三是完成门禁，任何未受检验的 Diff 一律产生 CRITICAL 级发现并阻断交付。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-3" id="faq-b-3">
+        <span>支持哪些 Coding Runtime？可以换模型吗？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-3" role="region" aria-labelledby="faq-b-3">
+      <p>内置 Codex CLI 与 Claude Code 适配器（能力探测、JSONL 事件流、进程树终止保护），以及用于离线演示与测试的 Scripted Runtime。模型由 ModelRouter 按任务复杂度动态路由，超出成本预算自动硬停机。新 Runtime 只需实现统一的异步事件流接口。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-4" id="faq-b-4">
+        <span>任务失败或进程崩溃后会发生什么？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-4" role="region" aria-labelledby="faq-b-4">
+      <p>修复循环受迭代数、运行时长与成本三重预算约束；同一失败指纹连续出现两次即注入「假设已证伪」提示，三次无进展判定 BLOCKED。进程失联由调度器按租约超时分类归属，旧 runId 永不复用，任务以全新 runId 重新排队。终态不可逆，历史完整留痕。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-5" id="faq-b-5">
+        <span>如何接入 GitHub 自动创建 PR？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-5" role="region" aria-labelledby="faq-b-5">
+      <p>Worker 达成 READY_FOR_REVIEW 时，交付请求与终态在同一 SQLite 事务落库（Transaction Outbox），随后由独立管道推送分支并创建 PR。网络超时不盲目重试：DELIVERY_UNKNOWN 状态先按稳定分支名与精确 headSha 对账，确保永不产生重复 PR。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-6" id="faq-b-6">
+        <span>源代码和凭据的安全性如何保障？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-6" role="region" aria-labelledby="faq-b-6">
+      <p>服务默认只绑定 127.0.0.1，对外开放必须显式配置并启用 RBAC 角色令牌；凭据仅存在于 Harness 进程，经环境变量白名单过滤后才进入子进程；出网通知经 URL Guard 校验（拒绝回环、内网段、云元数据端点与 DNS 重绑定）；Webhook 以 HMAC 验签并防重放。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-7" id="faq-b-7">
+        <span>数据如何备份与清理？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-7" role="region" aria-labelledby="faq-b-7">
+      <p>内置 db backup（基于 VACUUM INTO 的在线无锁热备份，自动生成 sha256 清单并保留最近 7 份）、db check（完整性检查）与 db prune（按保留天数清理只增历史，支持 --dry-run 预览）。</p>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <h3>
+      <button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-p-8" id="faq-b-8">
+        <span>开源协议是什么？可以商用吗？</span>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#plus"></use></svg>
+      </button>
+    </h3>
+    <div class="acc-panel" id="faq-p-8" role="region" aria-labelledby="faq-b-8">
+      <p>MIT 许可证，允许商用、修改与二次分发。核心引擎全部开源，我们销售的是部署支持与试点陪跑服务，不是许可。</p>
+    </div>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="trouble-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="trouble-h">故障排查</h2>
+      </div>
+      <div class="bento">
+        <div class="card span-3 reveal">
+          <h3>任务被标记为 BLOCKED</h3>
+          <p>同一失败指纹连续 3 次无进展即熔断。用 <code>veriforge inspect &lt;runId&gt; --events</code> 查看时间线与指纹，确认是否为既有失败（preExisting）或路径策略违规。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>BUDGET_EXCEEDED 太频繁</h3>
+          <p>调高契约中的 maxIterations 与 maxRuntimeMinutes，或用 FAST 检查更快的子集命令。先看验证命令耗时分布再调预算。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>控制台无法访问</h3>
+          <p>服务默认只绑定回环地址。远程访问必须显式启用非回环绑定并配置角色 Token，TLS 交给反向代理（见部署文档）。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>数据库维护</h3>
+          <p>用 <code>db backup</code> 在线热备份、<code>db check</code> 校验完整性、<code>db prune</code> 清理超过保留期的只增历史。清理前先 --dry-run。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">没找到答案？</h2>
+          <p>直接来信，或在仓库提交 Issue。较真的问题最受欢迎。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="mailto:hello@nanofactory.dev">提问</a>
+          <a class="btn" href="/products">了解产品</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="Veriforge 首页">
+          <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+          <span>
+            <span class="brand-name">Veriforge</span>
+            <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+          </span>
+        </a>
+        <p>生产级可验证 AI 编码工人 Harness 与控制平面。Coding Runtime 负责理解和修改代码，Harness 独占验证、预算与完成判定。</p>
+      </div>
+      <nav class="foot-col" aria-label="产品">
+        <h3>产品</h3>
+        <ul>
+          <li><a href="/products">产品与服务</a></li>
+          <li><a href="/cases">用户案例</a></li>
+          <li><a href="/help">帮助中心</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="项目">
+        <h3>项目</h3>
+        <ul>
+          <li><a href="/project">项目介绍</a></li>
+          <li><a href="/news">新闻动态</a></li>
+          <li><a href="https://github.com/nano-factory/veriforge" rel="noopener">GitHub 仓库</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="联系">
+        <h3>联系</h3>
+        <ul>
+          <li><a href="/about#contact">申请试点</a></li>
+          <li><a href="mailto:hello@nanofactory.dev">hello@nanofactory.dev</a></li>
+          <li><a href="/about">关于我们</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 NANOFACTORY · Veriforge 基于 MIT 许可证开源</span>
+      <span>全站 HTTPS 加密 · <a href="/help">无障碍说明</a></span>
+      <!-- TODO 上线前：替换为真实 ICP 备案号 -->
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
+

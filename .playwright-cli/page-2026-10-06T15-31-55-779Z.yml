@@ -1,0 +1,482 @@
+- generic [active] [ref=f8e1]:
+  - banner [ref=f8e2]:
+    - navigation [ref=f8e3]:
+      - generic [ref=f8e5]:
+        - generic [ref=f8e6]:
+          - link "MotionSite MotionSite.ai" [ref=f8e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f8e8]
+            - generic [ref=f8e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f8e12]
+        - generic [ref=f8e13]:
+          - generic [ref=f8e14]:
+            - link "Templates" [ref=f8e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f8e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f8e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f8e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f8e19]:
+            - button "Toggle theme" [ref=f8e20] [cursor=pointer]
+            - link "Log in" [ref=f8e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f8e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f8e29]
+  - main [ref=f8e30]:
+    - generic [ref=f8e32]:
+      - heading "HomeIQ - SaaS Smart Home Template" [level=1] [ref=f8e33]
+      - generic [ref=f8e35]:
+        - generic [ref=f8e41]:
+          - generic [ref=f8e42]:
+            - button "Desktop View (100%)" [ref=f8e43]
+            - button "Tablet View (768px)" [ref=f8e46]
+            - button "Mobile View (375px)" [ref=f8e49]
+          - button "Reload preview" [ref=f8e52]
+          - button "Fullscreen Preview" [ref=f8e56]
+        - iframe [ref=f8e64]:
+          - generic [ref=f9e3]:
+            - banner [ref=f9e4]:
+              - link "HomeIQ" [ref=f9e5] [cursor=pointer]:
+                - /url: "#"
+              - navigation [ref=f9e10]:
+                - link "Home" [ref=f9e11] [cursor=pointer]:
+                  - /url: "#home"
+                - generic [ref=f9e12]: •
+                - link "Features" [ref=f9e13] [cursor=pointer]:
+                  - /url: "#features"
+                - generic [ref=f9e14]: •
+                - link "Devices" [ref=f9e15] [cursor=pointer]:
+                  - /url: "#devices"
+                - generic [ref=f9e16]: •
+                - link "Support" [ref=f9e17] [cursor=pointer]:
+                  - /url: "#support"
+                - generic [ref=f9e18]: •
+                - link "Login" [ref=f9e19] [cursor=pointer]:
+                  - /url: "#login"
+              - generic [ref=f9e20]:
+                - button "EN" [ref=f9e22] [cursor=pointer]
+                - button "Search" [ref=f9e26] [cursor=pointer]
+                - button "Toggle menu" [ref=f9e30] [cursor=pointer]
+            - generic [ref=f9e33]:
+              - main [ref=f9e34]:
+                - generic [ref=f9e35]:
+                  - heading "Control Your Home The Smart Way" [level=1] [ref=f9e37]: ControlYour HomeThe Smart Way
+                  - paragraph [ref=f9e38]: Ambient control of your space — without lifting a finger. Your home is just four steps away from being autonomous!
+                  - button "CONNECT YOUR SPACE" [ref=f9e40] [cursor=pointer]
+                  - generic [ref=f9e46]:
+                    - generic [ref=f9e47]: Zero Touch Control
+                    - generic [ref=f9e50]: AI Protected
+                    - generic [ref=f9e54]: Autonomous OS
+                - generic [ref=f9e58]: Your browser does not support HTML5 video.
+              - generic [ref=f9e62]:
+                - generic [ref=f9e63]: Works seamlessly with
+                - generic [ref=f9e64]:
+                  - generic "Matter" [ref=f9e65] [cursor=pointer]
+                  - generic "Google Home" [ref=f9e66] [cursor=pointer]
+                  - generic "Amazon Alexa" [ref=f9e67] [cursor=pointer]
+                  - generic "Apple Home" [ref=f9e68] [cursor=pointer]
+                  - generic "Samsung SmartThings" [ref=f9e69] [cursor=pointer]
+            - generic [ref=f9e72]:
+              - generic [ref=f9e73]:
+                - generic [ref=f9e74]: SMART CONTROL
+                - heading "Everything in One Place" [level=2] [ref=f9e75]: Everything inOne Place
+                - paragraph [ref=f9e76]: Lights, security, temperature, entertainment — all working together, all in one app.
+                - generic [ref=f9e77]:
+                  - generic [ref=f9e78] [cursor=pointer]: Real-time device status
+                  - generic [ref=f9e84] [cursor=pointer]: Custom automation
+                  - generic [ref=f9e88] [cursor=pointer]: Energy monitoring
+                  - generic [ref=f9e93] [cursor=pointer]: Smart scheduling
+              - generic:
+                - generic:
+                  - img "HomeIQ Mobile App Showcase"
+              - generic [ref=f9e99]:
+                - generic [ref=f9e100]: AUTOMATE YOUR LIFE
+                - heading "Intelligence that Understands You" [level=2] [ref=f9e101]: Intelligence thatUnderstands You
+                - paragraph [ref=f9e102]: Our AI learns your routines and adapts automations to your lifestyle.
+                - generic [ref=f9e103]:
+                  - generic [ref=f9e108] [cursor=pointer]:
+                    - heading "AI Learning" [level=4] [ref=f9e109]
+                    - paragraph [ref=f9e110]: Adapts to your behavior
+                  - generic [ref=f9e118] [cursor=pointer]:
+                    - heading "Smart Scenes" [level=4] [ref=f9e119]
+                    - paragraph [ref=f9e120]: One tap, multiple actions
+                  - generic [ref=f9e126] [cursor=pointer]:
+                    - heading "Predictive Automation" [level=4] [ref=f9e127]
+                    - paragraph [ref=f9e128]: Stays ahead of your needs
+                  - generic [ref=f9e134] [cursor=pointer]:
+                    - heading "Voice & Gesture Control" [level=4] [ref=f9e135]
+                    - paragraph [ref=f9e136]: Hands-free living
+            - generic [ref=f9e138]:
+              - generic [ref=f9e139]:
+                - generic [ref=f9e140]:
+                  - text: BUILT FOR EVERY HOME
+                  - heading "Smart Devices for a Smarter You" [level=2] [ref=f9e141]
+                - button "View all devices" [ref=f9e142] [cursor=pointer]
+              - generic [ref=f9e147]:
+                - generic [ref=f9e148] [cursor=pointer]:
+                  - generic [ref=f9e149]: Mood Synced
+                  - generic [ref=f9e154]:
+                    - heading "Smart Lighting" [level=3] [ref=f9e155]
+                    - paragraph [ref=f9e156]: Set the perfect mood
+                    - generic [ref=f9e157]: Explore
+                - generic [ref=f9e161] [cursor=pointer]:
+                  - generic [ref=f9e162]: 4K Live Security
+                  - generic [ref=f9e167]:
+                    - heading "Smart Security" [level=3] [ref=f9e168]
+                    - paragraph [ref=f9e169]: Always watching over you
+                    - generic [ref=f9e170]: Explore
+                - generic [ref=f9e174] [cursor=pointer]:
+                  - generic [ref=f9e175]: Auto 24°C Comfort
+                  - generic [ref=f9e180]:
+                    - heading "Smart Climate" [level=3] [ref=f9e181]
+                    - paragraph [ref=f9e182]: Comfort, automated
+                    - generic [ref=f9e183]: Explore
+                - generic [ref=f9e187] [cursor=pointer]:
+                  - generic [ref=f9e188]: Touch Glass
+                  - generic [ref=f9e193]:
+                    - heading "Smart Switches" [level=3] [ref=f9e194]
+                    - paragraph [ref=f9e195]: Control at your fingertips
+                    - generic [ref=f9e196]: Explore
+                - generic [ref=f9e200] [cursor=pointer]:
+                  - generic [ref=f9e201]: 16A Energy Saver
+                  - generic [ref=f9e206]:
+                    - heading "Smart Plugs" [level=3] [ref=f9e207]
+                    - paragraph [ref=f9e208]: Power, smarter
+                    - generic [ref=f9e209]: Explore
+            - generic [ref=f9e213]:
+              - generic:
+                - img "Smart Villa Energy Sustainability"
+              - generic [ref=f9e215]:
+                - generic [ref=f9e216]:
+                  - generic [ref=f9e217]: SAVE ENERGY, LIVE BETTER
+                  - heading "Efficiency Meets Sustainability" [level=2] [ref=f9e218]: Efficiency MeetsSustainability
+                  - paragraph [ref=f9e219]: Reduce energy consumption and save on bills without compromising comfort.
+                  - generic [ref=f9e220]:
+                    - generic [ref=f9e221]:
+                      - generic [ref=f9e222]: 30%
+                      - generic [ref=f9e223]: Energy Saved
+                    - generic [ref=f9e224]:
+                      - generic [ref=f9e225]: 24/7
+                      - generic [ref=f9e226]: Smart Monitoring
+                    - generic [ref=f9e227]:
+                      - generic [ref=f9e228]: 100%
+                      - generic [ref=f9e229]: Peace of Mind
+                - generic [ref=f9e231]:
+                  - generic [ref=f9e233]:
+                    - generic [ref=f9e234]:
+                      - heading "Energy Usage" [level=4] [ref=f9e235]
+                      - text: This Week
+                    - generic [ref=f9e236]:
+                      - generic [ref=f9e237]: "-28%"
+                      - generic [ref=f9e241]: vs last week
+                  - generic [ref=f9e253]:
+                    - generic [ref=f9e254]: Mon
+                    - generic [ref=f9e255]: Tue
+                    - generic [ref=f9e256]: Wed
+                    - generic [ref=f9e257]: Thu
+                    - generic [ref=f9e258]: Fri
+                    - generic [ref=f9e259]: Sat
+                    - generic [ref=f9e260]: Sun
+                  - generic [ref=f9e261]:
+                    - generic [ref=f9e262]: Optimized by HomeIQ AI
+                    - generic [ref=f9e266]: Active
+            - generic [ref=f9e268]:
+              - generic [ref=f9e269]:
+                - generic [ref=f9e270]:
+                  - text: TRUSTED BY THOUSANDS
+                  - heading "Loved by Smart Homeowners" [level=2] [ref=f9e271]
+                - generic [ref=f9e272]:
+                  - button "Previous Testimonial" [ref=f9e273] [cursor=pointer]
+                  - button "Next Testimonial" [ref=f9e276] [cursor=pointer]
+              - generic [ref=f9e279]:
+                - generic [ref=f9e280] [cursor=pointer]:
+                  - generic [ref=f9e281]:
+                    - generic [ref=f9e282]: “
+                    - paragraph [ref=f9e283]: HomeIQ transformed the way I live. Everything is so convenient and just works!
+                  - generic [ref=f9e284]:
+                    - img "Sarah J." [ref=f9e285]
+                    - generic [ref=f9e286]:
+                      - heading "Sarah J." [level=4] [ref=f9e287]
+                      - text: Mumbai, India
+                - generic [ref=f9e288] [cursor=pointer]:
+                  - generic [ref=f9e289]:
+                    - generic [ref=f9e290]: “
+                    - paragraph [ref=f9e291]: The automation is incredible. It's like my home understands me.
+                  - generic [ref=f9e292]:
+                    - img "Arjun R." [ref=f9e293]
+                    - generic [ref=f9e294]:
+                      - heading "Arjun R." [level=4] [ref=f9e295]
+                      - text: Bengaluru, India
+                - generic [ref=f9e296] [cursor=pointer]:
+                  - generic [ref=f9e297]:
+                    - generic [ref=f9e298]: “
+                    - paragraph [ref=f9e299]: I feel safer, save more energy, and enjoy every moment at home.
+                  - generic [ref=f9e300]:
+                    - img "Priya M." [ref=f9e301]
+                    - generic [ref=f9e302]:
+                      - heading "Priya M." [level=4] [ref=f9e303]
+                      - text: Delhi, India
+            - generic [ref=f9e306]:
+              - generic:
+                - img "Smart Villa Background Graphic"
+              - generic [ref=f9e312]:
+                - heading "Your Home. Smarter. Safer. Sustainable." [level=3] [ref=f9e313]: Your Home. Smarter.Safer. Sustainable.
+                - paragraph [ref=f9e314]: Take the first step towards a fully autonomous smart home.
+              - button "GET STARTED NOW" [ref=f9e316] [cursor=pointer]
+            - contentinfo [ref=f9e322]:
+              - generic [ref=f9e323]:
+                - generic [ref=f9e324]:
+                  - generic [ref=f9e325]:
+                    - link "HomeIQ" [ref=f9e326] [cursor=pointer]:
+                      - /url: "#"
+                    - paragraph [ref=f9e331]: Building the future of autonomous smart homes with AI intelligence, security, and seamless control.
+                    - generic [ref=f9e332]:
+                      - link "Instagram" [ref=f9e333] [cursor=pointer]:
+                        - /url: "#"
+                      - link "Facebook" [ref=f9e336] [cursor=pointer]:
+                        - /url: "#"
+                      - link "X (Twitter)" [ref=f9e339] [cursor=pointer]:
+                        - /url: "#"
+                      - link "YouTube" [ref=f9e342] [cursor=pointer]:
+                        - /url: "#"
+                  - generic [ref=f9e345]:
+                    - heading "Products" [level=4] [ref=f9e346]
+                    - list [ref=f9e348]:
+                      - listitem [ref=f9e349]:
+                        - link "Smart Lighting" [ref=f9e350] [cursor=pointer]:
+                          - /url: "#devices"
+                      - listitem [ref=f9e351]:
+                        - link "Smart Security" [ref=f9e352] [cursor=pointer]:
+                          - /url: "#devices"
+                      - listitem [ref=f9e353]:
+                        - link "Smart Climate" [ref=f9e354] [cursor=pointer]:
+                          - /url: "#devices"
+                      - listitem [ref=f9e355]:
+                        - link "Smart Switches" [ref=f9e356] [cursor=pointer]:
+                          - /url: "#devices"
+                      - listitem [ref=f9e357]:
+                        - link "Smart Plugs" [ref=f9e358] [cursor=pointer]:
+                          - /url: "#devices"
+                      - listitem [ref=f9e359]:
+                        - link "All Devices" [ref=f9e360] [cursor=pointer]:
+                          - /url: "#devices"
+                  - generic [ref=f9e361]:
+                    - heading "Company" [level=4] [ref=f9e362]
+                    - list [ref=f9e364]:
+                      - listitem [ref=f9e365]:
+                        - link "About Us" [ref=f9e366] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e367]:
+                        - link "Careers" [ref=f9e368] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e369]:
+                        - link "Blog" [ref=f9e370] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e371]:
+                        - link "Press" [ref=f9e372] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e373]:
+                        - link "Partners" [ref=f9e374] [cursor=pointer]:
+                          - /url: "#"
+                  - generic [ref=f9e375]:
+                    - heading "Support" [level=4] [ref=f9e376]
+                    - list [ref=f9e378]:
+                      - listitem [ref=f9e379]:
+                        - link "Help Center" [ref=f9e380] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e381]:
+                        - link "Contact Us" [ref=f9e382] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e383]:
+                        - link "Installation Guide" [ref=f9e384] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e385]:
+                        - link "Community" [ref=f9e386] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e387]:
+                        - link "API Specs" [ref=f9e388] [cursor=pointer]:
+                          - /url: "#"
+                  - generic [ref=f9e389]:
+                    - heading "Legal" [level=4] [ref=f9e390]
+                    - list [ref=f9e392]:
+                      - listitem [ref=f9e393]:
+                        - link "Privacy Policy" [ref=f9e394] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e395]:
+                        - link "Terms of Service" [ref=f9e396] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e397]:
+                        - link "Warranty" [ref=f9e398] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f9e399]:
+                        - link "Cookies" [ref=f9e400] [cursor=pointer]:
+                          - /url: "#"
+                - generic [ref=f9e401]:
+                  - generic [ref=f9e402]: © 2026 HomeIQ Inc. All rights reserved.
+                  - generic [ref=f9e403]: Systems Operational & Secured
+      - generic [ref=f8e65]:
+        - generic [ref=f8e68]:
+          - heading "About this Template" [level=2] [ref=f8e69]
+          - paragraph [ref=f8e70]: The HomeIQ template is a meticulously crafted website solution designed for smart home automation platforms. With a focus on visual fidelity and interaction design, it offers a seamless user experience that embodies modern sophistication. Ideal for tech-savvy homeowners and businesses, this template combines organic warmth with futuristic aesthetics, creating an inviting and intuitive browsing experience.
+          - paragraph [ref=f8e71]: Each component is built with responsiveness in mind, ensuring that it looks stunning on any device. The unique feel of the HomeIQ template is enhanced by its glassmorphism elements and elegant animations, making every interaction feel smooth and engaging.
+          - heading "Perfect For" [level=2] [ref=f8e72]
+          - list [ref=f8e73]:
+            - listitem [ref=f8e74]: Smart Home Automation
+            - listitem [ref=f8e75]: Home Security Solutions
+            - listitem [ref=f8e76]: Energy Management Systems
+            - listitem [ref=f8e77]: IoT Device Integration
+            - listitem [ref=f8e78]: Mobile App Showcases
+            - listitem [ref=f8e79]: Home Improvement Services
+            - listitem [ref=f8e80]: Technology Startups
+            - listitem [ref=f8e81]: Real Estate Platforms
+            - listitem [ref=f8e82]: Home Automation Consultancies
+            - listitem [ref=f8e83]: Consumer Electronics Retailers
+          - heading "Note" [level=2] [ref=f8e84]
+          - paragraph [ref=f8e85]: This template is fully responsive and features reusable components for easy customization.
+        - generic [ref=f8e87]:
+          - generic [ref=f8e88]:
+            - button [ref=f8e89]:
+              - generic [ref=f8e90]: Unlock Prompt
+              - generic "Unlock for $19" [ref=f8e94]: $19
+            - button [ref=f8e97]:
+              - generic [ref=f8e98]: Unlock Source
+              - generic "Unlock for $19" [ref=f8e102]: $19
+          - generic [ref=f8e105]:
+            - generic [ref=f8e106]:
+              - heading "CATEGORIES" [level=4] [ref=f8e107]
+              - generic [ref=f8e108]:
+                - link "SaaS" [ref=f8e109] [cursor=pointer]:
+                  - /url: /category/saas
+                - link "Smart Home Automation" [ref=f8e110] [cursor=pointer]:
+                  - /url: /category/smart-home-automation
+                - link "Energy Management Systems" [ref=f8e111] [cursor=pointer]:
+                  - /url: /category/energy-management-systems
+                - link "IoT Device Integration" [ref=f8e112] [cursor=pointer]:
+                  - /url: /category/iot-device-integration
+                - link "Home Improvement Services" [ref=f8e113] [cursor=pointer]:
+                  - /url: /category/home-improvement-services
+            - generic [ref=f8e114]:
+              - heading "TAGS" [level=4] [ref=f8e115]
+              - generic [ref=f8e116]:
+                - link "#Responsive" [ref=f8e117] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f8e118] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Glassmorphism" [ref=f8e119] [cursor=pointer]:
+                  - /url: /tag/glassmorphism
+                - link "#Interactive" [ref=f8e120] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Landing Page" [ref=f8e121] [cursor=pointer]:
+                  - /url: /tag/landing-page
+            - generic [ref=f8e122]:
+              - heading "Compatible AI Editors" [level=4] [ref=f8e123]
+              - generic [ref=f8e127]:
+                - generic [ref=f8e128]:
+                  - img "Lovable" [ref=f8e130]
+                  - generic [ref=f8e131]: Lovable
+                - generic [ref=f8e132]:
+                  - img "Bolt.new" [ref=f8e134]
+                  - generic [ref=f8e135]: Bolt.new
+                - generic [ref=f8e136]:
+                  - img "Cursor" [ref=f8e138]
+                  - generic [ref=f8e139]: Cursor
+                - generic [ref=f8e140]:
+                  - img "Claude" [ref=f8e142]
+                  - generic [ref=f8e143]: Claude
+                - generic [ref=f8e144]:
+                  - img "Antigravity" [ref=f8e146]
+                  - generic [ref=f8e147]: Antigravity
+                - generic [ref=f8e148]:
+                  - img "Codex" [ref=f8e150]
+                  - generic [ref=f8e151]: Codex
+          - generic [ref=f8e152]:
+            - button "5 likes" [ref=f8e153]
+            - button "Share" [ref=f8e157]
+      - generic [ref=f8e165]:
+        - heading "More in Templates" [level=3] [ref=f8e166]
+        - generic [ref=f8e167]:
+          - link [ref=f8e168] [cursor=pointer]:
+            - /url: /templates/matcha
+            - img "Matcha" [ref=f8e170]
+            - generic [ref=f8e171]:
+              - heading "Matcha" [level=4] [ref=f8e172]
+              - paragraph [ref=f8e173]: Health
+          - link [ref=f8e174] [cursor=pointer]:
+            - /url: /templates/noodlix
+            - img "Noodlix" [ref=f8e176]
+            - generic [ref=f8e177]:
+              - heading "Noodlix" [level=4] [ref=f8e178]
+              - paragraph [ref=f8e179]: Food
+          - link [ref=f8e180] [cursor=pointer]:
+            - /url: /templates/gemora
+            - img "Gemora" [ref=f8e182]
+            - generic [ref=f8e183]:
+              - heading "Gemora" [level=4] [ref=f8e184]
+              - paragraph [ref=f8e185]: Luxury
+          - link [ref=f8e186] [cursor=pointer]:
+            - /url: /templates/interazoo
+            - img "Interazoo" [ref=f8e188]
+            - generic [ref=f8e189]:
+              - heading "Interazoo" [level=4] [ref=f8e190]
+              - paragraph [ref=f8e191]: Real Estate
+          - link [ref=f8e192] [cursor=pointer]:
+            - /url: /templates/beyond
+            - img "Beyond" [ref=f8e194]
+            - generic [ref=f8e195]:
+              - heading "Beyond" [level=4] [ref=f8e196]
+              - paragraph [ref=f8e197]: 3D
+          - link [ref=f8e198] [cursor=pointer]:
+            - /url: /templates/aventis
+            - img "Aventis" [ref=f8e200]
+            - generic [ref=f8e201]:
+              - heading "Aventis" [level=4] [ref=f8e202]
+              - paragraph [ref=f8e203]: Luxury
+  - contentinfo [ref=f8e204]:
+    - generic [ref=f8e205]:
+      - generic [ref=f8e206]:
+        - generic [ref=f8e207]:
+          - link "MotionSite MotionSite.ai" [ref=f8e208] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f8e209]
+            - generic [ref=f8e210]: MotionSite.ai
+          - paragraph [ref=f8e211]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f8e212]:
+          - heading "Resources" [level=4] [ref=f8e213]
+          - list [ref=f8e214]:
+            - listitem [ref=f8e215]:
+              - link "Templates" [ref=f8e216] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f8e217]:
+              - link "Sections" [ref=f8e218] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f8e219]:
+              - link "Backgrounds" [ref=f8e220] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f8e221]:
+              - link "How to Use" [ref=f8e222] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f8e223]:
+              - link "Blog" [ref=f8e224] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f8e225]:
+          - heading "Company" [level=4] [ref=f8e226]
+          - list [ref=f8e227]:
+            - listitem [ref=f8e228]:
+              - link "About" [ref=f8e229] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f8e230]:
+              - link "Contact" [ref=f8e231] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f8e232]:
+              - link "Terms of Service" [ref=f8e233] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f8e234]:
+              - link "Privacy Policy" [ref=f8e235] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f8e236]:
+        - paragraph [ref=f8e237]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f8e239] [cursor=pointer]
+  - alert [ref=f8e246]

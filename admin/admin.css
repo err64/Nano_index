@@ -1,0 +1,13 @@
+/* Veriforge 内容后台样式（叠加 main.css 设计令牌） */
+.admin-panel{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.admin-panel h2{font-size:1.05rem;font-weight:700}
+.admin-panel .meta{color:var(--subtle);font-size:.82rem;font-family:var(--mono);margin-top:4px}
+.admin-editor{width:100%;min-height:420px;margin-top:14px;background:#0b1016;border:1px solid var(--line-strong);
+  border-radius:var(--radius-sm);color:#c9d6e2;font-family:var(--mono);font-size:.86rem;line-height:1.7;padding:16px;resize:vertical}
+.admin-editor:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
+.admin-actions{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.is-hidden{display:none!important}
+#login-view h1{font-size:1.5rem;font-weight:740}
+#login-view .lede{margin-top:10px}
+#login-form{max-width:26rem;margin-top:26px}
+.lead-note{color:var(--muted);margin-top:10px;max-width:44rem}

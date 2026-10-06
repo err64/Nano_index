@@ -1,0 +1,12 @@
+html,body{width:1200px;height:630px;overflow:hidden}
+.og{width:1200px;height:630px;padding:70px 80px;display:flex;flex-direction:column;justify-content:space-between;position:relative;
+  background:
+  radial-gradient(60% 90% at 88% 8%,rgba(255,122,31,.16),transparent 60%),
+  radial-gradient(45% 70% at 5% 95%,rgba(255,122,31,.10),transparent 55%),#090d12}
+.og-brand{display:flex;align-items:center;gap:18px}
+.og-name{font-size:40px;font-weight:780;letter-spacing:-.02em;color:#eef2f6}
+.og-sub{font-family:var(--mono);font-size:15px;letter-spacing:.14em;color:#6f7a87;margin-top:6px}
+.og h1{font-size:76px;line-height:1.12;font-weight:780;letter-spacing:-.02em;max-width:20em;color:#eef2f6}
+.og .steel{background:linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.og-tagline{color:#98a2ae;font-size:26px;margin-top:26px;max-width:36em}
+.og-url{font-family:var(--mono);font-size:17px;color:#6f7a87}

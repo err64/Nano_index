@@ -1,0 +1,192 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "MotionSite MotionSite.ai" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=e8]
+            - generic [ref=e9]: MotionSite.ai
+          - textbox "Search items..." [ref=e63]
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - link "Templates" [ref=e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=e19]:
+            - button "Toggle theme" [ref=e64] [cursor=pointer]
+            - link "Log in" [ref=e21] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=e22] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=e23]
+  - main [ref=e24]:
+    - generic [ref=e729]:
+      - heading "Secura - Technology Smart Home Template" [level=1] [ref=e730]
+      - generic [ref=e733]:
+        - generic [ref=e736]:
+          - heading "About this Template" [level=2] [ref=e737]
+          - paragraph [ref=e738]: The Secura template is designed for a premium smart home security experience. This single-page web application combines cutting-edge technology with a warm, inviting aesthetic, making it perfect for luxury home security brands. Its interactive elements, such as a full-width video hero and micro-animations, create a captivating browsing experience that engages users and highlights the product's features.
+          - paragraph [ref=e739]: With a focus on responsive layouts and intuitive navigation, Secura ensures that users can seamlessly explore the various functionalities of smart home security systems. The unique blend of design quality and user experience sets this template apart, making it an excellent choice for brands looking to make a strong online impression.
+          - heading "Perfect For" [level=2] [ref=e740]
+          - list [ref=e741]:
+            - listitem [ref=e742]: Smart Home Security
+            - listitem [ref=e743]: Technology Brands
+            - listitem [ref=e744]: Luxury Home Products
+            - listitem [ref=e745]: Interactive Web Experiences
+            - listitem [ref=e746]: Product Showcases
+            - listitem [ref=e747]: Ecommerce Platforms
+            - listitem [ref=e748]: Home Automation Solutions
+            - listitem [ref=e749]: Digital Marketing Campaigns
+            - listitem [ref=e750]: Online Portfolios
+            - listitem [ref=e751]: Agency Websites
+          - paragraph [ref=e752]: Secura offers flexibility with its reusable components and smooth interactions, making it easy to customize for any brand's unique needs.
+        - generic [ref=e754]:
+          - generic [ref=e755]:
+            - button [ref=e756]:
+              - generic [ref=e757]: Unlock Prompt
+              - generic "Unlock for $19" [ref=e761]: $19
+            - button [ref=e764]:
+              - generic [ref=e765]: Unlock Source
+              - generic "Unlock for $19" [ref=e769]: $19
+          - generic [ref=e772]:
+            - generic [ref=e773]:
+              - heading "CATEGORIES" [level=4] [ref=e774]
+              - generic [ref=e775]:
+                - link "Technology" [ref=e776] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Landing Page" [ref=e777] [cursor=pointer]:
+                  - /url: /category/landing-page
+                - link "Interactive" [ref=e778] [cursor=pointer]:
+                  - /url: /category/interactive
+                - link "Modern" [ref=e779] [cursor=pointer]:
+                  - /url: /category/modern
+                - link "Responsive" [ref=e780] [cursor=pointer]:
+                  - /url: /category/responsive
+            - generic [ref=e781]:
+              - heading "TAGS" [level=4] [ref=e782]
+              - generic [ref=e783]:
+                - link "#Responsive" [ref=e784] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Interactive" [ref=e785] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Modern" [ref=e786] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Minimal" [ref=e787] [cursor=pointer]:
+                  - /url: /tag/minimal
+                - link "#Scroll Animation" [ref=e788] [cursor=pointer]:
+                  - /url: /tag/scroll-animation
+            - generic [ref=e789]:
+              - heading "Compatible AI Editors" [level=4] [ref=e790]
+              - generic [ref=e794]:
+                - generic [ref=e795]:
+                  - img "Lovable" [ref=e797]
+                  - generic [ref=e798]: Lovable
+                - generic [ref=e799]:
+                  - img "Bolt.new" [ref=e801]
+                  - generic [ref=e802]: Bolt.new
+                - generic [ref=e803]:
+                  - img "Cursor" [ref=e805]
+                  - generic [ref=e806]: Cursor
+                - generic [ref=e807]:
+                  - img "Claude" [ref=e809]
+                  - generic [ref=e810]: Claude
+                - generic [ref=e811]:
+                  - img "Antigravity" [ref=e813]
+                  - generic [ref=e814]: Antigravity
+                - generic [ref=e815]:
+                  - img "Codex" [ref=e817]
+                  - generic [ref=e818]: Codex
+          - generic [ref=e819]:
+            - button "6 likes" [ref=e820]
+            - button "Share" [ref=e824]
+      - generic [ref=e832]:
+        - heading "More in Templates" [level=3] [ref=e833]
+        - generic [ref=e834]:
+          - link [ref=e835] [cursor=pointer]:
+            - /url: /templates/matcha
+            - img "Matcha" [ref=e837]
+            - generic [ref=e838]:
+              - heading "Matcha" [level=4] [ref=e839]
+              - paragraph [ref=e840]: Health
+          - link [ref=e841] [cursor=pointer]:
+            - /url: /templates/noodlix
+            - img "Noodlix" [ref=e843]
+            - generic [ref=e844]:
+              - heading "Noodlix" [level=4] [ref=e845]
+              - paragraph [ref=e846]: Food
+          - link [ref=e847] [cursor=pointer]:
+            - /url: /templates/gemora
+            - img "Gemora" [ref=e849]
+            - generic [ref=e850]:
+              - heading "Gemora" [level=4] [ref=e851]
+              - paragraph [ref=e852]: Luxury
+          - link [ref=e853] [cursor=pointer]:
+            - /url: /templates/interazoo
+            - img "Interazoo" [ref=e855]
+            - generic [ref=e856]:
+              - heading "Interazoo" [level=4] [ref=e857]
+              - paragraph [ref=e858]: Real Estate
+          - link [ref=e859] [cursor=pointer]:
+            - /url: /templates/beyond
+            - img "Beyond" [ref=e861]
+            - generic [ref=e862]:
+              - heading "Beyond" [level=4] [ref=e863]
+              - paragraph [ref=e864]: 3D
+          - link [ref=e865] [cursor=pointer]:
+            - /url: /templates/aventis
+            - img "Aventis" [ref=e867]
+            - generic [ref=e868]:
+              - heading "Aventis" [level=4] [ref=e869]
+              - paragraph [ref=e870]: Luxury
+  - contentinfo [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - link "MotionSite MotionSite.ai" [ref=e30] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=e31]
+            - generic [ref=e32]: MotionSite.ai
+          - paragraph [ref=e33]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=e34]:
+          - heading "Resources" [level=4] [ref=e35]
+          - list [ref=e36]:
+            - listitem [ref=e37]:
+              - link "Templates" [ref=e38] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=e39]:
+              - link "Sections" [ref=e40] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=e41]:
+              - link "Backgrounds" [ref=e42] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=e43]:
+              - link "How to Use" [ref=e44] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=e45]:
+              - link "Blog" [ref=e46] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=e47]:
+          - heading "Company" [level=4] [ref=e48]
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - link "About" [ref=e51] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e52]:
+              - link "Contact" [ref=e53] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e54]:
+              - link "Terms of Service" [ref=e55] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e56]:
+              - link "Privacy Policy" [ref=e57] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=e58]:
+        - paragraph [ref=e59]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=e720] [cursor=pointer]
+  - alert [ref=e727]: Secura – Technology Smart Home Template | MotionSite AI

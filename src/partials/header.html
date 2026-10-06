@@ -1,0 +1,30 @@
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Veriforge 首页">
+      <img class="brand__mark" src="/assets/brand/icon.svg" alt="" width="38" height="38" aria-hidden="true">
+      <span class="brand__name">Veriforge</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      {{NAV}}
+    </nav>
+    <div class="header-actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="菜单">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="移动端导航">
+      {{NAV}}
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,42 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">用户案例</span>
+      </nav>
+      <h1 id="ph-h">每个案例，都有可复核的证据链。</h1>
+      <p class="lede">案例来自真实演示工程与试点场景。所有指标都能在你的机器上重放复现，不提供「无法复制的效果」。</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cases-h">
+    <div class="container">
+      <h2 id="cases-h" class="sr-only">案例列表</h2>
+      <div class="casegrid">
+        {{CASES_LIST}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">你的仓库也可以成为下一个案例。</h2>
+          <p>挑一个堆积已久的小缺陷清单，我们陪你跑完第一个带证据的自动修复。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="/about#contact">申请试点</a>
+          <a class="btn" href="/help#quickstart">先自己跑一遍</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

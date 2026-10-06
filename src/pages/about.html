@@ -1,0 +1,141 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">关于我们</span>
+      </nav>
+      <h1 id="ph-h">NANOFACTORY：小团队，高密度工程。</h1>
+      <p class="lede">我们相信 AI 编码的下一程不是更会说话的模型，而是更可信的验收体系。Veriforge 是这个判断的全部落点。</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="team-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="team-h">团队与分工</h2>
+        <p>一支小型、以测试密度著称的工程团队。以下为当前分工与职责界面，均向工程社区开放协作。</p>
+      </div>
+      <div class="bento">
+        <article class="card span-3 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#tree-structure"></use></svg></div>
+          <h3>Harness 架构</h3>
+          <p>状态机、预算与完成门禁的设计实现。负责「裁决权必须离开模型」这条第一性约束在每行代码里的贯彻。</p>
+        </article>
+        <article class="card span-3 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#shield-check"></use></svg></div>
+          <h3>验证引擎</h3>
+          <p>验证阶梯、受保护验证、弱化检测与失败指纹。维护 450+ 用例的防护网与双平台 CI。</p>
+        </article>
+        <article class="card span-3 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#database"></use></svg></div>
+          <h3>控制平面与交付</h3>
+          <p>调度池、Transaction Outbox、GitHub 交付与 Web 控制台。关注点：崩溃恢复、幂等与对账。</p>
+        </article>
+        <article class="card span-3 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#users-three"></use></svg></div>
+          <h3>开发者体验</h3>
+          <p>CLI 与控制台交互、文档、Demo 工程与试点支持。负责让第一次跑通在 5 分钟内发生。</p>
+        </article>
+      </div>
+      <p class="hero-caption reveal mt-14">
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#briefcase"></use></svg>
+        我们在验证工程与开发者体验方向持续招人，简历请附上你写过的最较真的测试：<a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="eco-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="eco-h">生态与伙伴</h2>
+        <p>Veriforge 站在开源生态之上，并寻找首批试点合作伙伴。</p>
+      </div>
+      <div class="bento">
+        <div class="card span-2 reveal">
+          <h3>Coding Runtime</h3>
+          <p>Codex CLI、Claude Code 经统一事件流契约接入；Scripted Runtime 支持离线演示与确定性测试。</p>
+        </div>
+        <div class="card span-2 reveal">
+          <h3>代码平台</h3>
+          <p>GitHub：Webhook 触发、REST API 交付、Check Run 精确校验。自建 Git 平台经推送管道对接。</p>
+        </div>
+        <div class="card span-2 reveal">
+          <h3>开源基础设施</h3>
+          <p>Node.js、SQLite、TypeScript、Vitest、Docker、pnpm。全部依赖可审计、可替换。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="container split split-top">
+      <div class="reveal">
+        <h2 id="contact-h">联系我们</h2>
+        <p class="lede">试点合作、部署咨询或任何较真的技术问题。</p>
+        <ul class="checklist mt-26">
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#envelope-simple"></use></svg>
+            <div><b>邮件</b><br><span><a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a>，两个工作日内回复。</span></div>
+          </li>
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#map-pin"></use></svg>
+            <div><b>工作方式</b><br><span>远程优先，试点期间按需驻场。</span></div>
+          </li>
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#github-logo"></use></svg>
+            <div><b>开源协作</b><br><span>Issue 与 PR 一律公开处理，见仓库贡献指南。</span></div>
+          </li>
+        </ul>
+      </div>
+      <form id="contact-form" class="reveal" action="#" method="post" aria-describedby="form-note">
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">姓名 <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="怎么称呼你">
+            <p class="err" id="f-name-err">请填写姓名。</p>
+          </div>
+          <div class="field">
+            <label for="f-email">邮箱 <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com" aria-describedby="f-email-err">
+            <p class="err" id="f-email-err">请填写有效邮箱。</p>
+          </div>
+          <div class="field">
+            <label for="f-topic">合作类型</label>
+            <select id="f-topic" name="topic">
+              <option>申请试点</option>
+              <option>私有化部署咨询</option>
+              <option>技术交流</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-size">团队规模</label>
+            <select id="f-size" name="size">
+              <option>1 至 10 人</option>
+              <option>11 至 50 人</option>
+              <option>51 至 200 人</option>
+              <option>200 人以上</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="f-msg">需求描述 <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-msg" name="message" required placeholder="想清偿的缺陷规模、仓库数量、验证命令现状，或者任何想聊的。"></textarea>
+            <p class="err">请简单描述你的需求。</p>
+          </div>
+        </div>
+        <p class="hint form-note" id="form-note">提交将打开你的邮件客户端发送至 shiganghai@gmail.com，内容不经过第三方。</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" type="submit">发送</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

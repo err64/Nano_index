@@ -1,0 +1,196 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - navigation [ref=f2e3]:
+      - generic [ref=f2e5]:
+        - generic [ref=f2e6]:
+          - link "MotionSite MotionSite.ai" [ref=f2e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f2e8]
+            - generic [ref=f2e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f2e12]
+        - generic [ref=f2e13]:
+          - generic [ref=f2e14]:
+            - link "Templates" [ref=f2e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f2e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f2e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f2e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f2e19]:
+            - button "Toggle theme" [ref=f2e20] [cursor=pointer]
+            - link "Log in" [ref=f2e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f2e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f2e29]
+  - main [ref=f2e30]:
+    - generic [ref=f2e231]:
+      - heading "Agentify Hero - AI Enterprise Section" [level=1] [ref=f2e232]
+      - generic [ref=f2e233]:
+        - generic [ref=f2e234]:
+          - img "Agentify Hero" [ref=f2e236]
+          - generic [ref=f2e238]:
+            - heading "About this Template" [level=2] [ref=f2e239]
+            - paragraph [ref=f2e240]: The Agentify Hero section is a premium, fully responsive component designed specifically for AI enterprise applications. It features a visually stunning layout that combines interactive elements with a striking video background, creating an engaging user experience. The layout is structured for optimal viewing across devices, ensuring that your message is delivered with clarity and impact.
+            - paragraph [ref=f2e241]: With a focus on modern design principles, this hero section boasts a clean aesthetic, smooth animations, and intuitive navigation. The unique blend of typography and color palette enhances the overall visual appeal, making it perfect for showcasing your brand's offerings.
+            - heading "Perfect For" [level=2] [ref=f2e242]
+            - list [ref=f2e243]:
+              - listitem [ref=f2e244]: AI Companies
+              - listitem [ref=f2e245]: Technology Startups
+              - listitem [ref=f2e246]: Software Development Firms
+              - listitem [ref=f2e247]: Data Analytics Services
+              - listitem [ref=f2e248]: Consulting Agencies
+              - listitem [ref=f2e249]: IT Solutions Providers
+              - listitem [ref=f2e250]: Digital Transformation Firms
+              - listitem [ref=f2e251]: Machine Learning Platforms
+              - listitem [ref=f2e252]: Cybersecurity Companies
+              - listitem [ref=f2e253]: Enterprise Software Solutions
+              - listitem [ref=f2e254]: Research Institutions
+              - listitem [ref=f2e255]: Innovative Product Launches
+              - listitem [ref=f2e256]: Online Courses and Webinars
+              - listitem [ref=f2e257]: Tech Conferences
+            - paragraph [ref=f2e258]: This hero section is easily customizable, allowing you to adapt it to your specific branding needs while maintaining responsive layouts and smooth interactions.
+        - generic [ref=f2e260]:
+          - button [ref=f2e262]:
+            - generic [ref=f2e263]: Unlock Prompt
+            - generic "Unlock for $19" [ref=f2e267]: $19
+          - generic [ref=f2e270]:
+            - generic [ref=f2e271]:
+              - heading "CATEGORIES" [level=4] [ref=f2e272]
+              - generic [ref=f2e273]:
+                - link "Hero Section" [ref=f2e274] [cursor=pointer]:
+                  - /url: /category/hero
+                - link "Technology" [ref=f2e275] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Technology" [ref=f2e276] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Software Development" [ref=f2e277] [cursor=pointer]:
+                  - /url: /category/software-development
+                - link "Data Analytics" [ref=f2e278] [cursor=pointer]:
+                  - /url: /category/data-analytics
+                - link "Consulting" [ref=f2e279] [cursor=pointer]:
+                  - /url: /category/consulting
+            - generic [ref=f2e280]:
+              - heading "TAGS" [level=4] [ref=f2e281]
+              - generic [ref=f2e282]:
+                - link "#Responsive" [ref=f2e283] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f2e284] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Interactive" [ref=f2e285] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Animated" [ref=f2e286] [cursor=pointer]:
+                  - /url: /tag/animated
+                - link "#Landing Page" [ref=f2e287] [cursor=pointer]:
+                  - /url: /tag/landing-page
+            - generic [ref=f2e288]:
+              - heading "Compatible AI Editors" [level=4] [ref=f2e289]
+              - generic [ref=f2e293]:
+                - generic [ref=f2e294]:
+                  - img "Lovable" [ref=f2e296]
+                  - generic [ref=f2e297]: Lovable
+                - generic [ref=f2e298]:
+                  - img "Bolt.new" [ref=f2e300]
+                  - generic [ref=f2e301]: Bolt.new
+                - generic [ref=f2e302]:
+                  - img "Cursor" [ref=f2e304]
+                  - generic [ref=f2e305]: Cursor
+                - generic [ref=f2e306]:
+                  - img "Claude" [ref=f2e308]
+                  - generic [ref=f2e309]: Claude
+                - generic [ref=f2e310]:
+                  - img "Antigravity" [ref=f2e312]
+                  - generic [ref=f2e313]: Antigravity
+                - generic [ref=f2e314]:
+                  - img "Codex" [ref=f2e316]
+                  - generic [ref=f2e317]: Codex
+          - generic [ref=f2e318]:
+            - button "7 likes" [ref=f2e319]
+            - button "Share" [ref=f2e323]
+      - generic [ref=f2e331]:
+        - heading "More in Sections" [level=3] [ref=f2e332]
+        - generic [ref=f2e333]:
+          - link [ref=f2e334] [cursor=pointer]:
+            - /url: /sections/klyro
+            - img "Klyro" [ref=f2e336]
+            - generic [ref=f2e337]:
+              - heading "Klyro" [level=4] [ref=f2e338]
+              - paragraph [ref=f2e339]: Hero
+          - link [ref=f2e340] [cursor=pointer]:
+            - /url: /sections/vaultix
+            - img "Vaultix" [ref=f2e342]
+            - generic [ref=f2e343]:
+              - heading "Vaultix" [level=4] [ref=f2e344]
+              - paragraph [ref=f2e345]: Finance
+          - link [ref=f2e346] [cursor=pointer]:
+            - /url: /sections/aero
+            - img "AERO" [ref=f2e348]
+            - generic [ref=f2e349]:
+              - heading "AERO" [level=4] [ref=f2e350]
+              - paragraph [ref=f2e351]: Hero
+          - link [ref=f2e352] [cursor=pointer]:
+            - /url: /sections/creativax
+            - img "CreativaX" [ref=f2e354]
+            - generic [ref=f2e355]:
+              - heading "CreativaX" [level=4] [ref=f2e356]
+              - paragraph [ref=f2e357]: Hero
+          - link [ref=f2e358] [cursor=pointer]:
+            - /url: /sections/cybertruck
+            - img "CyberTruck" [ref=f2e360]
+            - generic [ref=f2e361]:
+              - heading "CyberTruck" [level=4] [ref=f2e362]
+              - paragraph [ref=f2e363]: Hero
+          - link [ref=f2e364] [cursor=pointer]:
+            - /url: /sections/netro
+            - img "Netro" [ref=f2e366]
+            - generic [ref=f2e367]:
+              - heading "Netro" [level=4] [ref=f2e368]
+              - paragraph [ref=f2e369]: Hero
+  - contentinfo [ref=f2e187]:
+    - generic [ref=f2e188]:
+      - generic [ref=f2e189]:
+        - generic [ref=f2e190]:
+          - link "MotionSite MotionSite.ai" [ref=f2e191] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f2e192]
+            - generic [ref=f2e193]: MotionSite.ai
+          - paragraph [ref=f2e194]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f2e195]:
+          - heading "Resources" [level=4] [ref=f2e196]
+          - list [ref=f2e197]:
+            - listitem [ref=f2e198]:
+              - link "Templates" [ref=f2e199] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f2e200]:
+              - link "Sections" [ref=f2e201] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f2e202]:
+              - link "Backgrounds" [ref=f2e203] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f2e204]:
+              - link "How to Use" [ref=f2e205] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f2e206]:
+              - link "Blog" [ref=f2e207] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f2e208]:
+          - heading "Company" [level=4] [ref=f2e209]
+          - list [ref=f2e210]:
+            - listitem [ref=f2e211]:
+              - link "About" [ref=f2e212] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f2e213]:
+              - link "Contact" [ref=f2e214] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f2e215]:
+              - link "Terms of Service" [ref=f2e216] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f2e217]:
+              - link "Privacy Policy" [ref=f2e218] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f2e219]:
+        - paragraph [ref=f2e220]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f2e222] [cursor=pointer]
+  - alert [ref=f2e229]: Agentify Hero – AI Enterprise Section | MotionSite AI

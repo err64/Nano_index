@@ -1,0 +1,355 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - generic [ref=f3e5]:
+        - generic [ref=f3e6]:
+          - link "MotionSite MotionSite.ai" [ref=f3e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f3e8]
+            - generic [ref=f3e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f3e12]
+        - generic [ref=f3e13]:
+          - generic [ref=f3e14]:
+            - link "Templates" [ref=f3e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f3e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f3e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f3e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f3e19]:
+            - button "Toggle theme" [ref=f3e20] [cursor=pointer]
+            - link "Log in" [ref=f3e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f3e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f3e29]
+  - main [ref=f3e30]:
+    - generic [ref=f3e525]:
+      - heading "Intelligence - Agency Landing Page Template" [level=1] [ref=f3e526]
+      - generic [ref=f3e528]:
+        - generic [ref=f3e534]:
+          - generic [ref=f3e535]:
+            - button "Desktop View (100%)" [ref=f3e536]
+            - button "Tablet View (768px)" [ref=f3e539]
+            - button "Mobile View (375px)" [ref=f3e542]
+          - button "Reload preview" [ref=f3e545]
+          - button "Fullscreen Preview" [ref=f3e549]
+        - iframe [ref=f3e557]:
+          - generic [ref=f4e3]:
+            - navigation [ref=f4e4]:
+              - generic [ref=f4e5]:
+                - generic [ref=f4e6]: Intelligence.ai
+                - generic [ref=f4e9]:
+                  - link "Home" [ref=f4e10] [cursor=pointer]:
+                    - /url: "#home"
+                  - link "Solutions" [ref=f4e11] [cursor=pointer]:
+                    - /url: "#solutions"
+                  - link "Technology" [ref=f4e12] [cursor=pointer]:
+                    - /url: "#technology"
+                  - link "Projects" [ref=f4e13] [cursor=pointer]:
+                    - /url: "#projects"
+                  - link "About" [ref=f4e14] [cursor=pointer]:
+                    - /url: "#about"
+                - link "Get Started →" [ref=f4e16] [cursor=pointer]:
+                  - /url: "#contact"
+            - main [ref=f4e17]:
+              - generic [ref=f4e20]:
+                - generic [ref=f4e21]:
+                  - generic [ref=f4e22]: Genesis
+                  - heading "THE FUTURE STARTS WITH INTELLIGENCE" [level=1] [ref=f4e23]: THE FUTURE STARTSWITH INTELLIGENCE
+                  - paragraph [ref=f4e24]: Witness the awakening of digital consciousness.
+                - generic [ref=f4e25]:
+                  - generic [ref=f4e26]: Evolution
+                  - heading "AI THAT LEARNS. BUILDS. EVOLVES." [level=1] [ref=f4e27]: AI THAT LEARNS.BUILDS. EVOLVES.
+                  - paragraph [ref=f4e28]: Building intelligent digital experiences powered by AI, automation, and human creativity.
+                - generic [ref=f4e29]:
+                  - button "Explore Platform" [ref=f4e30]
+                  - button "Watch Demo" [ref=f4e31]
+                - generic [ref=f4e32]: Scroll to Discover
+              - generic [ref=f4e38]:
+                - generic [ref=f4e39]:
+                  - img "Team collaborating" [ref=f4e42]
+                  - img "Team discussion" [ref=f4e44]
+                  - generic [ref=f4e45]:
+                    - generic [ref=f4e46]: 30+
+                    - generic [ref=f4e47]: Years ofExperience
+                - generic [ref=f4e48]:
+                  - generic [ref=f4e49]:
+                    - heading "About Us" [level=3] [ref=f4e50]
+                    - heading "Innovate Solution For Success" [level=2] [ref=f4e51]: Innovate SolutionFor Success
+                  - paragraph [ref=f4e52]: We are pioneering the next generation of artificial intelligence, building systems that don't just compute—they understand, adapt, and evolve. By blending human creativity with neural architectures, we construct platforms that push boundaries.
+                  - list [ref=f4e53]:
+                    - listitem [ref=f4e54]:
+                      - generic [ref=f4e58]: Advanced neural networks modeling cognitive human behavior.
+                    - listitem [ref=f4e59]:
+                      - generic [ref=f4e63]: Real-time processing with sub-millisecond latency.
+                    - listitem [ref=f4e64]:
+                      - generic [ref=f4e68]: Ethical AI frameworks designed for transparency and trust.
+                    - listitem [ref=f4e69]:
+                      - generic [ref=f4e73]: Continuous self-learning algorithms that adapt over time.
+                  - button "Get Started" [ref=f4e75]
+              - generic [ref=f4e82]:
+                - generic [ref=f4e83]:
+                  - generic [ref=f4e84] [cursor=pointer]:
+                    - heading "Digital Marketing" [level=3] [ref=f4e89]
+                    - paragraph [ref=f4e90]: Nostrum exercitationem oe ullam corporis suscipit labo riosam alirulea.
+                  - generic [ref=f4e94] [cursor=pointer]:
+                    - heading "Product Development" [level=3] [ref=f4e100]
+                    - paragraph [ref=f4e101]: Nostrum exercitationem oe ullam corporis suscipit labo riosam alirulea.
+                  - generic [ref=f4e105] [cursor=pointer]:
+                    - heading "Ui/Ux Designing" [level=3] [ref=f4e112]
+                    - paragraph [ref=f4e113]: Nostrum exercitationem oe ullam corporis suscipit labo riosam alirulea.
+                  - generic [ref=f4e117] [cursor=pointer]:
+                    - heading "Data Analysis" [level=3] [ref=f4e121]
+                    - paragraph [ref=f4e122]: Nostrum exercitationem oe ullam corporis suscipit labo riosam alirulea.
+                - generic [ref=f4e126]:
+                  - generic [ref=f4e127]:
+                    - heading "Our Services" [level=3] [ref=f4e128]
+                    - heading "Best IT Solution For Your Business" [level=2] [ref=f4e129]: Best IT SolutionFor Your Business
+                  - paragraph [ref=f4e130]: Grursus mal suada faci lisis lorem ipsum dolarorit more ion consectetur elit vesti at bulum nec odio aea the um ipsumm recreo that dolocons.
+                  - list [ref=f4e131]:
+                    - listitem [ref=f4e132]:
+                      - generic [ref=f4e136]: Quisquam est, rui dolorem ipsum quia dolor corporis.
+                    - listitem [ref=f4e137]:
+                      - generic [ref=f4e141]: Rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                    - listitem [ref=f4e142]:
+                      - generic [ref=f4e146]: Duis aute irure dolor in reprehenderit in voluptate velit.
+                    - listitem [ref=f4e147]:
+                      - generic [ref=f4e151]: Molestiae non recusandae itarue earum rerum ma.
+                  - button "Get Started" [ref=f4e153]
+              - generic [ref=f4e158]:
+                - heading "Built on a modern stack." [level=2] [ref=f4e159]
+                - paragraph [ref=f4e160]: Our infrastructure is designed for extreme scale and sub-millisecond latency. We combine cutting-edge front-end technologies with powerful backend neural networks.
+                - generic [ref=f4e161]:
+                  - generic [ref=f4e162]: React
+                  - generic [ref=f4e163]: TypeScript
+                  - generic [ref=f4e164]: Python
+                  - generic [ref=f4e165]: TensorFlow
+                  - generic [ref=f4e166]: OpenAI
+                  - generic [ref=f4e167]: Cloud
+                  - generic [ref=f4e168]: Edge AI
+              - generic [ref=f4e183]:
+                - heading "Case Study" [level=2] [ref=f4e185]: CaseStudy
+                - generic [ref=f4e186]:
+                  - heading "Result" [level=3] [ref=f4e187]
+                  - generic [ref=f4e188]:
+                    - generic [ref=f4e189]:
+                      - generic [ref=f4e190]: Efficiency Increased
+                      - generic [ref=f4e191]: +140%
+                    - generic [ref=f4e192]:
+                      - generic [ref=f4e193]: System Latency
+                      - generic [ref=f4e194]: 0.1ms
+                    - generic [ref=f4e195]:
+                      - generic [ref=f4e196]: Model Accuracy
+                      - generic [ref=f4e197]: 99.9%
+                - generic [ref=f4e198]:
+                  - generic [ref=f4e199]:
+                    - heading "Project Nexus" [level=4] [ref=f4e200]: ProjectNexus
+                    - paragraph [ref=f4e201]: Our flagship implementation transformed how data centers process predictive models. By restructuring the neural pathways, we achieved unprecedented processing speeds while reducing overall thermal output.
+                  - generic [ref=f4e202]:
+                    - heading "Aura Systems" [level=4] [ref=f4e203]: AuraSystems
+                    - paragraph [ref=f4e204]: Real-time sensory feedback requires absolute minimal latency. The Aura integration bypassed traditional routing protocols to establish direct hardware-level communication for instantaneous response.
+                - generic [ref=f4e205]:
+                  - img "Nexus" [ref=f4e206]
+                  - img "Aura" [ref=f4e207]
+                  - generic: Iconic!
+              - generic [ref=f4e208]:
+                - generic [ref=f4e213]:
+                  - generic [ref=f4e214]:
+                    - generic [ref=f4e215]:
+                      - heading "Contact Info" [level=3] [ref=f4e216]
+                      - heading "Get In Touch" [level=2] [ref=f4e217]
+                    - generic [ref=f4e218]:
+                      - generic [ref=f4e224]:
+                        - heading "Location:" [level=4] [ref=f4e225]
+                        - paragraph [ref=f4e226]: 121 King Street, MelbourneVictoria 3000 Australia
+                      - generic [ref=f4e232]:
+                        - heading "Email:" [level=4] [ref=f4e233]
+                        - paragraph [ref=f4e234]: support@technofy.comtechnofy@gmail.com
+                      - generic [ref=f4e241]:
+                        - heading "Phone:" [level=4] [ref=f4e242]
+                        - paragraph [ref=f4e243]: +012 (345) 678 99+12345678 478 58
+                  - generic [ref=f4e244]:
+                    - heading "Write To Us" [level=3] [ref=f4e245]
+                    - heading "Send Us A Message" [level=2] [ref=f4e246]
+                    - generic [ref=f4e247]:
+                      - textbox "Your Name:" [ref=f4e248]
+                      - textbox "Your Email:" [ref=f4e249]
+                      - textbox "Message:" [ref=f4e250]
+                      - button "Send Now" [ref=f4e251]
+                - generic [ref=f4e255]:
+                  - generic [ref=f4e256]: Intelligence.ai
+                  - generic [ref=f4e259]:
+                    - link "Privacy" [ref=f4e260] [cursor=pointer]:
+                      - /url: "#"
+                    - link "Terms" [ref=f4e261] [cursor=pointer]:
+                      - /url: "#"
+                    - link "Twitter" [ref=f4e262] [cursor=pointer]:
+                      - /url: "#"
+                    - link "LinkedIn" [ref=f4e263] [cursor=pointer]:
+                      - /url: "#"
+                  - generic [ref=f4e264]: © 2026 Intelligence AI. All rights reserved.
+      - generic [ref=f3e558]:
+        - generic [ref=f3e561]:
+          - heading "About this Template" [level=2] [ref=f3e562]
+          - paragraph [ref=f3e563]: The Intelligence template is a modern landing page designed specifically for agencies looking to showcase their innovative solutions. With a sleek, dark aesthetic and vibrant accent colors, this template provides an engaging browsing experience that emphasizes both visual appeal and user experience. The layout is structured to guide visitors through various sections seamlessly, ensuring a fluid interaction from start to finish.
+          - paragraph [ref=f3e564]: Featuring responsive design elements and reusable components, this template is perfect for agencies that want to make a strong impression. The combination of high-quality visuals and smooth animations creates a unique feel that captivates users and highlights your services effectively.
+          - heading "Perfect For" [level=2] [ref=f3e565]
+          - list [ref=f3e566]:
+            - listitem [ref=f3e567]: Digital Marketing Agencies
+            - listitem [ref=f3e568]: Web Development Firms
+            - listitem [ref=f3e569]: Creative Design Studios
+            - listitem [ref=f3e570]: Consulting Services
+            - listitem [ref=f3e571]: Technology Startups
+            - listitem [ref=f3e572]: Data Analysis Companies
+            - listitem [ref=f3e573]: Product Development Teams
+            - listitem [ref=f3e574]: UI/UX Design Agencies
+            - listitem [ref=f3e575]: Software Development Companies
+            - listitem [ref=f3e576]: Freelance Designers
+          - paragraph [ref=f3e577]: This template offers great flexibility with its customizable layouts and smooth interactions, making it an ideal choice for any agency looking to elevate their online presence.
+        - generic [ref=f3e579]:
+          - generic [ref=f3e580]:
+            - button [ref=f3e581]:
+              - generic [ref=f3e582]: Unlock Prompt
+              - generic "Unlock for $19" [ref=f3e586]: $19
+            - button [ref=f3e589]:
+              - generic [ref=f3e590]: Unlock Source
+              - generic "Unlock for $19" [ref=f3e594]: $19
+          - generic [ref=f3e597]:
+            - generic [ref=f3e598]:
+              - heading "CATEGORIES" [level=4] [ref=f3e599]
+              - generic [ref=f3e600]:
+                - link "Technology" [ref=f3e601] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Web Development" [ref=f3e602] [cursor=pointer]:
+                  - /url: /category/web-development
+                - link "UI/UX Design" [ref=f3e603] [cursor=pointer]:
+                  - /url: /category/ui-ux-design
+                - link "Technology Startups" [ref=f3e604] [cursor=pointer]:
+                  - /url: /category/technology-startups
+                - link "SaaS" [ref=f3e605] [cursor=pointer]:
+                  - /url: /category/saas
+            - generic [ref=f3e606]:
+              - heading "TAGS" [level=4] [ref=f3e607]
+              - generic [ref=f3e608]:
+                - link "#Interactive" [ref=f3e609] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#GSAP" [ref=f3e610] [cursor=pointer]:
+                  - /url: /tag/gsap
+                - link "#Landing Page" [ref=f3e611] [cursor=pointer]:
+                  - /url: /tag/landing-page
+                - link "#Immersive" [ref=f3e612] [cursor=pointer]:
+                  - /url: /tag/immersive
+                - link "#Animated" [ref=f3e613] [cursor=pointer]:
+                  - /url: /tag/animated
+            - generic [ref=f3e614]:
+              - heading "Compatible AI Editors" [level=4] [ref=f3e615]
+              - generic [ref=f3e619]:
+                - generic [ref=f3e620]:
+                  - img "Lovable" [ref=f3e622]
+                  - generic [ref=f3e623]: Lovable
+                - generic [ref=f3e624]:
+                  - img "Bolt.new" [ref=f3e626]
+                  - generic [ref=f3e627]: Bolt.new
+                - generic [ref=f3e628]:
+                  - img "Cursor" [ref=f3e630]
+                  - generic [ref=f3e631]: Cursor
+                - generic [ref=f3e632]:
+                  - img "Claude" [ref=f3e634]
+                  - generic [ref=f3e635]: Claude
+                - generic [ref=f3e636]:
+                  - img "Antigravity" [ref=f3e638]
+                  - generic [ref=f3e639]: Antigravity
+                - generic [ref=f3e640]:
+                  - img "Codex" [ref=f3e642]
+                  - generic [ref=f3e643]: Codex
+          - generic [ref=f3e644]:
+            - button "18 likes" [ref=f3e645]
+            - button "Share" [ref=f3e649]
+      - generic [ref=f3e657]:
+        - heading "More in Templates" [level=3] [ref=f3e658]
+        - generic [ref=f3e659]:
+          - link [ref=f3e660] [cursor=pointer]:
+            - /url: /templates/matcha
+            - img "Matcha" [ref=f3e662]
+            - generic [ref=f3e663]:
+              - heading "Matcha" [level=4] [ref=f3e664]
+              - paragraph [ref=f3e665]: Health
+          - link [ref=f3e666] [cursor=pointer]:
+            - /url: /templates/noodlix
+            - img "Noodlix" [ref=f3e668]
+            - generic [ref=f3e669]:
+              - heading "Noodlix" [level=4] [ref=f3e670]
+              - paragraph [ref=f3e671]: Food
+          - link [ref=f3e672] [cursor=pointer]:
+            - /url: /templates/gemora
+            - img "Gemora" [ref=f3e674]
+            - generic [ref=f3e675]:
+              - heading "Gemora" [level=4] [ref=f3e676]
+              - paragraph [ref=f3e677]: Luxury
+          - link [ref=f3e678] [cursor=pointer]:
+            - /url: /templates/interazoo
+            - img "Interazoo" [ref=f3e680]
+            - generic [ref=f3e681]:
+              - heading "Interazoo" [level=4] [ref=f3e682]
+              - paragraph [ref=f3e683]: Real Estate
+          - link [ref=f3e684] [cursor=pointer]:
+            - /url: /templates/beyond
+            - img "Beyond" [ref=f3e686]
+            - generic [ref=f3e687]:
+              - heading "Beyond" [level=4] [ref=f3e688]
+              - paragraph [ref=f3e689]: 3D
+          - link [ref=f3e690] [cursor=pointer]:
+            - /url: /templates/aventis
+            - img "Aventis" [ref=f3e692]
+            - generic [ref=f3e693]:
+              - heading "Aventis" [level=4] [ref=f3e694]
+              - paragraph [ref=f3e695]: Luxury
+  - contentinfo [ref=f3e481]:
+    - generic [ref=f3e482]:
+      - generic [ref=f3e483]:
+        - generic [ref=f3e484]:
+          - link "MotionSite MotionSite.ai" [ref=f3e485] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f3e486]
+            - generic [ref=f3e487]: MotionSite.ai
+          - paragraph [ref=f3e488]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f3e489]:
+          - heading "Resources" [level=4] [ref=f3e490]
+          - list [ref=f3e491]:
+            - listitem [ref=f3e492]:
+              - link "Templates" [ref=f3e493] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f3e494]:
+              - link "Sections" [ref=f3e495] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f3e496]:
+              - link "Backgrounds" [ref=f3e497] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f3e498]:
+              - link "How to Use" [ref=f3e499] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f3e500]:
+              - link "Blog" [ref=f3e501] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f3e502]:
+          - heading "Company" [level=4] [ref=f3e503]
+          - list [ref=f3e504]:
+            - listitem [ref=f3e505]:
+              - link "About" [ref=f3e506] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e507]:
+              - link "Contact" [ref=f3e508] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f3e509]:
+              - link "Terms of Service" [ref=f3e510] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f3e511]:
+              - link "Privacy Policy" [ref=f3e512] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f3e513]:
+        - paragraph [ref=f3e514]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f3e516] [cursor=pointer]
+  - alert [ref=f3e523]: Intelligence – Agency Landing Page Template | MotionSite AI

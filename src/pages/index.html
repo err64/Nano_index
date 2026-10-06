@@ -1,0 +1,356 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <!-- ======================================================
+       场景：hero 框与产品框是同一张照片的两次取景。
+       滚动进度驱动一次连续的相机运动（平移 + 推近），
+       hero 文案升场失焦退出，产品窗格沿双曲线入场。
+       ====================================================== -->
+  <section class="scene" id="scene" aria-label="产品总览">
+    <div class="scene__viewport">
+      <div class="scene__backdrop" aria-hidden="true">
+        <div class="scene__camera">
+          <img class="scene__photo" src="/assets/img/hero-launch.jpg" alt="" width="1536" height="2752" fetchpriority="high">
+        </div>
+        <div class="scene__glow"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__badge">
+          <span class="hero__badge-row">
+            <span class="hero__badge-label">出品方</span>
+            <span class="hero__badge-logo">NANOFACTORY · MIT 开源</span>
+          </span>
+        </p>
+        <h1 class="hero__title">
+          <span class="line"><span class="line__in">AI 负责写码，</span></span>
+          <span class="line"><span class="line__in"><span class="steel">证据</span>负责放行。</span></span>
+        </h1>
+        <p class="hero__subtitle">在隔离的 Git Worktree 中驱动真实编码运行时，以五级防篡改验证与机器证据链裁决每一次 AI 交付。</p>
+      </div>
+
+      <div class="platform__content">
+        <p class="pill"><span class="pill__dot" aria-hidden="true"></span>实时验证流水线</p>
+        <h2 class="platform__title">阶梯式防篡改验证，裁决每一次交付</h2>
+
+        <div class="shot" role="img" aria-label="Veriforge 控制台总览：已验证交付、缺陷清偿与交付管道指标">
+          <div class="shot__toolbar" aria-hidden="true">
+            <div class="shot__tl"><i></i><i></i><i></i></div>
+            <span class="shot__glyph shot--sidebar"><svg viewBox="0 0 14 11"><rect x="0.5" y="0.5" width="13" height="10" rx="2"/><line x1="4.5" y1="0.5" x2="4.5" y2="10.5"/></svg></span>
+            <span class="shot__glyph shot--back"><svg viewBox="0 0 8 12"><path d="M6 1 2 6 6 11"/></svg></span>
+            <span class="shot__glyph shot--fwd"><svg viewBox="0 0 8 12"><path d="M2 1 6 6 2 11"/></svg></span>
+            <span class="shot--address">
+              <span class="shot__glyph shot--shield"><svg viewBox="0 0 10 12"><path d="M5 .8 9.2 2.4 V6 C9.2 9 7.4 10.8 5 11.4 2.6 10.8 .8 9 .8 6 V2.4 Z"/></svg></span>
+              <span class="urlplate"><svg viewBox="0 0 6 8"><rect x="0.8" y="3.4" width="4.4" height="3.9" rx="1"/><path d="M1.8 3.4 V2.4 a1.2 1.2 0 0 1 2.4 0 V3.4"/></svg>veriforge.nanofactory.dev</span>
+              <span class="shot__glyph shot--reload"><svg viewBox="0 0 8 9"><path d="M7.2 4.5 a3.2 3.2 0 1 1 -1 -2.3 M6.4 .7 V2.4 H4.7"/></svg></span>
+            </span>
+            <span class="shot--tools">
+              <span class="shot__glyph"><svg viewBox="0 0 12 12"><path d="M6 1.5 V7 M3.5 5 6 7.5 8.5 5 M1.5 8.5 V10.5 H10.5 V8.5"/></svg></span>
+              <span class="shot__glyph"><svg viewBox="0 0 12 12"><path d="M6 .8 V6.5 M3.8 2.6 6 .4 8.2 2.6 M3.5 4.8 H2 V10.8 H10 V4.8 H8.5"/></svg></span>
+              <span class="shot__glyph"><svg viewBox="0 0 12 12"><path d="M6 2 V10 M2 6 H10"/></svg></span>
+              <span class="shot__glyph"><svg viewBox="0 0 12 12"><rect x="1.5" y="3.8" width="7" height="7" rx="1.4"/><path d="M4.2 3.8 V2.6 a1.2 1.2 0 0 1 1.2 -1.2 H9.4 a1.2 1.2 0 0 1 1.2 1.2 V7 a1.2 1.2 0 0 1 -1.2 1.2 H8.2"/></svg></span>
+            </span>
+          </div>
+
+          <nav class="dash-nav" aria-label="产品导航">
+            <a class="dash-nav__item" aria-current="page" href="#scene" tabindex="-1">
+              <svg viewBox="0 0 13 13" aria-hidden="true"><rect x="1" y="1" width="4.6" height="4.6" rx="1"/><rect x="7.4" y="1" width="4.6" height="4.6" rx="1"/><rect x="1" y="7.4" width="4.6" height="4.6" rx="1"/><rect x="7.4" y="7.4" width="4.6" height="4.6" rx="1"/></svg>
+              总览
+            </a>
+            <a class="dash-nav__item" href="#scene" tabindex="-1">
+              <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M5.5 3 H11.5 M5.5 9.5 H11.5 M1.5 2.6 l1 1 1.8 -2 M1.5 9.1 l1 1 1.8 -2"/></svg>
+              任务
+            </a>
+            <a class="dash-nav__item" href="#scene" tabindex="-1">
+              <svg viewBox="0 0 13 13" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><path d="M5 3 V1 M8 3 V1 M5 12 V10 M8 12 V10 M3 5 H1 M3 8 H1 M12 5 H10 M12 8 H10"/></svg>
+              运行时
+            </a>
+            <a class="dash-nav__item" href="#scene" tabindex="-1">
+              <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M6.5 1 11 2.8 V6.5 C11 9.8 9 11.6 6.5 12.2 4 11.6 2 9.8 2 6.5 V2.8 Z M4.5 6.5 6 8 8.8 5.2"/></svg>
+              证据
+            </a>
+            <a class="dash-nav__item" href="#scene" tabindex="-1">
+              <svg viewBox="0 0 13 13" aria-hidden="true"><circle cx="6.5" cy="6.5" r="2"/><path d="M6.5 1 V2.8 M6.5 10.2 V12 M1 6.5 H2.8 M10.2 6.5 H12 M2.7 2.7 4 4 M9 9 10.3 10.3 M10.3 2.7 9 4 M4 9 2.7 10.3"/></svg>
+              设置
+            </a>
+            <span class="dash-nav__user">
+              <span class="dash-nav__avatar" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#2E3138"/><circle cx="10" cy="8" r="3.1" fill="#8B93A1"/><path d="M3.6 17.6 a6.6 6.6 0 0 1 12.8 0" fill="#8B93A1"/></svg>
+                <span class="dash-nav__status"></span>
+              </span>
+              Lin W.
+            </span>
+          </nav>
+
+          <div class="shot-tabs" aria-hidden="true">
+            <span>总览</span><span>阶梯</span><span>证据</span>
+          </div>
+
+          <article class="card card--revenue">
+            <h3 class="card__title">已验证交付</h3>
+            <p class="card__figure">1,428<small> 次</small></p>
+            <p class="card__delta"><span class="card__tag">+32.4%</span><span class="card__note">vs. 上一周期 (1,082)</span></p>
+            <div class="card__chart chart--area" aria-hidden="true">
+              <svg viewBox="0 0 245.5 69.5" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="#fff" stroke-opacity=".1" stroke-width="1">
+                  <line x1="11.5" y1="0" x2="11.5" y2="69.5"/>
+                  <line x1="66.5" y1="0" x2="66.5" y2="69.5"/>
+                  <line x1="121.5" y1="0" x2="121.5" y2="69.5"/>
+                  <line x1="176.5" y1="0" x2="176.5" y2="69.5"/>
+                  <line x1="231.5" y1="0" x2="231.5" y2="69.5"/>
+                </g>
+                <line x1="0" y1="64" x2="245.5" y2="64" stroke="#fff" stroke-opacity=".28" stroke-width="1" stroke-dasharray="2 3"/>
+                <path d="M0 58 L30 52 55 55 85 42 110 46 140 30 170 34 200 18 225 22 245.5 10 V69.5 H0 Z" fill="url(#area-fill)"/>
+                <path d="M0 58 L30 52 55 55 85 42 110 46 140 30 170 34 200 18 225 22 245.5 10" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="card__axis" aria-hidden="true"><span>10:00</span><span>11:00</span><span>12:00</span><span>14:00</span><span>16:00</span></p>
+          </article>
+
+          <article class="card card--leads">
+            <h3 class="card__title">缺陷清偿</h3>
+            <div class="stat"><span class="stat__label">累计清偿</span><span class="stat__value">3,412</span></div>
+            <div class="stat"><span class="stat__label">一次通过率</span><span class="stat__value">94.2%</span></div>
+            <div class="card__chart chart--dots" aria-hidden="true">
+              <svg viewBox="0 0 238 109" preserveAspectRatio="none"><circle cx="3.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.50"/><circle cx="24.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.85"/><circle cx="45.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.41"/><circle cx="66.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.58"/><circle cx="87.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.44"/><circle cx="108.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.42"/><circle cx="129.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.44"/><circle cx="150.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.18"/><circle cx="171.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.35"/><circle cx="192.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.20"/><circle cx="213.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.06"/><circle cx="234.5" cy="3.5" r="3.5" fill="#fff" fill-opacity="0.06"/><circle cx="3.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.92"/><circle cx="24.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.49"/><circle cx="45.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.52"/><circle cx="66.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.58"/><circle cx="87.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.74"/><circle cx="108.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.46"/><circle cx="129.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.50"/><circle cx="150.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.30"/><circle cx="171.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.44"/><circle cx="192.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.29"/><circle cx="213.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.28"/><circle cx="234.5" cy="20.5" r="3.5" fill="#fff" fill-opacity="0.19"/><circle cx="3.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.99"/><circle cx="24.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.85"/><circle cx="45.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.71"/><circle cx="66.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.88"/><circle cx="87.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.75"/><circle cx="108.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.58"/><circle cx="129.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.71"/><circle cx="150.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.53"/><circle cx="171.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.28"/><circle cx="192.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.28"/><circle cx="213.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.13"/><circle cx="234.5" cy="37.5" r="3.5" fill="#fff" fill-opacity="0.24"/><circle cx="3.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="1.00"/><circle cx="24.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="1.00"/><circle cx="45.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.78"/><circle cx="66.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.59"/><circle cx="87.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.61"/><circle cx="108.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.40"/><circle cx="129.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.56"/><circle cx="150.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.61"/><circle cx="171.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.34"/><circle cx="192.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.50"/><circle cx="213.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.22"/><circle cx="234.5" cy="54.5" r="3.5" fill="#fff" fill-opacity="0.27"/><circle cx="3.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.77"/><circle cx="24.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.70"/><circle cx="45.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.73"/><circle cx="66.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.59"/><circle cx="87.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.56"/><circle cx="108.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.62"/><circle cx="129.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.64"/><circle cx="150.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.37"/><circle cx="171.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.49"/><circle cx="192.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.55"/><circle cx="213.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.45"/><circle cx="234.5" cy="71.5" r="3.5" fill="#fff" fill-opacity="0.46"/><circle cx="3.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.83"/><circle cx="24.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.74"/><circle cx="45.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="1.00"/><circle cx="66.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.60"/><circle cx="87.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.57"/><circle cx="108.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.51"/><circle cx="129.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.69"/><circle cx="150.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.71"/><circle cx="171.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.58"/><circle cx="192.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.55"/><circle cx="213.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.48"/><circle cx="234.5" cy="88.5" r="3.5" fill="#fff" fill-opacity="0.36"/></svg>
+            </div>
+          </article>
+
+          <article class="card card--sales">
+            <h3 class="card__title">交付管道</h3>
+            <div class="stat stat--sm"><span class="stat__label">进行中任务</span><span class="stat__value">128</span></div>
+            <div class="stat stat--sm"><span class="stat__label">预计通过率</span><span class="stat__value">85%</span></div>
+            <div class="card__chart chart--bars" aria-hidden="true">
+              <svg viewBox="0 0 246 120" preserveAspectRatio="none">
+                <line x1="0" y1="0.5" x2="246" y2="0.5" stroke="#fff" stroke-opacity=".1" stroke-width="1"/>
+                <line x1="60" y1="0.5" x2="117" y2="0.5" stroke="#fff" stroke-width="1.5"/>
+                <line x1="123" y1="0.5" x2="233" y2="0.5" stroke="#fff" stroke-width="1.5"/>
+                <g fill="#D9D9D9" fill-opacity=".1">
+                  <rect x="0" y="80" width="35" height="38"/>
+                  <rect x="42" y="62" width="35" height="56"/>
+                  <rect x="84" y="70" width="35" height="48"/>
+                  <rect x="126" y="40" width="35" height="78"/>
+                  <rect x="168" y="52" width="35" height="66"/>
+                  <rect x="210" y="26" width="35" height="92"/>
+                </g>
+                <g fill="#fff">
+                  <rect x="0" y="80" width="35" height="2"/>
+                  <rect x="42" y="62" width="35" height="2"/>
+                  <rect x="84" y="70" width="35" height="2"/>
+                  <rect x="126" y="40" width="35" height="2"/>
+                  <rect x="168" y="52" width="35" height="2"/>
+                  <rect x="210" y="26" width="35" height="2"/>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="card card--log">
+            <h3 class="card__title">迁移日志</h3>
+            <div class="card__list">
+              <p class="card__row"><span class="card__chip">FSM</span>FAST → FULL 迁移已确认<em>DONE</em></p>
+              <p class="card__row"><span class="card__chip">验证</span>受保护套件恢复原始测试执行</p>
+              <p class="card__row"><span class="card__chip">NET</span>运行时 Codex-Cli 心跳 0.08s</p>
+            </div>
+          </article>
+
+          <article class="card card--traj">
+            <h3 class="card__title">交付轨迹</h3>
+            <div class="stat"><span class="stat__label">证据完备率</span><span class="stat__value">99.98%</span></div>
+            <div class="stat"><span class="stat__label">篡改拦截</span><span class="stat__value">47 次</span></div>
+            <div class="stat"><span class="stat__label">置信评分</span><span class="stat__value">99.98%</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事实数据条 -->
+  <section class="section-tight content-glow" aria-label="项目关键事实">
+    <div class="container">
+      <dl class="stats">
+        <div class="stat-cell"><dt class="stat-label">验证阶梯</dt><dd class="stat-num"><em>5</em> 阶</dd></div>
+        <div class="stat-cell"><dt class="stat-label">守护 Harness 自身的测试用例</dt><dd class="stat-num">450+</dd></div>
+        <div class="stat-cell"><dt class="stat-label">全部运行时依赖</dt><dd class="stat-num">4 个</dd></div>
+        <div class="stat-cell"><dt class="stat-label">开源协议</dt><dd class="stat-num">MIT</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 能力 Bento -->
+  <section class="section" aria-labelledby="ability-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="ability-h">模型可以有很多个，验收线只要一条。</h2>
+        <p>Veriforge 不训练模型、不封装提示词，它只做一件事：让「任务完成」这句话有客观标准。</p>
+      </div>
+      <div class="bento">
+        <article class="card span-4 card-flush reveal">
+          <div>
+            <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#tree-structure"></use></svg></div>
+            <h3>完成判定权归 Harness 所有</h3>
+            <p>状态流转、预算、验证与证据收集由纯代码 Harness 独占，Coding Runtime 只被调用、永不裁决。强类型合法迁移表禁止跳步与回跳，终态不可逆。</p>
+          </div>
+          <p class="card-link"><a class="link-more" href="/project#advantage">看状态机设计<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+        </article>
+        <article class="card span-2 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#git-branch"></use></svg></div>
+          <h3>Git Worktree 物理隔离</h3>
+          <p>每次运行独立 detached worktree，环境变量白名单过滤，绝不污染源仓库与其他 Worker。</p>
+        </article>
+        <article class="card span-2 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#shield-check"></use></svg></div>
+          <h3>受保护验证</h3>
+          <p>全量验证前强制恢复 Base Commit 的原始测试执行，封存模型对测试的一切改动。</p>
+        </article>
+        <article class="card span-2 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#fingerprint"></use></svg></div>
+          <h3>稳定失败指纹</h3>
+          <p>SHA-256 归一化指纹让同因失败无所遁形：连续无进展即熔断，不给无效循环烧钱。</p>
+        </article>
+        <article class="card span-2 reveal">
+          <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#rocket-launch"></use></svg></div>
+          <h3>事务化交付</h3>
+          <p>完成判定与交付请求同事务落库，GitHub PR 幂等创建，网络未知状态先对账再重试。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 验证阶梯（全宽图示） -->
+  <section class="section" aria-labelledby="ladder-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">验证阶梯</p>
+        <h2 id="ladder-h">不是跑一次测试，而是五级阶梯。</h2>
+        <p>验证成本随置信度阶梯推进：修改前先记录基线，快速检查驱动修复，候选就绪才进全量。受保护阶段与新增测试双向验证，缺一不可。</p>
+      </div>
+      <div class="ladder-wrap reveal">
+        <ol class="ladder">
+          <li class="rung">
+            <h3>BASELINE</h3>
+            <p>修改前基线运行，记录历史既有失败指纹，不让存量缺陷冤枉本次改动。</p>
+            <div class="rung-arrow" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg#arrow-right"></use></svg></div>
+          </li>
+          <li class="rung">
+            <h3>FAST</h3>
+            <p>每轮修复后快速回归类型检查与核心单测，在预算内驱动修复循环。</p>
+            <div class="rung-arrow" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg#arrow-right"></use></svg></div>
+          </li>
+          <li class="rung">
+            <h3>FULL</h3>
+            <p>候选就绪才触发全量套件，通过 FAST 验证是入场资格。</p>
+            <div class="rung-arrow" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg#arrow-right"></use></svg></div>
+          </li>
+          <li class="rung rung-hot">
+            <h3>PROTECTED</h3>
+            <p>强制恢复原始测试执行。任何「改测试凑通过」的尝试，都在这一级现形。</p>
+            <div class="rung-arrow" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg#arrow-right"></use></svg></div>
+          </li>
+          <li class="rung">
+            <h3>SYNTHESIZE</h3>
+            <p>新增测试先红后绿的 RED/GREEN 双向验证，证明新测试真的在测。</p>
+          </li>
+        </ol>
+        <p class="hero-caption mt-20">
+          <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#warning-circle"></use></svg>
+          测试弱化检测同步运行：新增 .skip、断言批量删除、未受检验的 Diff，一律产生 CRITICAL 级发现并阻断交付。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 适用场景（两栏分述 + 证据截图） -->
+  <section class="section" aria-labelledby="scene2-h">
+    <div class="container split">
+      <div class="reveal">
+        <h2 id="scene2-h">把这三类活交给它，把「信任」从流程里拿掉。</h2>
+        <ul class="checklist">
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#bug"></use></svg>
+            <div><b>遗留缺陷清偿</b><br><span>把 bug 单编译成强类型任务契约，批量投入调度池，PR 带着验证证据回来。</span></div>
+          </li>
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list-checks"></use></svg>
+            <div><b>测试覆盖率提升</b><br><span>SYNTHESIZE 引擎为改动生成先红后绿的新测试，覆盖缺口可度量、可审计。</span></div>
+          </li>
+          <li>
+            <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#terminal-window"></use></svg>
+            <div><b>企业内网编码平台</b><br><span>SQLite 调度池、Web 控制台、热备份与 RBAC 全部运行在你自己的机器上。</span></div>
+          </li>
+        </ul>
+        <p class="card-link"><a class="link-more" href="/cases">看完整案例<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+      </div>
+      <div class="hero-visual reveal">
+        <figure class="window">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>验收标准证据</span></div>
+          <img src="/assets/img/console-evidence.png" alt="验收标准证据视图：AC1、AC2 均为 VERIFIED，绑定测试命令与退出码" width="1512" height="900" loading="lazy">
+        </figure>
+        <p class="hero-caption">
+          <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#check"></use></svg>
+          每条验收标准绑定真实命令退出码与耗时，证据可导出、可复核。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 生态墙 -->
+  <section class="section" aria-labelledby="eco-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="eco-h">站在生态之上，而不是重造轮子。</h2>
+        <p>与主流 Coding Runtime 和工具链原生集成；Web 控制台由纯 Node HTTP 实现，零 Web 框架。</p>
+      </div>
+      <ul class="logowall reveal">
+        <li><svg role="img" aria-label="GitHub"><use href="/assets/img/icons.svg#logo-github"></use></svg></li>
+        <li><svg role="img" aria-label="Git"><use href="/assets/img/icons.svg#logo-git"></use></svg></li>
+        <li><svg role="img" aria-label="Node.js"><use href="/assets/img/icons.svg#logo-node-dot-js"></use></svg></li>
+        <li><svg role="img" aria-label="SQLite"><use href="/assets/img/icons.svg#logo-sqlite"></use></svg></li>
+        <li><svg role="img" aria-label="TypeScript"><use href="/assets/img/icons.svg#logo-typescript"></use></svg></li>
+        <li><svg role="img" aria-label="Vitest"><use href="/assets/img/icons.svg#logo-vitest"></use></svg></li>
+        <li><svg role="img" aria-label="Docker"><use href="/assets/img/icons.svg#logo-docker"></use></svg></li>
+        <li><svg role="img" aria-label="pnpm"><use href="/assets/img/icons.svg#logo-pnpm"></use></svg></li>
+      </ul>
+      <p class="hero-caption reveal">
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#cpu"></use></svg>
+        Codex CLI 与 Claude Code 通过能力探测与 JSONL 事件流接入，模型可按任务复杂度动态路由。
+      </p>
+    </div>
+  </section>
+
+  <!-- 新闻速览 -->
+  <section class="section" aria-labelledby="news-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="news-h">项目动态</h2>
+      </div>
+      {{NEWS_TEASER}}
+      <p class="card-link reveal"><a class="link-more" href="/news">全部动态<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">让下一次 AI 交付，自带证据链。</h2>
+          <p>我们正在寻找首批试点团队：3 个仓库以内的真实缺陷清偿场景，陪跑部署、契约设计与指标验证。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="/about#contact">申请试点</a>
+          <a class="btn" href="/help#quickstart">阅读快速上手</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

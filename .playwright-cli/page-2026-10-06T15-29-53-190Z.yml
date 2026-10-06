@@ -1,0 +1,197 @@
+- generic [active] [ref=f5e1]:
+  - banner [ref=f5e2]:
+    - navigation [ref=f5e3]:
+      - generic [ref=f5e5]:
+        - generic [ref=f5e6]:
+          - link "MotionSite MotionSite.ai" [ref=f5e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f5e8]
+            - generic [ref=f5e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f5e12]
+        - generic [ref=f5e13]:
+          - generic [ref=f5e14]:
+            - link "Templates" [ref=f5e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f5e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f5e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f5e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f5e19]:
+            - button "Toggle theme" [ref=f5e20] [cursor=pointer]
+            - link "Log in" [ref=f5e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f5e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f5e29]
+  - main [ref=f5e30]:
+    - generic [ref=f5e32]:
+      - heading "Pixzen - SaaS Agency Website Template" [level=1] [ref=f5e33]
+      - generic [ref=f5e34]:
+        - generic [ref=f5e35]:
+          - img "Pixzen" [ref=f5e37]
+          - generic [ref=f5e39]:
+            - heading "About this Template" [level=2] [ref=f5e40]
+            - paragraph [ref=f5e41]: Pixzen is a premium website template designed specifically for futuristic AI agencies. Featuring an ultra-clean monochrome editorial aesthetic, it combines massive typography and fluid interactions to create a captivating browsing experience. The seamless integration of GSAP and Framer Motion ensures smooth animations that enhance storytelling and user engagement.
+            - paragraph [ref=f5e42]: Tailored for professionals seeking to showcase their expertise, Pixzen offers a unique visual style that balances minimalism with striking design elements. The responsive layouts and reusable components make customization effortless, allowing agencies to focus on their core services while maintaining a high-quality online presence.
+            - heading "Perfect For" [level=2] [ref=f5e43]
+            - list [ref=f5e44]:
+              - listitem [ref=f5e45]: AI Development Agencies
+              - listitem [ref=f5e46]: Tech Startups
+              - listitem [ref=f5e47]: Digital Marketing Firms
+              - listitem [ref=f5e48]: Brand Strategy Consultants
+              - listitem [ref=f5e49]: Web Development Companies
+              - listitem [ref=f5e50]: Design Studios
+              - listitem [ref=f5e51]: Creative Agencies
+              - listitem [ref=f5e52]: Software as a Service (SaaS) Businesses
+              - listitem [ref=f5e53]: Product Design Firms
+              - listitem [ref=f5e54]: Data Analytics Companies
+              - listitem [ref=f5e55]: Consulting Services
+              - listitem [ref=f5e56]: Innovation Hubs
+              - listitem [ref=f5e57]: Freelancers and Creatives
+              - listitem [ref=f5e58]: Educational Platforms
+              - listitem [ref=f5e59]: Corporate Websites
+            - paragraph [ref=f5e60]: With its flexible design and smooth interactions, Pixzen is an ideal choice for any agency looking to create a stunning online presence that stands out in the digital landscape.
+        - generic [ref=f5e62]:
+          - generic [ref=f5e63]:
+            - button "Copy Prompt" [ref=f5e64]
+            - button [ref=f5e68]:
+              - generic [ref=f5e69]: Unlock Source
+              - generic "Unlock for $19" [ref=f5e73]: $19
+          - generic [ref=f5e76]:
+            - generic [ref=f5e77]:
+              - heading "CATEGORIES" [level=4] [ref=f5e78]
+              - generic [ref=f5e79]:
+                - link "SaaS" [ref=f5e80] [cursor=pointer]:
+                  - /url: /category/saas
+                - link "AI Development" [ref=f5e81] [cursor=pointer]:
+                  - /url: /category/ai-development
+                - link "Digital Marketing" [ref=f5e82] [cursor=pointer]:
+                  - /url: /category/digital-marketing
+                - link "Tech Startups" [ref=f5e83] [cursor=pointer]:
+                  - /url: /category/tech-startups
+                - link "Creative Agencies" [ref=f5e84] [cursor=pointer]:
+                  - /url: /category/creative-agencies
+            - generic [ref=f5e85]:
+              - heading "TAGS" [level=4] [ref=f5e86]
+              - generic [ref=f5e87]:
+                - link "#Modern" [ref=f5e88] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Responsive" [ref=f5e89] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Interactive" [ref=f5e90] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#GSAP" [ref=f5e91] [cursor=pointer]:
+                  - /url: /tag/gsap
+                - link "#Framer Motion" [ref=f5e92] [cursor=pointer]:
+                  - /url: /tag/framer-motion
+            - generic [ref=f5e93]:
+              - heading "Compatible AI Editors" [level=4] [ref=f5e94]
+              - generic [ref=f5e98]:
+                - generic [ref=f5e99]:
+                  - img "Lovable" [ref=f5e101]
+                  - generic [ref=f5e102]: Lovable
+                - generic [ref=f5e103]:
+                  - img "Bolt.new" [ref=f5e105]
+                  - generic [ref=f5e106]: Bolt.new
+                - generic [ref=f5e107]:
+                  - img "Cursor" [ref=f5e109]
+                  - generic [ref=f5e110]: Cursor
+                - generic [ref=f5e111]:
+                  - img "Claude" [ref=f5e113]
+                  - generic [ref=f5e114]: Claude
+                - generic [ref=f5e115]:
+                  - img "Antigravity" [ref=f5e117]
+                  - generic [ref=f5e118]: Antigravity
+                - generic [ref=f5e119]:
+                  - img "Codex" [ref=f5e121]
+                  - generic [ref=f5e122]: Codex
+          - generic [ref=f5e123]:
+            - button "26 likes" [ref=f5e124]
+            - button "Share" [ref=f5e128]
+      - generic [ref=f5e136]:
+        - heading "More in Templates" [level=3] [ref=f5e137]
+        - generic [ref=f5e138]:
+          - link [ref=f5e139] [cursor=pointer]:
+            - /url: /templates/matcha
+            - img "Matcha" [ref=f5e141]
+            - generic [ref=f5e142]:
+              - heading "Matcha" [level=4] [ref=f5e143]
+              - paragraph [ref=f5e144]: Health
+          - link [ref=f5e145] [cursor=pointer]:
+            - /url: /templates/noodlix
+            - img "Noodlix" [ref=f5e147]
+            - generic [ref=f5e148]:
+              - heading "Noodlix" [level=4] [ref=f5e149]
+              - paragraph [ref=f5e150]: Food
+          - link [ref=f5e151] [cursor=pointer]:
+            - /url: /templates/gemora
+            - img "Gemora" [ref=f5e153]
+            - generic [ref=f5e154]:
+              - heading "Gemora" [level=4] [ref=f5e155]
+              - paragraph [ref=f5e156]: Luxury
+          - link [ref=f5e157] [cursor=pointer]:
+            - /url: /templates/interazoo
+            - img "Interazoo" [ref=f5e159]
+            - generic [ref=f5e160]:
+              - heading "Interazoo" [level=4] [ref=f5e161]
+              - paragraph [ref=f5e162]: Real Estate
+          - link [ref=f5e163] [cursor=pointer]:
+            - /url: /templates/beyond
+            - img "Beyond" [ref=f5e165]
+            - generic [ref=f5e166]:
+              - heading "Beyond" [level=4] [ref=f5e167]
+              - paragraph [ref=f5e168]: 3D
+          - link [ref=f5e169] [cursor=pointer]:
+            - /url: /templates/aventis
+            - img "Aventis" [ref=f5e171]
+            - generic [ref=f5e172]:
+              - heading "Aventis" [level=4] [ref=f5e173]
+              - paragraph [ref=f5e174]: Luxury
+  - contentinfo [ref=f5e175]:
+    - generic [ref=f5e176]:
+      - generic [ref=f5e177]:
+        - generic [ref=f5e178]:
+          - link "MotionSite MotionSite.ai" [ref=f5e179] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f5e180]
+            - generic [ref=f5e181]: MotionSite.ai
+          - paragraph [ref=f5e182]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f5e183]:
+          - heading "Resources" [level=4] [ref=f5e184]
+          - list [ref=f5e185]:
+            - listitem [ref=f5e186]:
+              - link "Templates" [ref=f5e187] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f5e188]:
+              - link "Sections" [ref=f5e189] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f5e190]:
+              - link "Backgrounds" [ref=f5e191] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f5e192]:
+              - link "How to Use" [ref=f5e193] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f5e194]:
+              - link "Blog" [ref=f5e195] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f5e196]:
+          - heading "Company" [level=4] [ref=f5e197]
+          - list [ref=f5e198]:
+            - listitem [ref=f5e199]:
+              - link "About" [ref=f5e200] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f5e201]:
+              - link "Contact" [ref=f5e202] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f5e203]:
+              - link "Terms of Service" [ref=f5e204] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f5e205]:
+              - link "Privacy Policy" [ref=f5e206] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f5e207]:
+        - paragraph [ref=f5e208]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f5e210] [cursor=pointer]
+  - alert [ref=f5e217]

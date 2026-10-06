@@ -1,0 +1,199 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - navigation [ref=f6e3]:
+      - generic [ref=f6e5]:
+        - generic [ref=f6e6]:
+          - link "MotionSite MotionSite.ai" [ref=f6e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f6e8]
+            - generic [ref=f6e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f6e12]
+        - generic [ref=f6e13]:
+          - generic [ref=f6e14]:
+            - link "Templates" [ref=f6e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f6e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f6e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f6e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f6e19]:
+            - button "Toggle theme" [ref=f6e20] [cursor=pointer]
+            - link "Log in" [ref=f6e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f6e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f6e29]
+  - main [ref=f6e30]:
+    - generic [ref=f6e32]:
+      - heading "Features - Flow Section" [level=1] [ref=f6e33]
+      - generic [ref=f6e34]:
+        - generic [ref=f6e35]:
+          - img "Features - Flow" [ref=f6e37]
+          - generic [ref=f6e39]:
+            - heading "About this Section" [level=2] [ref=f6e40]
+            - paragraph [ref=f6e41]: This Features Section is designed for modern SaaS products, offering a visually stunning and interactive presentation of key functionalities. With a focus on user experience, it utilizes a clean layout and engaging animations to highlight each feature seamlessly. The soft gradient background and glassmorphism effects create a contemporary feel, ensuring that users are drawn to the content.
+            - paragraph [ref=f6e42]: The section is fully responsive, adapting beautifully across devices, and includes dynamic SVG lines that connect feature icons, adding a unique visual flair. It is perfect for showcasing powerful integrations in a way that is both informative and aesthetically pleasing.
+            - heading "Perfect For" [level=2] [ref=f6e43]
+            - list [ref=f6e44]:
+              - listitem [ref=f6e45]: SaaS Products
+              - listitem [ref=f6e46]: Web Applications
+              - listitem [ref=f6e47]: Mobile Apps
+              - listitem [ref=f6e48]: Tech Startups
+              - listitem [ref=f6e49]: Software Development
+              - listitem [ref=f6e50]: Digital Services
+              - listitem [ref=f6e51]: E-commerce Platforms
+              - listitem [ref=f6e52]: Cloud Services
+              - listitem [ref=f6e53]: Data Analytics
+              - listitem [ref=f6e54]: Project Management Tools
+              - listitem [ref=f6e55]: Financial Software
+              - listitem [ref=f6e56]: API Services
+              - listitem [ref=f6e57]: Marketing Solutions
+              - listitem [ref=f6e58]: Collaboration Tools
+              - listitem [ref=f6e59]: Customer Relationship Management
+            - paragraph [ref=f6e60]: This section is highly customizable, allowing for easy integration into your existing site while maintaining responsive layouts and smooth interactions that enhance user engagement.
+        - generic [ref=f6e62]:
+          - generic [ref=f6e63]:
+            - button "Copy Prompt" [ref=f6e64]
+            - button [ref=f6e68]:
+              - generic [ref=f6e69]: Unlock Source
+              - generic "Unlock for $19" [ref=f6e73]: $19
+          - generic [ref=f6e76]:
+            - generic [ref=f6e77]:
+              - heading "CATEGORIES" [level=4] [ref=f6e78]
+              - generic [ref=f6e79]:
+                - link "Features Section" [ref=f6e80] [cursor=pointer]:
+                  - /url: /category/features
+                - link "SaaS" [ref=f6e81] [cursor=pointer]:
+                  - /url: /category/saas
+                - link "Web Applications" [ref=f6e82] [cursor=pointer]:
+                  - /url: /category/web-applications
+                - link "Software Development" [ref=f6e83] [cursor=pointer]:
+                  - /url: /category/software-development
+                - link "Digital Services" [ref=f6e84] [cursor=pointer]:
+                  - /url: /category/digital-services
+                - link "Tech Startups" [ref=f6e85] [cursor=pointer]:
+                  - /url: /category/tech-startups
+            - generic [ref=f6e86]:
+              - heading "TAGS" [level=4] [ref=f6e87]
+              - generic [ref=f6e88]:
+                - link "#Responsive" [ref=f6e89] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f6e90] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Interactive" [ref=f6e91] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Glassmorphism" [ref=f6e92] [cursor=pointer]:
+                  - /url: /tag/glassmorphism
+                - link "#Landing Page" [ref=f6e93] [cursor=pointer]:
+                  - /url: /tag/landing-page
+            - generic [ref=f6e94]:
+              - heading "Compatible AI Editors" [level=4] [ref=f6e95]
+              - generic [ref=f6e99]:
+                - generic [ref=f6e100]:
+                  - img "Lovable" [ref=f6e102]
+                  - generic [ref=f6e103]: Lovable
+                - generic [ref=f6e104]:
+                  - img "Bolt.new" [ref=f6e106]
+                  - generic [ref=f6e107]: Bolt.new
+                - generic [ref=f6e108]:
+                  - img "Cursor" [ref=f6e110]
+                  - generic [ref=f6e111]: Cursor
+                - generic [ref=f6e112]:
+                  - img "Claude" [ref=f6e114]
+                  - generic [ref=f6e115]: Claude
+                - generic [ref=f6e116]:
+                  - img "Antigravity" [ref=f6e118]
+                  - generic [ref=f6e119]: Antigravity
+                - generic [ref=f6e120]:
+                  - img "Codex" [ref=f6e122]
+                  - generic [ref=f6e123]: Codex
+          - generic [ref=f6e124]:
+            - button "0 likes" [ref=f6e125]
+            - button "Share" [ref=f6e129]
+      - generic [ref=f6e137]:
+        - heading "More in Sections" [level=3] [ref=f6e138]
+        - generic [ref=f6e139]:
+          - link [ref=f6e140] [cursor=pointer]:
+            - /url: /sections/klyro
+            - img "Klyro" [ref=f6e142]
+            - generic [ref=f6e143]:
+              - heading "Klyro" [level=4] [ref=f6e144]
+              - paragraph [ref=f6e145]: Hero
+          - link [ref=f6e146] [cursor=pointer]:
+            - /url: /sections/vaultix
+            - img "Vaultix" [ref=f6e148]
+            - generic [ref=f6e149]:
+              - heading "Vaultix" [level=4] [ref=f6e150]
+              - paragraph [ref=f6e151]: Finance
+          - link [ref=f6e152] [cursor=pointer]:
+            - /url: /sections/aero
+            - img "AERO" [ref=f6e154]
+            - generic [ref=f6e155]:
+              - heading "AERO" [level=4] [ref=f6e156]
+              - paragraph [ref=f6e157]: Hero
+          - link [ref=f6e158] [cursor=pointer]:
+            - /url: /sections/creativax
+            - img "CreativaX" [ref=f6e160]
+            - generic [ref=f6e161]:
+              - heading "CreativaX" [level=4] [ref=f6e162]
+              - paragraph [ref=f6e163]: Hero
+          - link [ref=f6e164] [cursor=pointer]:
+            - /url: /sections/cybertruck
+            - img "CyberTruck" [ref=f6e166]
+            - generic [ref=f6e167]:
+              - heading "CyberTruck" [level=4] [ref=f6e168]
+              - paragraph [ref=f6e169]: Hero
+          - link [ref=f6e170] [cursor=pointer]:
+            - /url: /sections/netro
+            - img "Netro" [ref=f6e172]
+            - generic [ref=f6e173]:
+              - heading "Netro" [level=4] [ref=f6e174]
+              - paragraph [ref=f6e175]: Hero
+  - contentinfo [ref=f6e176]:
+    - generic [ref=f6e177]:
+      - generic [ref=f6e178]:
+        - generic [ref=f6e179]:
+          - link "MotionSite MotionSite.ai" [ref=f6e180] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f6e181]
+            - generic [ref=f6e182]: MotionSite.ai
+          - paragraph [ref=f6e183]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f6e184]:
+          - heading "Resources" [level=4] [ref=f6e185]
+          - list [ref=f6e186]:
+            - listitem [ref=f6e187]:
+              - link "Templates" [ref=f6e188] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f6e189]:
+              - link "Sections" [ref=f6e190] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f6e191]:
+              - link "Backgrounds" [ref=f6e192] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f6e193]:
+              - link "How to Use" [ref=f6e194] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f6e195]:
+              - link "Blog" [ref=f6e196] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f6e197]:
+          - heading "Company" [level=4] [ref=f6e198]
+          - list [ref=f6e199]:
+            - listitem [ref=f6e200]:
+              - link "About" [ref=f6e201] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f6e202]:
+              - link "Contact" [ref=f6e203] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f6e204]:
+              - link "Terms of Service" [ref=f6e205] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f6e206]:
+              - link "Privacy Policy" [ref=f6e207] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f6e208]:
+        - paragraph [ref=f6e209]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f6e211] [cursor=pointer]
+  - alert [ref=f6e218]

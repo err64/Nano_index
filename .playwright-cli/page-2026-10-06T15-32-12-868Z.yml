@@ -1,0 +1,199 @@
+- generic [active] [ref=f10e1]:
+  - banner [ref=f10e2]:
+    - navigation [ref=f10e3]:
+      - generic [ref=f10e5]:
+        - generic [ref=f10e6]:
+          - link "MotionSite MotionSite.ai" [ref=f10e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f10e8]
+            - generic [ref=f10e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f10e12]
+        - generic [ref=f10e13]:
+          - generic [ref=f10e14]:
+            - link "Templates" [ref=f10e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f10e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f10e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f10e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f10e19]:
+            - button "Toggle theme" [ref=f10e20] [cursor=pointer]
+            - link "Log in" [ref=f10e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f10e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f10e29]
+  - main [ref=f10e30]:
+    - generic [ref=f10e32]:
+      - heading "Vaultix - AI Hero Section Template" [level=1] [ref=f10e33]
+      - generic [ref=f10e36]:
+        - generic [ref=f10e39]:
+          - heading "About this Template" [level=2] [ref=f10e40]
+          - paragraph [ref=f10e41]: The Vaultix Hero Section template is a meticulously crafted HTML5 design tailored for Web3 and crypto finance brands. This premium layout features a striking background video that plays at 1.5x speed, ensuring an engaging visual experience. The use of Tailwind CSS, combined with a clean and modern aesthetic, makes it an ideal choice for businesses looking to enhance their online presence with a sophisticated and user-friendly interface.
+          - paragraph [ref=f10e42]: Designed with a focus on clarity and usability, the Vaultix template showcases a seamless blend of functionality and style. The responsive layout ensures an optimal browsing experience across all devices, while the well-structured content and intuitive navigation guide users effortlessly through your offerings.
+          - heading "Perfect For" [level=2] [ref=f10e43]
+          - list [ref=f10e44]:
+            - listitem [ref=f10e45]: Crypto Finance
+            - listitem [ref=f10e46]: Blockchain Solutions
+            - listitem [ref=f10e47]: Fintech Startups
+            - listitem [ref=f10e48]: Investment Platforms
+            - listitem [ref=f10e49]: Digital Asset Management
+            - listitem [ref=f10e50]: Web3 Applications
+            - listitem [ref=f10e51]: Financial Technology
+            - listitem [ref=f10e52]: Decentralized Finance (DeFi)
+            - listitem [ref=f10e53]: Payment Solutions
+            - listitem [ref=f10e54]: Asset Security Services
+            - listitem [ref=f10e55]: Financial Education
+            - listitem [ref=f10e56]: Corporate Websites
+            - listitem [ref=f10e57]: Consulting Firms
+            - listitem [ref=f10e58]: Tech Startups
+            - listitem [ref=f10e59]: Online Marketplaces
+          - paragraph [ref=f10e60]: This template not only provides a captivating visual appeal but also offers flexibility with its reusable components and easy customization options, making it perfect for any modern finance-related website.
+        - generic [ref=f10e62]:
+          - generic [ref=f10e63]:
+            - button [ref=f10e64]:
+              - generic [ref=f10e65]: Unlock Prompt
+              - generic "Unlock for $19" [ref=f10e69]: $19
+            - button [ref=f10e72]:
+              - generic [ref=f10e73]: Unlock Source
+              - generic "Unlock for $19" [ref=f10e77]: $19
+          - generic [ref=f10e80]:
+            - generic [ref=f10e81]:
+              - heading "CATEGORIES" [level=4] [ref=f10e82]
+              - generic [ref=f10e83]:
+                - link "Finance Section" [ref=f10e84] [cursor=pointer]:
+                  - /url: /category/finance
+                - link "Finance" [ref=f10e85] [cursor=pointer]:
+                  - /url: /category/finance
+                - link "Web3" [ref=f10e86] [cursor=pointer]:
+                  - /url: /category/web3
+                - link "Crypto" [ref=f10e87] [cursor=pointer]:
+                  - /url: /category/crypto
+                - link "Technology" [ref=f10e88] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "SaaS" [ref=f10e89] [cursor=pointer]:
+                  - /url: /category/saas
+            - generic [ref=f10e90]:
+              - heading "TAGS" [level=4] [ref=f10e91]
+              - generic [ref=f10e92]:
+                - link "#Responsive" [ref=f10e93] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f10e94] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Interactive" [ref=f10e95] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Glassmorphism" [ref=f10e96] [cursor=pointer]:
+                  - /url: /tag/glassmorphism
+                - link "#Minimal" [ref=f10e97] [cursor=pointer]:
+                  - /url: /tag/minimal
+            - generic [ref=f10e98]:
+              - heading "Compatible AI Editors" [level=4] [ref=f10e99]
+              - generic [ref=f10e103]:
+                - generic [ref=f10e104]:
+                  - img "Lovable" [ref=f10e106]
+                  - generic [ref=f10e107]: Lovable
+                - generic [ref=f10e108]:
+                  - img "Bolt.new" [ref=f10e110]
+                  - generic [ref=f10e111]: Bolt.new
+                - generic [ref=f10e112]:
+                  - img "Cursor" [ref=f10e114]
+                  - generic [ref=f10e115]: Cursor
+                - generic [ref=f10e116]:
+                  - img "Claude" [ref=f10e118]
+                  - generic [ref=f10e119]: Claude
+                - generic [ref=f10e120]:
+                  - img "Antigravity" [ref=f10e122]
+                  - generic [ref=f10e123]: Antigravity
+                - generic [ref=f10e124]:
+                  - img "Codex" [ref=f10e126]
+                  - generic [ref=f10e127]: Codex
+          - generic [ref=f10e128]:
+            - button "1 like" [ref=f10e129]
+            - button "Share" [ref=f10e133]
+      - generic [ref=f10e141]:
+        - heading "More in Sections" [level=3] [ref=f10e142]
+        - generic [ref=f10e143]:
+          - link [ref=f10e144] [cursor=pointer]:
+            - /url: /sections/klyro
+            - img "Klyro" [ref=f10e146]
+            - generic [ref=f10e147]:
+              - heading "Klyro" [level=4] [ref=f10e148]
+              - paragraph [ref=f10e149]: Hero
+          - link [ref=f10e150] [cursor=pointer]:
+            - /url: /sections/aero
+            - img "AERO" [ref=f10e152]
+            - generic [ref=f10e153]:
+              - heading "AERO" [level=4] [ref=f10e154]
+              - paragraph [ref=f10e155]: Hero
+          - link [ref=f10e156] [cursor=pointer]:
+            - /url: /sections/creativax
+            - img "CreativaX" [ref=f10e158]
+            - generic [ref=f10e159]:
+              - heading "CreativaX" [level=4] [ref=f10e160]
+              - paragraph [ref=f10e161]: Hero
+          - link [ref=f10e162] [cursor=pointer]:
+            - /url: /sections/cybertruck
+            - img "CyberTruck" [ref=f10e164]
+            - generic [ref=f10e165]:
+              - heading "CyberTruck" [level=4] [ref=f10e166]
+              - paragraph [ref=f10e167]: Hero
+          - link [ref=f10e168] [cursor=pointer]:
+            - /url: /sections/netro
+            - img "Netro" [ref=f10e170]
+            - generic [ref=f10e171]:
+              - heading "Netro" [level=4] [ref=f10e172]
+              - paragraph [ref=f10e173]: Hero
+          - link [ref=f10e174] [cursor=pointer]:
+            - /url: /sections/rooted
+            - img "Rooted" [ref=f10e176]
+            - generic [ref=f10e177]:
+              - heading "Rooted" [level=4] [ref=f10e178]
+              - paragraph [ref=f10e179]: Hero
+  - contentinfo [ref=f10e180]:
+    - generic [ref=f10e181]:
+      - generic [ref=f10e182]:
+        - generic [ref=f10e183]:
+          - link "MotionSite MotionSite.ai" [ref=f10e184] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f10e185]
+            - generic [ref=f10e186]: MotionSite.ai
+          - paragraph [ref=f10e187]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f10e188]:
+          - heading "Resources" [level=4] [ref=f10e189]
+          - list [ref=f10e190]:
+            - listitem [ref=f10e191]:
+              - link "Templates" [ref=f10e192] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f10e193]:
+              - link "Sections" [ref=f10e194] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f10e195]:
+              - link "Backgrounds" [ref=f10e196] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f10e197]:
+              - link "How to Use" [ref=f10e198] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f10e199]:
+              - link "Blog" [ref=f10e200] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f10e201]:
+          - heading "Company" [level=4] [ref=f10e202]
+          - list [ref=f10e203]:
+            - listitem [ref=f10e204]:
+              - link "About" [ref=f10e205] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f10e206]:
+              - link "Contact" [ref=f10e207] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f10e208]:
+              - link "Terms of Service" [ref=f10e209] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f10e210]:
+              - link "Privacy Policy" [ref=f10e211] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f10e212]:
+        - paragraph [ref=f10e213]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f10e215] [cursor=pointer]
+  - alert [ref=f10e222]

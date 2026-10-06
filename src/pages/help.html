@@ -1,0 +1,121 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">帮助中心</span>
+      </nav>
+      <h1 id="ph-h">五分钟，看到第一条完整的验证链。</h1>
+      <p class="lede">从克隆到控制台，四步完成。整个过程不调用任何外部模型服务，Scripted Runtime 在本地确定性执行。</p>
+    </div>
+  </section>
+
+  <section class="section" id="quickstart" aria-labelledby="qs-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="qs-h">快速上手</h2>
+        <p>环境要求：Node.js 22.13 至 24、pnpm 10+、Git 2.30+。</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <h3>克隆并安装</h3>
+          <p>获取仓库并安装依赖，全部构建在本地完成。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-1" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-1"><span class="prompt">$ </span><span class="cmd">git clone &lt;repo-url&gt; && cd NANOFACTORY && pnpm install && pnpm build</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>运行端到端演示</h3>
+          <p>内置一个带增值税缺陷的演示工程。脚本会构建真实 Git Worktree、执行验证阶梯并输出完整状态机轨迹，约 6 秒结束。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-2" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-2"><span class="prompt">$ </span><span class="cmd">pnpm demo</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>打开控制台</h3>
+          <p>在可视化界面查看需求采集、运行轨迹、证据与审计，默认监听 <code>127.0.0.1:7788</code>。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-3" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-3"><span class="prompt">$ </span><span class="cmd">pnpm web</span><span class="cmt">  # 然后访问 http://127.0.0.1:7788</span></pre>
+          </div>
+        </article>
+        <article class="step reveal">
+          <h3>接入真实模型</h3>
+          <p>把演示工程换成你的任务契约，用 <code>--runtime codex</code> 或 <code>--runtime claude-code</code> 驱动真实模型。契约字段、预算与验证命令见示例文件。</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span>terminal</span>
+              <button class="copy-btn" data-copy="code-4" type="button"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#list"></use></svg><span>复制</span></button>
+            </div>
+            <pre id="code-4"><span class="prompt">$ </span><span class="cmd">node dist/cli/run-task.js run examples/task.example.json --runtime codex --json</span></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="faq-h">常见问题</h2>
+      </div>
+      <div class="acc reveal">
+        {{FAQ_LIST}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="trouble-h">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="trouble-h">故障排查</h2>
+      </div>
+      <div class="bento">
+        <div class="card span-3 reveal">
+          <h3>任务被标记为 BLOCKED</h3>
+          <p>同一失败指纹连续 3 次无进展即熔断。用 <code>veriforge inspect &lt;runId&gt; --events</code> 查看时间线与指纹，确认是否为既有失败（preExisting）或路径策略违规。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>BUDGET_EXCEEDED 太频繁</h3>
+          <p>调高契约中的 maxIterations 与 maxRuntimeMinutes，或用 FAST 检查更快的子集命令。先看验证命令耗时分布再调预算。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>控制台无法访问</h3>
+          <p>服务默认只绑定回环地址。远程访问必须显式启用非回环绑定并配置角色 Token，TLS 交给反向代理（见部署文档）。</p>
+        </div>
+        <div class="card span-3 reveal">
+          <h3>数据库维护</h3>
+          <p>用 <code>db backup</code> 在线热备份、<code>db check</code> 校验完整性、<code>db prune</code> 清理超过保留期的只增历史。清理前先 --dry-run。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">没找到答案？</h2>
+          <p>直接来信，或在仓库提交 Issue。较真的问题最受欢迎。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="mailto:shiganghai@gmail.com">提问</a>
+          <a class="btn" href="/products">了解产品</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

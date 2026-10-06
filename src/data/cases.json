@@ -1,0 +1,32 @@
+[
+  {
+    "id": "demo-vat-fix",
+    "industry": "演示工程 · 端到端",
+    "title": "增值税计算缺陷的自动修复，全程 6 秒带证据交付",
+    "scenario": "内置演示工程：购物车金额计算未包含 20% 增值税，两条断言失败。",
+    "challenge": "修复必须只动计算逻辑、不得篡改测试、并在预算内完成；同时每一步「我认为修好了」都要换成可复核的机器证据。",
+    "solution": "任务契约声明目标、允许路径与验收标准。Worker 在独立 Worktree 中完成修改，FAST_VERIFY 驱动快速回归，FULL_VERIFY 以受保护方式恢复原始测试执行，SYNTHESIZE 验证新增测试先红后绿，最终由完成门禁裁决放行。",
+    "metrics": ["验收 3/3 VERIFIED", "变更 1 个文件", "修复轮次 0（一次通过）", "全程约 6 秒"],
+    "evidence": "[TEST] command \"node tests/run-tests.js\" PASS (exit 0)\nAC1 · VERIFIED   AC2 · VERIFIED\nBASELINE → EDIT → FAST_VERIFY → FULL_VERIFY → SELF_REVIEW → READY_FOR_REVIEW"
+  },
+  {
+    "id": "legacy-test-sweep",
+    "industry": "工程效能 · 批量场景",
+    "title": "遗留缺陷批量清偿：把 bug 单变成调度池里的契约",
+    "scenario": "仓库中堆积大量小缺陷与低覆盖模块，人工排队处理慢、反复打断主线开发。",
+    "challenge": "批量任务不能一拥而上：并发要可控、磁盘要设防、失败要分类归属，且每条 PR 都要带验证证据而非聊天记录。",
+    "solution": "用 sweep 批量扫描生成任务清单，SQLite 租赁队列控制全局与单仓库并发，磁盘水位准入；每个 Worker 独立 Worktree 互不串扰，完成后经交付编排以 PR 形式进入人工审查队列。",
+    "metrics": ["并发上限可配", "崩溃自动重新排队", "旧 runId 永不复用", "PR 幂等创建"],
+    "evidence": "task_queue: READY → LEASED → RUNNING → DONE\nheartbeat 续租 · 磁盘水位准入 · headSha 精确比对"
+  },
+  {
+    "id": "private-control-plane",
+    "industry": "企业内网 · 私有部署",
+    "title": "内网编码控制平面：代码与凭据全程不出本机",
+    "scenario": "安全团队要求：源代码、访问凭据与任务记录必须留在内网，外部通知目标受白名单管控。",
+    "challenge": "既要私有化，又不能牺牲审计与运维：谁有权限、通知发到哪、备份怎么落、历史留多久，都要有明确答案。",
+    "solution": "单机 Docker 部署，默认回环绑定加 RBAC 角色令牌；凭据仅存在于 Harness 侧并经环境变量白名单过滤，绝不进入模型上下文；出网 URL Guard 拦截内网地址与 DNS 重绑定；SQLite 在线热备份加保留期清理完成数据治理。",
+    "metrics": ["零中间件依赖", "事件存储只增不改", "WAL 在线热备份", "SSRF 白名单管控"],
+    "evidence": "bind 127.0.0.1 · VERIFORGE_ROLE_TOKENS (RBAC)\nwebhook HMAC 验签 · URL Guard: RFC1918 / link-local / metadata 拒绝"
+  }
+]

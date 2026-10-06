@@ -1,0 +1,195 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - navigation [ref=f1e3]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]:
+          - link "MotionSite MotionSite.ai" [ref=f1e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f1e8]
+            - generic [ref=f1e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f1e12]
+        - generic [ref=f1e13]:
+          - generic [ref=f1e14]:
+            - link "Templates" [ref=f1e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f1e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f1e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f1e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f1e19]:
+            - button "Toggle theme" [ref=f1e20] [cursor=pointer]
+            - link "Log in" [ref=f1e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f1e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f1e29]
+  - main [ref=f1e30]:
+    - generic [ref=f1e231]:
+      - heading "Outbox - SaaS Website Template" [level=1] [ref=f1e232]
+      - generic [ref=f1e233]:
+        - generic [ref=f1e234]:
+          - img "Outbox" [ref=f1e236]
+          - generic [ref=f1e238]:
+            - heading "About this Template" [level=2] [ref=f1e239]
+            - paragraph [ref=f1e240]: Outbox is a meticulously designed SaaS website template that combines a warm, premium color palette with a dark mode aesthetic, creating a visually stunning browsing experience. Tailored for startups and established businesses alike, it offers an engaging user interface that enhances interaction and retention. The template's dynamic layout and smooth animations, powered by Framer Motion, provide a unique feel that sets it apart from conventional designs.
+            - paragraph [ref=f1e241]: With a fully responsive structure built using React and Tailwind CSS, Outbox ensures that your website looks great on all devices. Each component is designed with usability in mind, allowing for easy customization and seamless integration into your brand identity.
+            - heading "Perfect For" [level=2] [ref=f1e242]
+            - list [ref=f1e243]:
+              - listitem [ref=f1e244]: Startups
+              - listitem [ref=f1e245]: Technology Companies
+              - listitem [ref=f1e246]: Digital Marketing Agencies
+              - listitem [ref=f1e247]: Consulting Firms
+              - listitem [ref=f1e248]: Online Services
+              - listitem [ref=f1e249]: Creative Agencies
+              - listitem [ref=f1e250]: Software Development
+              - listitem [ref=f1e251]: eCommerce Platforms
+              - listitem [ref=f1e252]: Portfolio Websites
+              - listitem [ref=f1e253]: Freelancers
+              - listitem [ref=f1e254]: Educational Institutions
+              - listitem [ref=f1e255]: Healthcare Services
+              - listitem [ref=f1e256]: Non-Profit Organizations
+            - paragraph [ref=f1e257]: Outbox offers flexibility with its reusable components and smooth interactions, making it easy to tailor the design to your specific needs.
+        - generic [ref=f1e259]:
+          - generic [ref=f1e260]:
+            - button "Copy Prompt" [ref=f1e261]
+            - button [ref=f1e265]:
+              - generic [ref=f1e266]: Unlock Source
+              - generic "Unlock for $19" [ref=f1e270]: $19
+          - generic [ref=f1e273]:
+            - generic [ref=f1e274]:
+              - heading "CATEGORIES" [level=4] [ref=f1e275]
+              - generic [ref=f1e276]:
+                - link "SaaS" [ref=f1e277] [cursor=pointer]:
+                  - /url: /category/saas
+                - link "Technology" [ref=f1e278] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Digital Marketing" [ref=f1e279] [cursor=pointer]:
+                  - /url: /category/digital-marketing
+                - link "Creative Agencies" [ref=f1e280] [cursor=pointer]:
+                  - /url: /category/creative-agencies
+                - link "Software Development" [ref=f1e281] [cursor=pointer]:
+                  - /url: /category/software-development
+            - generic [ref=f1e282]:
+              - heading "TAGS" [level=4] [ref=f1e283]
+              - generic [ref=f1e284]:
+                - link "#Responsive" [ref=f1e285] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f1e286] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Interactive" [ref=f1e287] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#Landing Page" [ref=f1e288] [cursor=pointer]:
+                  - /url: /tag/landing-page
+                - link "#Framer Motion" [ref=f1e289] [cursor=pointer]:
+                  - /url: /tag/framer-motion
+            - generic [ref=f1e290]:
+              - heading "Compatible AI Editors" [level=4] [ref=f1e291]
+              - generic [ref=f1e295]:
+                - generic [ref=f1e296]:
+                  - img "Lovable" [ref=f1e298]
+                  - generic [ref=f1e299]: Lovable
+                - generic [ref=f1e300]:
+                  - img "Bolt.new" [ref=f1e302]
+                  - generic [ref=f1e303]: Bolt.new
+                - generic [ref=f1e304]:
+                  - img "Cursor" [ref=f1e306]
+                  - generic [ref=f1e307]: Cursor
+                - generic [ref=f1e308]:
+                  - img "Claude" [ref=f1e310]
+                  - generic [ref=f1e311]: Claude
+                - generic [ref=f1e312]:
+                  - img "Antigravity" [ref=f1e314]
+                  - generic [ref=f1e315]: Antigravity
+                - generic [ref=f1e316]:
+                  - img "Codex" [ref=f1e318]
+                  - generic [ref=f1e319]: Codex
+          - generic [ref=f1e320]:
+            - button "13 likes" [ref=f1e321]
+            - button "Share" [ref=f1e325]
+      - generic [ref=f1e333]:
+        - heading "More in Templates" [level=3] [ref=f1e334]
+        - generic [ref=f1e335]:
+          - link [ref=f1e336] [cursor=pointer]:
+            - /url: /templates/matcha
+            - img "Matcha" [ref=f1e338]
+            - generic [ref=f1e339]:
+              - heading "Matcha" [level=4] [ref=f1e340]
+              - paragraph [ref=f1e341]: Health
+          - link [ref=f1e342] [cursor=pointer]:
+            - /url: /templates/noodlix
+            - img "Noodlix" [ref=f1e344]
+            - generic [ref=f1e345]:
+              - heading "Noodlix" [level=4] [ref=f1e346]
+              - paragraph [ref=f1e347]: Food
+          - link [ref=f1e348] [cursor=pointer]:
+            - /url: /templates/gemora
+            - img "Gemora" [ref=f1e350]
+            - generic [ref=f1e351]:
+              - heading "Gemora" [level=4] [ref=f1e352]
+              - paragraph [ref=f1e353]: Luxury
+          - link [ref=f1e354] [cursor=pointer]:
+            - /url: /templates/interazoo
+            - img "Interazoo" [ref=f1e356]
+            - generic [ref=f1e357]:
+              - heading "Interazoo" [level=4] [ref=f1e358]
+              - paragraph [ref=f1e359]: Real Estate
+          - link [ref=f1e360] [cursor=pointer]:
+            - /url: /templates/beyond
+            - img "Beyond" [ref=f1e362]
+            - generic [ref=f1e363]:
+              - heading "Beyond" [level=4] [ref=f1e364]
+              - paragraph [ref=f1e365]: 3D
+          - link [ref=f1e366] [cursor=pointer]:
+            - /url: /templates/aventis
+            - img "Aventis" [ref=f1e368]
+            - generic [ref=f1e369]:
+              - heading "Aventis" [level=4] [ref=f1e370]
+              - paragraph [ref=f1e371]: Luxury
+  - contentinfo [ref=f1e187]:
+    - generic [ref=f1e188]:
+      - generic [ref=f1e189]:
+        - generic [ref=f1e190]:
+          - link "MotionSite MotionSite.ai" [ref=f1e191] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f1e192]
+            - generic [ref=f1e193]: MotionSite.ai
+          - paragraph [ref=f1e194]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f1e195]:
+          - heading "Resources" [level=4] [ref=f1e196]
+          - list [ref=f1e197]:
+            - listitem [ref=f1e198]:
+              - link "Templates" [ref=f1e199] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f1e200]:
+              - link "Sections" [ref=f1e201] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f1e202]:
+              - link "Backgrounds" [ref=f1e203] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f1e204]:
+              - link "How to Use" [ref=f1e205] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f1e206]:
+              - link "Blog" [ref=f1e207] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f1e208]:
+          - heading "Company" [level=4] [ref=f1e209]
+          - list [ref=f1e210]:
+            - listitem [ref=f1e211]:
+              - link "About" [ref=f1e212] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f1e213]:
+              - link "Contact" [ref=f1e214] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f1e215]:
+              - link "Terms of Service" [ref=f1e216] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f1e217]:
+              - link "Privacy Policy" [ref=f1e218] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f1e219]:
+        - paragraph [ref=f1e220]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f1e222] [cursor=pointer]
+  - alert [ref=f1e229]: Outbox – SaaS Website Template | MotionSite AI

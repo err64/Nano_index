@@ -1,0 +1,15 @@
+{
+  "name": "veriforge-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Veriforge 官方网站：静态优先 + 零依赖 Node 内容服务（build + server + admin CMS）",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js",
+    "dev": "node build.js && node server.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

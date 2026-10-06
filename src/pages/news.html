@@ -1,0 +1,42 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">新闻动态</span>
+      </nav>
+      <h1 id="ph-h">项目进展与行业观察。</h1>
+      <p class="lede">里程碑、评审纪要与工程深度文章，全部来自真实开发过程，由内容后台维护更新。</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="news-h">
+    <div class="container">
+      <h2 id="news-h" class="sr-only">全部动态</h2>
+      <div class="newslist">
+        {{NEWS_PAGE_LIST}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="ctaband reveal">
+        <div>
+          <h2 id="cta-h">不想错过版本节奏？</h2>
+          <p>每次评审与发布都会同步到动态页，也可通过邮件与我们保持联系。</p>
+        </div>
+        <div class="hero-ctas mt-0">
+          <a class="btn btn-primary" href="mailto:shiganghai@gmail.com?subject=%E8%AE%A2%E9%98%85%E5%8A%A8%E6%80%81">邮件订阅动态</a>
+          <a class="btn" href="/project">了解项目</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

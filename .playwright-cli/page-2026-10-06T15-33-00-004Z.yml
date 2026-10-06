@@ -1,0 +1,194 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - navigation [ref=f11e3]:
+      - generic [ref=f11e5]:
+        - generic [ref=f11e6]:
+          - link "MotionSite MotionSite.ai" [ref=f11e7] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f11e8]
+            - generic [ref=f11e9]: MotionSite.ai
+          - textbox "Search items..." [ref=f11e12]
+        - generic [ref=f11e13]:
+          - generic [ref=f11e14]:
+            - link "Templates" [ref=f11e15] [cursor=pointer]:
+              - /url: /templates
+            - link "Sections" [ref=f11e16] [cursor=pointer]:
+              - /url: /sections
+            - link "Backgrounds" [ref=f11e17] [cursor=pointer]:
+              - /url: /backgrounds
+            - link "Pricing" [ref=f11e18] [cursor=pointer]:
+              - /url: /pricing
+          - generic [ref=f11e19]:
+            - button "Toggle theme" [ref=f11e20] [cursor=pointer]
+            - link "Log in" [ref=f11e27] [cursor=pointer]:
+              - /url: /auth/login
+            - link [ref=f11e28] [cursor=pointer]:
+              - /url: /pricing
+              - button "Get Access" [ref=f11e29]
+  - main [ref=f11e30]:
+    - generic [ref=f11e32]:
+      - heading "Features - Analytics Section" [level=1] [ref=f11e33]
+      - generic [ref=f11e34]:
+        - generic [ref=f11e35]:
+          - img "Features - Analytics" [ref=f11e37]
+          - generic [ref=f11e39]:
+            - heading "About this Section" [level=2] [ref=f11e40]
+            - paragraph [ref=f11e41]: This modern Features Section is designed for showcasing advanced analytics capabilities in a visually engaging manner. Ideal for tech companies, startups, and digital platforms, it combines stunning 3D visuals with smooth interactions to enhance user experience. The layout is fully responsive, ensuring that it looks great on any device while maintaining high performance.
+            - paragraph [ref=f11e42]: The section features a compelling isometric illustration that represents data analytics, alongside glassmorphic feature cards that highlight key functionalities. Each element is crafted with attention to detail, focusing on usability and aesthetic appeal.
+            - heading "Perfect For" [level=2] [ref=f11e43]
+            - list [ref=f11e44]:
+              - listitem [ref=f11e45]: Tech Startups
+              - listitem [ref=f11e46]: Data Analytics Companies
+              - listitem [ref=f11e47]: Financial Services
+              - listitem [ref=f11e48]: Business Intelligence Tools
+              - listitem [ref=f11e49]: Marketing Platforms
+              - listitem [ref=f11e50]: E-commerce Solutions
+              - listitem [ref=f11e51]: Software Development Firms
+              - listitem [ref=f11e52]: Consulting Services
+              - listitem [ref=f11e53]: Educational Platforms
+              - listitem [ref=f11e54]: Health Tech Solutions
+            - paragraph [ref=f11e55]: This section is flexible and customizable, allowing you to easily adapt it to fit your brand and messaging while ensuring a seamless browsing experience.
+        - generic [ref=f11e57]:
+          - generic [ref=f11e58]:
+            - button "Copy Prompt" [ref=f11e59]
+            - button [ref=f11e63]:
+              - generic [ref=f11e64]: Unlock Source
+              - generic "Unlock for $19" [ref=f11e68]: $19
+          - generic [ref=f11e71]:
+            - generic [ref=f11e72]:
+              - heading "CATEGORIES" [level=4] [ref=f11e73]
+              - generic [ref=f11e74]:
+                - link "Features Section" [ref=f11e75] [cursor=pointer]:
+                  - /url: /category/features
+                - link "Technology" [ref=f11e76] [cursor=pointer]:
+                  - /url: /category/technology
+                - link "Data Analytics" [ref=f11e77] [cursor=pointer]:
+                  - /url: /category/data-analytics
+                - link "Tech Startups" [ref=f11e78] [cursor=pointer]:
+                  - /url: /category/tech-startups
+                - link "Business Intelligence" [ref=f11e79] [cursor=pointer]:
+                  - /url: /category/business-intelligence
+                - link "Software Development" [ref=f11e80] [cursor=pointer]:
+                  - /url: /category/software-development
+            - generic [ref=f11e81]:
+              - heading "TAGS" [level=4] [ref=f11e82]
+              - generic [ref=f11e83]:
+                - link "#Responsive" [ref=f11e84] [cursor=pointer]:
+                  - /url: /tag/responsive
+                - link "#Modern" [ref=f11e85] [cursor=pointer]:
+                  - /url: /tag/modern
+                - link "#Interactive" [ref=f11e86] [cursor=pointer]:
+                  - /url: /tag/interactive
+                - link "#3D" [ref=f11e87] [cursor=pointer]:
+                  - /url: /tag/3d
+                - link "#Glassmorphism" [ref=f11e88] [cursor=pointer]:
+                  - /url: /tag/glassmorphism
+            - generic [ref=f11e89]:
+              - heading "Compatible AI Editors" [level=4] [ref=f11e90]
+              - generic [ref=f11e94]:
+                - generic [ref=f11e95]:
+                  - img "Lovable" [ref=f11e97]
+                  - generic [ref=f11e98]: Lovable
+                - generic [ref=f11e99]:
+                  - img "Bolt.new" [ref=f11e101]
+                  - generic [ref=f11e102]: Bolt.new
+                - generic [ref=f11e103]:
+                  - img "Cursor" [ref=f11e105]
+                  - generic [ref=f11e106]: Cursor
+                - generic [ref=f11e107]:
+                  - img "Claude" [ref=f11e109]
+                  - generic [ref=f11e110]: Claude
+                - generic [ref=f11e111]:
+                  - img "Antigravity" [ref=f11e113]
+                  - generic [ref=f11e114]: Antigravity
+                - generic [ref=f11e115]:
+                  - img "Codex" [ref=f11e117]
+                  - generic [ref=f11e118]: Codex
+          - generic [ref=f11e119]:
+            - button "6 likes" [ref=f11e120]
+            - button "Share" [ref=f11e124]
+      - generic [ref=f11e132]:
+        - heading "More in Sections" [level=3] [ref=f11e133]
+        - generic [ref=f11e134]:
+          - link [ref=f11e135] [cursor=pointer]:
+            - /url: /sections/klyro
+            - img "Klyro" [ref=f11e137]
+            - generic [ref=f11e138]:
+              - heading "Klyro" [level=4] [ref=f11e139]
+              - paragraph [ref=f11e140]: Hero
+          - link [ref=f11e141] [cursor=pointer]:
+            - /url: /sections/vaultix
+            - img "Vaultix" [ref=f11e143]
+            - generic [ref=f11e144]:
+              - heading "Vaultix" [level=4] [ref=f11e145]
+              - paragraph [ref=f11e146]: Finance
+          - link [ref=f11e147] [cursor=pointer]:
+            - /url: /sections/aero
+            - img "AERO" [ref=f11e149]
+            - generic [ref=f11e150]:
+              - heading "AERO" [level=4] [ref=f11e151]
+              - paragraph [ref=f11e152]: Hero
+          - link [ref=f11e153] [cursor=pointer]:
+            - /url: /sections/creativax
+            - img "CreativaX" [ref=f11e155]
+            - generic [ref=f11e156]:
+              - heading "CreativaX" [level=4] [ref=f11e157]
+              - paragraph [ref=f11e158]: Hero
+          - link [ref=f11e159] [cursor=pointer]:
+            - /url: /sections/cybertruck
+            - img "CyberTruck" [ref=f11e161]
+            - generic [ref=f11e162]:
+              - heading "CyberTruck" [level=4] [ref=f11e163]
+              - paragraph [ref=f11e164]: Hero
+          - link [ref=f11e165] [cursor=pointer]:
+            - /url: /sections/netro
+            - img "Netro" [ref=f11e167]
+            - generic [ref=f11e168]:
+              - heading "Netro" [level=4] [ref=f11e169]
+              - paragraph [ref=f11e170]: Hero
+  - contentinfo [ref=f11e171]:
+    - generic [ref=f11e172]:
+      - generic [ref=f11e173]:
+        - generic [ref=f11e174]:
+          - link "MotionSite MotionSite.ai" [ref=f11e175] [cursor=pointer]:
+            - /url: /
+            - img "MotionSite" [ref=f11e176]
+            - generic [ref=f11e177]: MotionSite.ai
+          - paragraph [ref=f11e178]: Premium prompts, templates and design resources for creating next generation websites.
+        - generic [ref=f11e179]:
+          - heading "Resources" [level=4] [ref=f11e180]
+          - list [ref=f11e181]:
+            - listitem [ref=f11e182]:
+              - link "Templates" [ref=f11e183] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=f11e184]:
+              - link "Sections" [ref=f11e185] [cursor=pointer]:
+                - /url: /sections
+            - listitem [ref=f11e186]:
+              - link "Backgrounds" [ref=f11e187] [cursor=pointer]:
+                - /url: /backgrounds
+            - listitem [ref=f11e188]:
+              - link "How to Use" [ref=f11e189] [cursor=pointer]:
+                - /url: /how-to-use
+            - listitem [ref=f11e190]:
+              - link "Blog" [ref=f11e191] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f11e192]:
+          - heading "Company" [level=4] [ref=f11e193]
+          - list [ref=f11e194]:
+            - listitem [ref=f11e195]:
+              - link "About" [ref=f11e196] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f11e197]:
+              - link "Contact" [ref=f11e198] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f11e199]:
+              - link "Terms of Service" [ref=f11e200] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f11e201]:
+              - link "Privacy Policy" [ref=f11e202] [cursor=pointer]:
+                - /url: /privacy
+      - generic [ref=f11e203]:
+        - paragraph [ref=f11e204]: © 2026 MotionSite. All rights reserved.
+        - button "Toggle theme" [ref=f11e206] [cursor=pointer]
+  - alert [ref=f11e213]
