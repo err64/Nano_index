@@ -1,0 +1,1432 @@
+[
+  {
+    "page": "project",
+    "url": "/project",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "项目介绍 · 发展历程与核心优势 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "38.4px",
+      "lh": "46.848px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "TH.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.8,
+        "ratio": 4.34,
+        "text": "Veriforge"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "project",
+    "url": "/project",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "项目介绍 · 发展历程与核心优势 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "TH.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.8,
+        "ratio": 4.34,
+        "text": "Veriforge"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "project",
+    "url": "/project",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "项目介绍 · 发展历程与核心优势 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "TH.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.8,
+        "ratio": 4.34,
+        "text": "Veriforge"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "products",
+    "url": "/products",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "产品与服务 · 五大子系统与部署支持 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "38.4px",
+      "lh": "46.848px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 12,
+      "10px": 6,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "products",
+    "url": "/products",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "产品与服务 · 五大子系统与部署支持 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 12,
+      "10px": 6,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "products",
+    "url": "/products",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "产品与服务 · 五大子系统与部署支持 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [
+      {
+        "sel": "P.",
+        "text": "INIT 到 READY_FOR_REVIEW 的每一步都由强类型合法迁移表驱动",
+        "sw": 141,
+        "cw": 101
+      }
+    ],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 12,
+      "10px": 6,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "news",
+    "url": "/news",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "新闻动态 · 项目进展与行业观察 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "24.48px",
+      "lh": "41.1264px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 6,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "news",
+    "url": "/news",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "新闻动态 · 项目进展与行业观察 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "24.48px",
+      "lh": "41.1264px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 6,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "news",
+    "url": "/news",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "新闻动态 · 项目进展与行业观察 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "24px",
+      "lh": "40.32px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 6,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "cases",
+    "url": "/cases",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "用户案例 · 可复核的证据链 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "24.48px",
+      "lh": "41.1264px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "cases",
+    "url": "/cases",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "用户案例 · 可复核的证据链 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "24.48px",
+      "lh": "41.1264px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "cases",
+    "url": "/cases",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "用户案例 · 可复核的证据链 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "24px",
+      "lh": "40.32px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "999px": 3,
+      "12px": 2
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "about",
+    "url": "/about",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "关于我们 · 团队与联系 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "38.4px",
+      "lh": "46.848px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "P.hero-caption.reveal",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "text": "我们在验证工程与开发者体验方向持续招人，简历请附上你写过的最"
+      },
+      {
+        "sel": "P.hint.form-note",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.6,
+        "ratio": 4.34,
+        "text": "提交将打开你的邮件客户端发送至 shiganghai@gma"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 7,
+      "10px": 6,
+      "12px": 1
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "about",
+    "url": "/about",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "关于我们 · 团队与联系 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "P.hero-caption.reveal",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "text": "我们在验证工程与开发者体验方向持续招人，简历请附上你写过的最"
+      },
+      {
+        "sel": "P.hint.form-note",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.6,
+        "ratio": 4.34,
+        "text": "提交将打开你的邮件客户端发送至 shiganghai@gma"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 7,
+      "10px": 6,
+      "12px": 1
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "about",
+    "url": "/about",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "关于我们 · 团队与联系 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "P.hero-caption.reveal",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "text": "我们在验证工程与开发者体验方向持续招人，简历请附上你写过的最"
+      },
+      {
+        "sel": "P.hint.form-note",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.6,
+        "ratio": 4.34,
+        "text": "提交将打开你的邮件客户端发送至 shiganghai@gma"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "14px": 7,
+      "10px": 6,
+      "12px": 1
+    },
+    "accordions": 1,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "help",
+    "url": "/help",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "帮助中心 · 快速上手与常见问题 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "49.6px",
+      "lh": "56.544px",
+      "ls": "-0.744px"
+    },
+    "h2": {
+      "size": "38.4px",
+      "lh": "46.848px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": true,
+    "menuBtnVisible": false,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.48,
+        "ratio": 4.34,
+        "text": "terminal"
+      },
+      {
+        "sel": "SPAN.cmt",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "# 然后访问 http://127.0.0.1:7788"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "6px": 4,
+      "14px": 4,
+      "12px": 2
+    },
+    "accordions": 10,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 48
+  },
+  {
+    "page": "help",
+    "url": "/help",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "帮助中心 · 快速上手与常见问题 | Veriforge",
+    "hOverflow": false,
+    "bodyHOverflow": false,
+    "bodyFontSize": "16.32px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [],
+    "contrastFail": [
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.48,
+        "ratio": 4.34,
+        "text": "terminal"
+      },
+      {
+        "sel": "SPAN.cmt",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "# 然后访问 http://127.0.0.1:7788"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "6px": 4,
+      "14px": 4,
+      "12px": 2
+    },
+    "accordions": 10,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  },
+  {
+    "page": "help",
+    "url": "/help",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "帮助中心 · 快速上手与常见问题 | Veriforge",
+    "hOverflow": true,
+    "bodyHOverflow": true,
+    "bodyFontSize": "16px",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "33.6px",
+      "lh": "38.304px",
+      "ls": "-0.504px"
+    },
+    "h2": {
+      "size": "27.2px",
+      "lh": "33.184px"
+    },
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1
+    },
+    "navVisible": false,
+    "menuBtnVisible": true,
+    "clippedText": [
+      {
+        "sel": "P.",
+        "text": "同一失败指纹连续 3 次无进展即熔断。用 veriforge inspect <",
+        "sw": 106,
+        "cw": 101
+      },
+      {
+        "sel": "H3.",
+        "text": "BUDGET_EXCEEDED 太频繁",
+        "sw": 159,
+        "cw": 101
+      },
+      {
+        "sel": "P.",
+        "text": "调高契约中的 maxIterations 与 maxRuntimeMinutes",
+        "sw": 156,
+        "cw": 101
+      }
+    ],
+    "contrastFail": [
+      {
+        "sel": "SPAN.",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 12.48,
+        "ratio": 4.34,
+        "text": "terminal"
+      },
+      {
+        "sel": "SPAN.cmt",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "text": "# 然后访问 http://127.0.0.1:7788"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "text": "NANOFACTORY"
+      }
+    ],
+    "radii": {
+      "11px": 1,
+      "6px": 4,
+      "14px": 4,
+      "12px": 2
+    },
+    "accordions": 10,
+    "inputsNoLabel": 0,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "headerHeight": 52
+  }
+]

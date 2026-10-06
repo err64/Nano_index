@@ -1,4 +1,8 @@
 /* Veriforge 内容后台样式（叠加 main.css 设计令牌） */
+/* 后台无长页滚动需求，页头改静态布局：
+   窄屏下 fixed 头（top:20px + 内边距 + 品牌两行）会压到主内容标题，叠印修复 */
+.site-header{position:static;padding-top:22px}
+#main{padding-top:26px}
 .admin-panel{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
 .admin-panel h2{font-size:1.05rem;font-weight:700}
 .admin-panel .meta{color:var(--subtle);font-size:.82rem;font-family:var(--mono);margin-top:4px}

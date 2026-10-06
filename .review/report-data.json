@@ -1,0 +1,4026 @@
+[
+  {
+    "page": "home",
+    "url": "/",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "Veriforge · 可验证的 AI 编码工人引擎 | NANOFACTORY",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "78.8321px",
+      "lh": "80.4088px",
+      "ls": "-1.57664px",
+      "weight": "400"
+    },
+    "h2": {
+      "size": "41.8199px",
+      "lh": "44.3291px",
+      "ls": "-0.836399px"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/hero-launch.jpg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/console-evidence.png",
+        "broken": false,
+        "alt": "验收标准证据视图：AC1、AC2 均为 VERIFIED，绑定测试命令与退出码"
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "LI.rung",
+        "text": "BASELINE\n            修改前基线运行，记录历史既有失败指纹，",
+        "sw": 204,
+        "cw": 191
+      },
+      {
+        "tag": "LI.rung",
+        "text": "FAST\n            每轮修复后快速回归类型检查与核心单测，在预算内",
+        "sw": 204,
+        "cw": 191
+      },
+      {
+        "tag": "LI.rung",
+        "text": "FULL\n            候选就绪才触发全量套件，通过 FAST 验证是",
+        "sw": 204,
+        "cw": 191
+      },
+      {
+        "tag": "LI.rung",
+        "text": "PROTECTED\n            强制恢复原始测试执行。任何「改测试凑",
+        "sw": 204,
+        "cw": 191
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "P.hero-caption.mt-20",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "测试弱化检测同步运行：新增 .skip、断言批量删除、未受检"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 27,
+    "radii": {
+      "11px": 1,
+      "4.65px": 1,
+      "0px": 22,
+      "20.0387px": 5,
+      "3.485px": 1,
+      "3.04937px": 3,
+      "14px": 5,
+      "10px": 5,
+      "999px": 4,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "home",
+    "url": "/",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "Veriforge · 可验证的 AI 编码工人引擎 | NANOFACTORY",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "68px",
+      "lh": "69.36px",
+      "ls": "-1.36px",
+      "weight": "400"
+    },
+    "h2": {
+      "size": "39.936px",
+      "lh": "42.3322px",
+      "ls": "-0.79872px"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/hero-launch.jpg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/console-evidence.png",
+        "broken": false,
+        "alt": "验收标准证据视图：AC1、AC2 均为 VERIFIED，绑定测试命令与退出码"
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [],
+    "contrast": [
+      {
+        "sel": "P.hero-caption.mt-20",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "测试弱化检测同步运行：新增 .skip、断言批量删除、未受检"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 27,
+    "radii": {
+      "11px": 1,
+      "5px": 1,
+      "0px": 22,
+      "18.0365px": 5,
+      "3.13678px": 1,
+      "2.74468px": 3,
+      "14px": 5,
+      "10px": 5,
+      "999px": 4,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "home",
+    "url": "/",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [],
+    "failedReqs": [],
+    "title": "Veriforge · 可验证的 AI 编码工人引擎 | NANOFACTORY",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "\"STIX Two Text\", \"Noto Serif SC\", \"Songti SC\", SimSun, serif",
+      "size": "38.25px",
+      "lh": "39.015px",
+      "ls": "-0.765px",
+      "weight": "400"
+    },
+    "h2": {
+      "size": "31px",
+      "lh": "32.86px",
+      "ls": "-0.62px"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/hero-launch.jpg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/img/console-evidence.png",
+        "broken": false,
+        "alt": "验收标准证据视图：AC1、AC2 均为 VERIFIED，绑定测试命令与退出码"
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [],
+    "contrast": [
+      {
+        "sel": "P.hero-caption.mt-20",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.44,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "测试弱化检测同步运行：新增 .skip、断言批量删除、未受检"
+      },
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 27,
+    "radii": {
+      "11px": 1,
+      "5px": 1,
+      "0px": 22,
+      "8.34739px": 5,
+      "1.45172px": 1,
+      "1.27026px": 3,
+      "14px": 5,
+      "10px": 5,
+      "999px": 4,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "project",
+    "url": "/project/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/project/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "project",
+    "url": "/project/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/project/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "project",
+    "url": "/project/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/project/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "products",
+    "url": "/products/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/products/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "products",
+    "url": "/products/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/products/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "products",
+    "url": "/products/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/products/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "news",
+    "url": "/news/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/news/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "news",
+    "url": "/news/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/news/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "news",
+    "url": "/news/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/news/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "cases",
+    "url": "/cases/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/cases/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "cases",
+    "url": "/cases/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/cases/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "cases",
+    "url": "/cases/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/cases/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "about",
+    "url": "/about/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/about/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "about",
+    "url": "/about/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/about/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "about",
+    "url": "/about/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/about/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "help",
+    "url": "/help/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/help/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "help",
+    "url": "/help/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/help/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "help",
+    "url": "/help/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/help/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "404",
+    "url": "/this-path-does-not-exist-xyz/",
+    "viewport": "desktop",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/this-path-does-not-exist-xyz/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "flex",
+      "visible": true
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": false,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1440
+  },
+  {
+    "page": "404",
+    "url": "/this-path-does-not-exist-xyz/",
+    "viewport": "tablet",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/this-path-does-not-exist-xyz/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32.64px",
+      "lh": "54.8352px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 163,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 768
+  },
+  {
+    "page": "404",
+    "url": "/this-path-does-not-exist-xyz/",
+    "viewport": "mobile",
+    "status": 404,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/this-path-does-not-exist-xyz/",
+        "status": 404
+      }
+    ],
+    "title": "页面不存在 | Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "32px",
+      "lh": "53.76px",
+      "ls": "normal",
+      "weight": "700"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      },
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "footer": true,
+      "h1Count": 1,
+      "skipLink": true
+    },
+    "nav": {
+      "display": "none",
+      "visible": false
+    },
+    "menuBtn": {
+      "cls": "menu-toggle",
+      "visible": true,
+      "expanded": "false",
+      "label": "菜单"
+    },
+    "clippedText": [
+      {
+        "tag": "H1.sr-only",
+        "text": "页面不存在",
+        "sw": 160,
+        "cw": 1
+      }
+    ],
+    "contrast": [
+      {
+        "sel": "SPAN.brand-sub",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 10.56,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "NANOFACTORY"
+      },
+      {
+        "sel": "DIV.foot-meta",
+        "color": "rgba(255, 255, 255, 0.44)",
+        "fs": 13.76,
+        "ratio": 4.34,
+        "large": false,
+        "fail": true,
+        "text": "© 2026 NANOFACTORY · Veriforge"
+      }
+    ],
+    "contrastSampleCount": 9,
+    "radii": {
+      "11px": 1,
+      "12px": 2
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 375
+  },
+  {
+    "page": "admin",
+    "url": "/admin/",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/admin/api/status",
+        "status": 401
+      }
+    ],
+    "title": "内容后台 · Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "24px",
+      "lh": "40.32px",
+      "ls": "normal",
+      "weight": "740"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": false,
+      "main": true,
+      "footer": false,
+      "h1Count": 2,
+      "skipLink": true
+    },
+    "nav": null,
+    "menuBtn": null,
+    "clippedText": [],
+    "contrast": [],
+    "contrastSampleCount": 3,
+    "radii": {
+      "12px": 3,
+      "10px": 1
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-sm is-hidden",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "14.72px"
+      },
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 1120
+  },
+  {
+    "page": "admin",
+    "url": "/admin/",
+    "viewport": "tablet",
+    "status": 200,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/admin/api/status",
+        "status": 401
+      }
+    ],
+    "title": "内容后台 · Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16.32px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "24px",
+      "lh": "40.32px",
+      "ls": "normal",
+      "weight": "740"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": false,
+      "main": true,
+      "footer": false,
+      "h1Count": 2,
+      "skipLink": true
+    },
+    "nav": null,
+    "menuBtn": null,
+    "clippedText": [],
+    "contrast": [],
+    "contrastSampleCount": 3,
+    "radii": {
+      "12px": 3,
+      "10px": 1
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-sm is-hidden",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "14.72px"
+      },
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 706.546875
+  },
+  {
+    "page": "admin",
+    "url": "/admin/",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleMsgs": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      }
+    ],
+    "failedReqs": [
+      {
+        "url": "http://127.0.0.1:8080/admin/api/status",
+        "status": 401
+      }
+    ],
+    "title": "内容后台 · Veriforge",
+    "hOverflow": false,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "bodyHOverflow": false,
+    "vars": {
+      "--bg": "",
+      "--surface-1": "",
+      "--surface-2": "",
+      "--surface-3": "",
+      "--line": "rgba(255, 255, 255, 0.1)",
+      "--line-strong": "rgba(255, 255, 255, 0.2)",
+      "--text": "#F4F2F0",
+      "--muted": "rgba(255, 255, 255, 0.66)",
+      "--subtle": "rgba(255, 255, 255, 0.44)",
+      "--accent": "#FF7A4D",
+      "--accent-2": "",
+      "--info": "#8FB3FF",
+      "--ok": "#7DCC9A",
+      "--warn": "#E6BB76",
+      "--danger": "#E58989",
+      "--radius": "14px",
+      "--radius-sm": "10px",
+      "--radius-lg": "20px",
+      "--color-void": "#080A19",
+      "--font-display": "'STIX Two Text', 'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+      "--font-ui": "'Switzer', 'Inter', -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      "--font-ui-mono": "'Inter', ui-monospace, Consolas, monospace",
+      "--shadow": "0 24px 60px rgba(2, 4, 16, 0.5)",
+      "--steel": "linear-gradient(135deg,#f4581c,#ff8c2e 38%,#ffc46a 74%,#ffedcf)",
+      "--content": "min(1120px, calc(100vw - 2 * clamp(24px, 4vw, 56px)))",
+      "--secpad": "clamp(72px, 9vw, 128px)"
+    },
+    "bodyFont": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "bodyFontSize": "16px",
+    "bodyBg": "rgb(8, 10, 25)",
+    "bodyColor": "rgb(244, 242, 240)",
+    "h1": {
+      "font": "Switzer, Inter, -apple-system, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "size": "24px",
+      "lh": "40.32px",
+      "ls": "normal",
+      "weight": "740"
+    },
+    "loadedFonts": [],
+    "imgs": [
+      {
+        "src": "/assets/brand/icon.svg",
+        "broken": false,
+        "alt": ""
+      }
+    ],
+    "brokenImgs": [],
+    "missingAlt": [],
+    "landmarks": {
+      "header": true,
+      "nav": false,
+      "main": true,
+      "footer": false,
+      "h1Count": 2,
+      "skipLink": true
+    },
+    "nav": null,
+    "menuBtn": null,
+    "clippedText": [],
+    "contrast": [],
+    "contrastSampleCount": 3,
+    "radii": {
+      "12px": 3,
+      "10px": 1
+    },
+    "focus": {
+      "outline": "solid 2px rgba(255, 255, 255, 0.85)",
+      "boxShadow": "none"
+    },
+    "hasReducedMotion": true,
+    "buttons": [
+      {
+        "cls": "btn btn-sm is-hidden",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "14.72px"
+      },
+      {
+        "cls": "btn btn-primary",
+        "bg": "rgb(233, 233, 233)",
+        "color": "rgb(10, 7, 7)",
+        "radius": "12px",
+        "fs": "15.68px"
+      },
+      {
+        "cls": "btn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15.68px"
+      }
+    ],
+    "mainWidth": 327
+  }
+]

@@ -41,16 +41,16 @@ const PAGES = {
 /* ---------- 内容渲染 ---------- */
 const readData = (name) => JSON.parse(fs.readFileSync(path.join(SRC, "data", name), "utf8"));
 
-const chipClass = { "产品动态": "chip-accent", "工程纪事": "chip-info", "里程碑": "chip-ok" };
+const chipClass = { "产品动态": "chip-accent" };
 
 function newsTeaser(items) {
   const feat = items.find((n) => n.featured) || items[0];
   const rest = items.filter((n) => n !== feat).slice(0, 3);
   const one = (n, isFeat) => `
   <article class="newsitem${isFeat ? " news-feat reveal" : " reveal"}">
-    <time datetime="${n.date}">${n.date}</time>
+    <time datetime="${esc(n.date)}">${esc(n.date)}</time>
     <div>
-      <h3><a href="/news#${n.id}">${esc(n.title)}</a></h3>
+      <h3><a href="/news#${esc(n.id)}">${esc(n.title)}</a></h3>
       <p>${esc(n.summary)}</p>
     </div>
     <span class="chip ${chipClass[n.category] || ""}">${esc(n.category)}</span>
@@ -60,8 +60,8 @@ function newsTeaser(items) {
 
 function newsPageList(items) {
   return items.map((n) => `
-  <article class="newsitem reveal" id="${n.id}">
-    <time datetime="${n.date}">${n.date}</time>
+  <article class="newsitem reveal" id="${esc(n.id)}">
+    <time datetime="${esc(n.date)}">${esc(n.date)}</time>
     <div>
       <h3>${esc(n.title)}</h3>
       ${n.body.map((p) => `<p>${esc(p)}</p>`).join("\n      ")}
@@ -72,7 +72,7 @@ function newsPageList(items) {
 
 function caseList(items) {
   return items.map((c, i) => `
-  <article class="case-row reveal" id="${c.id}">
+  <article class="case-row reveal" id="${esc(c.id)}">
     <div class="case-row__body">
       <div class="case-row__head">
         <span class="chip">${esc(c.industry)}</span>
@@ -180,7 +180,8 @@ function pageLd(id) {
       "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   });
-  return blocks.map((b) => `<script type="application/ld+json">${JSON.stringify(b)}</script>`).join("\n");
+  /* JSON-LD 嵌入 HTML <script>：必须转义 <，防止内容中的 </script> 提前闭合标签注入任意 HTML */
+  return blocks.map((b) => `<script type="application/ld+json">${JSON.stringify(b).replace(/</g, "\\u003c")}</script>`).join("\n");
 }
 
 /* ---------- 模板拼装 ---------- */

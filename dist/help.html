@@ -22,7 +22,7 @@
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
-<link rel="stylesheet" href="/assets/css/main.css?v=20261007a">
+<link rel="stylesheet" href="/assets/css/main.css?v=20261007j">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"shiganghai@gmail.com"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://veriforge.nanofactory.dev/"},{"@type":"ListItem","position":2,"name":"帮助中心","item":"https://veriforge.nanofactory.dev/help"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"运行 Veriforge 需要什么环境？","acceptedAnswer":{"@type":"Answer","text":"Node.js 22.13 至 24（内置 node:sqlite，无需任何原生编译）、pnpm 10 以上与 Git 2.30 以上。容器部署提供 Dockerfile 与生产编排样例。"}},{"@type":"Question","name":"如何在不接入任何大模型的情况下体验完整流程？","acceptedAnswer":{"@type":"Answer","text":"运行 pnpm build && pnpm demo。演示使用 Scripted Runtime 在本地确定性执行：构建真实 Git Worktree、运行真实验证命令、产出真实证据，全程不调用外部模型服务，约 6 秒完成。"}},{"@type":"Question","name":"如何防止模型通过修改或跳过测试来伪造通过？","acceptedAnswer":{"@type":"Answer","text":"三层防线：一是受保护验证，全量验证前用 git restore 将测试目录强制恢复到基线状态再执行；二是弱化检测器，静态扫描新增 .skip、.only、xfail 与断言批量删除；三是完成门禁，任何未受检验的 Diff 一律产生 CRITICAL 级发现并阻断交付。"}},{"@type":"Question","name":"支持哪些 Coding Runtime？可以换模型吗？","acceptedAnswer":{"@type":"Answer","text":"内置 Codex CLI 与 Claude Code 适配器（能力探测、JSONL 事件流、进程树终止保护），以及用于离线演示与测试的 Scripted Runtime。模型由 ModelRouter 按任务复杂度动态路由，超出成本预算自动硬停机。新 Runtime 只需实现统一的异步事件流接口。"}},{"@type":"Question","name":"任务失败或进程崩溃后会发生什么？","acceptedAnswer":{"@type":"Answer","text":"修复循环受迭代数、运行时长与成本三重预算约束；同一失败指纹连续出现两次即注入「假设已证伪」提示，三次无进展判定 BLOCKED。进程失联由调度器按租约超时分类归属，旧 runId 永不复用，任务以全新 runId 重新排队。终态不可逆，历史完整留痕。"}},{"@type":"Question","name":"如何接入 GitHub 自动创建 PR？","acceptedAnswer":{"@type":"Answer","text":"Worker 达成 READY_FOR_REVIEW 时，交付请求与终态在同一 SQLite 事务落库（Transaction Outbox），随后由独立管道推送分支并创建 PR。网络超时不盲目重试：DELIVERY_UNKNOWN 状态先按稳定分支名与精确 headSha 对账，确保永不产生重复 PR。"}},{"@type":"Question","name":"源代码和凭据的安全性如何保障？","acceptedAnswer":{"@type":"Answer","text":"服务默认只绑定 127.0.0.1，对外开放必须显式配置并启用 RBAC 角色令牌；凭据仅存在于 Harness 进程，经环境变量白名单过滤后才进入子进程；出网通知经 URL Guard 校验（拒绝回环、内网段、云元数据端点与 DNS 重绑定）；Webhook 以 HMAC 验签并防重放。"}},{"@type":"Question","name":"数据如何备份与清理？","acceptedAnswer":{"@type":"Answer","text":"内置 db backup（基于 VACUUM INTO 的在线无锁热备份，自动生成 sha256 清单并保留最近 7 份）、db check（完整性检查）与 db prune（按保留天数清理只增历史，支持 --dry-run 预览）。"}},{"@type":"Question","name":"开源协议是什么？可以商用吗？","acceptedAnswer":{"@type":"Answer","text":"MIT 许可证，允许商用、修改与二次分发。核心引擎全部开源，我们销售的是部署支持与试点陪跑服务，不是许可。"}}]}</script>
@@ -341,7 +341,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/main.js?v=20261007a" defer></script>
+<script src="/assets/js/main.js?v=20261007j" defer></script>
 </body>
 </html>
 

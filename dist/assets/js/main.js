@@ -209,7 +209,8 @@
   }
 
   /* ============================================================
-     滚动显现（IntersectionObserver）
+     滚动显现：内容默认可见。仅对首屏之外的元素由 JS 标记 reveal-pending，
+     交由 IO 在进入视口时淡入；IO 失联时 2.5s 兜底强制显形。
      ============================================================ */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
@@ -221,9 +222,21 @@
         }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
+    var vh0 = window.innerHeight;
+    reveals.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      /* 首屏内的元素保持可见，从不隐藏；只有视口外的才参与淡入 */
+      if (r.top < vh0 * 0.92 && r.bottom > 0) return;
+      el.classList.add("reveal-pending");
+      io.observe(el);
+    });
+    /* 兜底：IO 被节流/遮挡时，标记过的元素最终也必须显形 */
+    window.setTimeout(function () {
+      document.querySelectorAll(".reveal-pending:not(.in)").forEach(function (el) {
+        el.classList.add("in");
+        io.unobserve(el);
+      });
+    }, 1200);
   }
 
   /* FAQ 手风琴 */

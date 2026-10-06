@@ -115,11 +115,16 @@
   }
 
   function loadFile() {
-    api("/admin/api/content/" + state.active).then(function (r) {
-      if (r.status !== 200) { status("加载失败", false); return; }
-      state.drafts[state.active] = JSON.stringify(r.data, null, 2);
-      var ta = $("#editor-textarea");
-      if (ta) ta.value = state.drafts[state.active];
+    /* 捕获发起请求时的文件名：响应乱序（快速切换 Tab）时写入正确的草稿槽，
+       且仅在仍是当前 Tab 时才更新编辑器，防止 A 文件内容覆盖 B 文件 */
+    var name = state.active;
+    api("/admin/api/content/" + name).then(function (r) {
+      if (r.status !== 200) { if (name === state.active) status("加载失败", false); return; }
+      state.drafts[name] = JSON.stringify(r.data, null, 2);
+      if (name === state.active) {
+        var ta = $("#editor-textarea");
+        if (ta) ta.value = state.drafts[name];
+      }
     });
   }
 

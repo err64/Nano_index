@@ -32,17 +32,47 @@ const MIME = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".svg": "image/svg+xml", ".png": "image/png", ".ico": "image/x-icon",
+  ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp", ".gif": "image/gif",
+  ".avif": "image/avif",
   ".webmanifest": "application/manifest+json", ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8", ".woff2": "font/woff2",
 };
 
 /* 登录限速：每 IP 每分钟最多 5 次失败 */
 const failLog = new Map();
+const FAILLOG_MAX = 10_000;
 const tooManyFails = (ip) => {
   const now = Date.now();
   const arr = (failLog.get(ip) || []).filter((t) => now - t < 60_000);
   failLog.set(ip, arr);
+  /* 容量上限：海量伪造源 IP 各失败一次会让 Map 无界增长（内存 DoS）。
+     超限时先清除已过期的空条目，仍超限则按插入序淘汰最旧 key。 */
+  if (failLog.size > FAILLOG_MAX) {
+    for (const [k, v] of failLog) {
+      if (!v.some((t) => now - t < 60_000)) failLog.delete(k);
+    }
+    for (const k of failLog.keys()) {
+      if (failLog.size <= FAILLOG_MAX) break;
+      failLog.delete(k);
+    }
+  }
   return arr.length >= 5;
+};
+
+/* 限速键：反代部署（Caddy/nginx）时 remoteAddress 恒为回环地址，若直接以其计键，
+   所有访客共享一个限速桶，攻击者 5 次失败即可锁定全部管理员。
+   因此仅在直连方为回环（即处于文档标准反代部署）时采信 X-Forwarded-For 的
+   最后一跳——该值由直接连接本服务的可信反代追加，无法被上游伪造。
+   直接暴露公网时 remoteAddress 为真实客户端地址，XFF 一律忽略以防伪造绕过。 */
+const clientKey = (req) => {
+  const ra = req.socket.remoteAddress || "?";
+  const loopback = ra === "127.0.0.1" || ra === "::1" || ra === "::ffff:127.0.0.1";
+  if (loopback) {
+    const hops = String(req.headers["x-forwarded-for"] || "")
+      .split(",").map((s) => s.trim()).filter(Boolean);
+    if (hops.length) return hops[hops.length - 1];
+  }
+  return ra;
 };
 
 function securityHeaders(res, isHtml) {
@@ -129,6 +159,38 @@ function runBuild() {
   return { ok: r.status === 0, output: ((r.stdout || "") + (r.stderr || "")).trim() };
 }
 
+/* 内容 schema 校验：在写入入口收敛坏数据与注入面。
+   news 数组为空会使 newsTeaser 构建崩溃，三个文件统一拒绝空数组；
+   id 限 [\w-]+、date 限 ISO 日期，杜绝其进入 HTML 属性位。 */
+const SCHEMAS = {
+  "news.json": (n) => n && typeof n === "object"
+    && typeof n.id === "string" && /^[\w-]+$/.test(n.id)
+    && typeof n.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(n.date)
+    && typeof n.title === "string" && n.title.length > 0
+    && typeof n.summary === "string"
+    && Array.isArray(n.body) && n.body.every((s) => typeof s === "string"),
+  "cases.json": (c) => c && typeof c === "object"
+    && typeof c.id === "string" && /^[\w-]+$/.test(c.id)
+    && typeof c.industry === "string"
+    && typeof c.title === "string" && c.title.length > 0
+    && typeof c.scenario === "string" && typeof c.challenge === "string" && typeof c.solution === "string"
+    && Array.isArray(c.metrics) && c.metrics.every((s) => typeof s === "string")
+    && typeof c.evidence === "string",
+  "faq.json": (f) => f && typeof f === "object"
+    && typeof f.q === "string" && f.q.length > 0
+    && typeof f.a === "string" && f.a.length > 0,
+};
+
+function validateContent(name, arr) {
+  if (!Array.isArray(arr)) return "根节点必须是数组";
+  if (arr.length === 0) return "数组不能为空（至少保留一条内容）";
+  const check = SCHEMAS[name];
+  for (let i = 0; i < arr.length; i++) {
+    if (!check(arr[i])) return `第 ${i + 1} 条数据不符合 ${name} 的内容模型（缺少必填字段或格式错误）`;
+  }
+  return null;
+}
+
 async function handleAdmin(req, res, url) {
   const p = url.pathname;
 
@@ -146,7 +208,7 @@ async function handleAdmin(req, res, url) {
 
   /* 登录 / 登出 */
   if (p === "/admin/api/login" && req.method === "POST") {
-    const ip = req.socket.remoteAddress || "?";
+    const ip = clientKey(req);
     if (tooManyFails(ip)) return send(res, 429, JSON.stringify({ error: "尝试过于频繁，请一分钟后再试" }), MIME[".json"]);
     const body = await readBody(req);
     let token = "";
@@ -175,15 +237,33 @@ async function handleAdmin(req, res, url) {
     }
     if (req.method === "PUT") {
       const body = await readBody(req);
-      try {
-        const parsed = JSON.parse(body);
-        if (!Array.isArray(parsed)) throw new Error("根节点必须是数组");
-        fs.writeFileSync(file, JSON.stringify(parsed, null, 2) + "\n");
-      } catch (e) {
+      let parsed;
+      try { parsed = JSON.parse(body); } catch (e) {
         return send(res, 400, JSON.stringify({ error: "JSON 无效：" + e.message }), MIME[".json"]);
       }
+      const invalid = validateContent(m[1], parsed);
+      if (invalid) return send(res, 400, JSON.stringify({ error: invalid }), MIME[".json"]);
+
+      /* 原子写入（临时文件 + rename）；构建失败自动回滚数据并重建，
+         避免「文件已坏、dist 停在旧版、此后每次重建都失败」的不可自恢复状态 */
+      const tmp = file + ".tmp";
+      const orig = fs.existsSync(file) ? fs.readFileSync(file) : null;
+      fs.writeFileSync(tmp, JSON.stringify(parsed, null, 2) + "\n");
+      fs.renameSync(tmp, file);
       const build = runBuild();
-      return send(res, build.ok ? 200 : 500, JSON.stringify({ ok: build.ok, build: build.output }), MIME[".json"]);
+      if (!build.ok) {
+        if (orig !== null) {
+          fs.writeFileSync(tmp, orig);
+          fs.renameSync(tmp, file);
+        }
+        const restore = runBuild();
+        return send(res, 500, JSON.stringify({
+          error: "构建失败，数据已回滚到修改前版本",
+          build: build.output,
+          rollback: restore.ok ? "已按原数据重建，站点保持一致" : "回滚后重建仍失败，请检查 src/data 与手动重建",
+        }), MIME[".json"]);
+      }
+      return send(res, 200, JSON.stringify({ ok: true, build: build.output }), MIME[".json"]);
     }
   }
   if (p === "/admin/api/rebuild" && req.method === "POST") {
@@ -201,6 +281,28 @@ async function handleAdmin(req, res, url) {
 }
 
 /* ---------- 服务器 ---------- */
+/* 启动期校验：dist 内出现的扩展名必须都在 MIME 表内。
+   未映射的类型会按 application/octet-stream 下发，叠加 nosniff 后浏览器将拒绝渲染（如图片破图）。 */
+function validateDistMime() {
+  if (!fs.existsSync(DIST)) return;
+  const unknown = new Set();
+  const stack = [DIST];
+  while (stack.length) {
+    const dir = stack.pop();
+    for (const f of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (f.isDirectory()) stack.push(path.join(dir, f.name));
+      else {
+        const ext = path.extname(f.name).toLowerCase();
+        if (ext && !MIME[ext]) unknown.add(ext);
+      }
+    }
+  }
+  if (unknown.size) {
+    console.warn(`[veriforge-site] 警告: dist 存在未映射 MIME 的扩展名: ${[...unknown].join(" ")} —— 请在 MIME 表补齐，否则会被 nosniff 阻断`);
+  }
+}
+validateDistMime();
+
 const server = http.createServer(async (req, res) => {
   let url;
   try { url = new URL(req.url, `http://${req.headers.host || "localhost"}`); }
@@ -215,6 +317,15 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method !== "GET" && req.method !== "HEAD") {
     return send(res, 405, "Method Not Allowed", MIME[".txt"]);
+  }
+
+  /* 目录式 URL 规范化：/project/ → 301 /project（与页面 canonical 一致，避免重复内容） */
+  if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
+    securityHeaders(res, false);
+    res.statusCode = 301;
+    res.setHeader("Location", url.pathname.replace(/\/+$/, "") || "/");
+    res.setHeader("Content-Length", "0");
+    return res.end();
   }
 
   const file = resolveStatic(url.pathname);
