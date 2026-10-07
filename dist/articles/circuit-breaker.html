@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>同因失败 3 次就熔断，省下 42% 预算 | Veriforge 实践系列</title>
+<meta name="description" content="agent 不会喊停：同一失败签名连续 3 轮无可测量进展即熔断。失败指纹的数学化、三段式处置、42% 的账，以及它诚实的边界。">
+<link rel="canonical" href="https://veriforge.nanofactory.dev/articles/circuit-breaker">
+<meta name="theme-color" content="#080A19">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Veriforge">
+<meta property="og:title" content="同因失败 3 次就熔断，省下 42% 预算 | Veriforge 实践系列">
+<meta property="og:description" content="agent 不会喊停：同一失败签名连续 3 轮无可测量进展即熔断。失败指纹的数学化、三段式处置、42% 的账，以及它诚实的边界。">
+<meta property="og:url" content="https://veriforge.nanofactory.dev/articles/circuit-breaker">
+<meta property="og:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="同因失败 3 次就熔断，省下 42% 预算 | Veriforge 实践系列">
+<meta name="twitter:description" content="agent 不会喊停：同一失败签名连续 3 轮无可测量进展即熔断。失败指纹的数学化、三段式处置、42% 的账，以及它诚实的边界。">
+<meta name="twitter:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
+<link rel="stylesheet" href="/assets/css/main.css?v=20261007l">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"shiganghai@gmail.com"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"同因失败 3 次就熔断，省下 42% 预算","description":"agent 不会喊停：同一失败签名连续 3 轮无可测量进展即熔断。失败指纹的数学化、三段式处置、42% 的账，以及它诚实的边界。","datePublished":"2026-10-07","url":"https://veriforge.nanofactory.dev/articles/circuit-breaker","mainEntityOfPage":"https://veriforge.nanofactory.dev/articles/circuit-breaker","author":{"@id":"https://veriforge.nanofactory.dev/#org"},"publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Veriforge 首页">
+      <img class="brand__mark" src="/assets/brand/icon.svg" alt="" width="38" height="38" aria-hidden="true">
+      <span class="brand__name">Veriforge</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="菜单">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="移动端导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <a href="/articles">技术文章</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">正文</span>
+      </nav>
+      <p class="article-kicker"><span class="chip chip-warn">成本治理</span></p>
+      <h1 id="ph-h">同因失败 3 次就熔断，省下 42% 预算</h1>
+      <p class="article-meta">发表于 <time datetime="2026-10-07">2026-10-07</time> · Veriforge 实践系列 第 3 篇 · 阅读约 15 分钟</p>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="ph-h">
+    <div class="container">
+      <article class="article">
+<blockquote><p>这是 Veriforge 实践系列的第三篇。第一篇讲防作弊（AI 改测试凑通过），第二篇讲可复现（五级验证阶梯），这一篇讲一个更现实的问题：<strong>钱</strong>。当一个编码 agent 在原地打转时，谁有权喊停？</p></blockquote>
+<h2>一、agent 不会喊停</h2>
+<p>先看一次真实的失败运行（数字细节已做脱敏，形状是真实的）。</p>
+<p>一个&quot;修复并发重复下单&quot;的任务交给 agent，<code>maxIterations = 6</code>。第 1 轮 repair，它给订单服务加了检查，测试还挂着同样 2 个失败。第 2 轮，它把检查换成了数据库唯一索引，还是那 2 个失败。第 3 轮，它给 webhook 加了幂等表——注意，思路确实在换，但每次都没换到点子上，测试输出里的失败签名一模一样。第 4、5、6 轮继续。最终 <code>BUDGET_EXCEEDED</code>，一无所获。</p>
+<p>这笔账单上每一行都是真实的成本：每一轮 REPAIR 是一次带着完整失败上下文的模型调用——这类调用恰恰是整个流程里最贵的，因为它要携带失败摘要、当前 diff、历史尝试记录；每一轮之间还夹着一次 FAST 验证，挂着 CI 的墙钟。六轮下来，真金白银的模型费和五十多分钟墙钟全部沉没，<strong>产出的预期收益为零</strong>。</p>
+<p>问题不在模型不够聪明——换个更强的模型，它可能第 2 轮就解出来，也可能第 4 轮才解出来，你永远不知道。问题在于一个结构性的真空：<strong>这个系统里没有任何一方有立场、有依据、有权限喊停</strong>。</p>
+<ul><li>模型不会喊。它对&quot;这轮修复有没有实质进展&quot;的判断是乐观的——每一次生成都感觉接近成功，何况它根本看不到账单。</li><li>人不该喊。让人盯着每次运行、在第 3 轮失败时人肉判断&quot;要不要杀掉&quot;，等于把自动化省下的人力又还了回去。</li><li>预算上限不会及时喊。<code>maxIterations</code> 是最后防线，但它是定时器，不是熔断器——下文详述。</li></ul>
+<p>Veriforge 的答案是一个确定性熔断器：<strong>同一失败签名连续 3 轮无可测量进展，立即终止，不再进入下一轮修复。</strong> 这篇文章讲它的机制、它的账，和它诚实的边界。</p>
+<h2>二、迭代上限是定时器，不是熔断器</h2>
+<p>一个常见的误解是：预算上限本身就是熔断。不是。<code>maxIterations</code> 回答的问题是&quot;最多允许几轮&quot;，而熔断器要回答的问题是&quot;<strong>还有没有理由继续</strong>&quot;。这是两个正交的问题，混在一起会两头都错：</p>
+<p><strong>卡死的任务烧满预算。</strong> 上面的例子就是：6 轮全部花在一个签名完全相同的失败上。上限在第 6 轮才生效，前 3 轮的沉没成本里没有一分钱花在改变结果的可能性上。</p>
+<p><strong>有进展的任务被一刀切。</strong> 反过来，如果一个任务每轮都在真实改善——失败数 10 → 7 → 4 → 2 → 通过——你不会想在任何一轮掐掉它。一刀切的定时器只能选择一个对所有任务都错的数字。</p>
+<p>熔断器的本质区别在于它<strong>感知故障的特征</strong>，而不只是故障的次数。电力系统的熔断器不看&quot;今天用电多久&quot;，看电流是否异常；修复循环的熔断器不看&quot;修了几轮&quot;，看<strong>失败是否在实质上原地踏步</strong>。我们的端到端测试里专门有一条以这个性质命名——&quot;Case 3: repeated identical failure -&gt; BLOCKED with <strong>bounded runtime calls (no infinite loop)</strong>&quot;：卡死必须被拦截，且运行时调用次数必须有界。</p>
+<p>要实现&quot;感知特征&quot;，第一个前提是把&quot;同一个失败&quot;变成机器可比对的数学对象。</p>
+<h2>三、&quot;同因&quot;的数学化：失败指纹</h2>
+<p>&quot;同因失败&quot;在人类嘴里是一个模糊判断，在熔断器里必须是一个精确谓词。Veriforge 的定义分两层。</p>
+<p><strong>第一层：单条失败的指纹。</strong> 每条失败的验证命令产出四元组——命令本身、从输出中提取的失败测试名集合（排序后拼接）、错误类型（<code>TypeError</code>、<code>AssertionError</code>……）、规范化后的错误消息——对四元组做 sha256：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-1"><span>复制</span></button></figcaption><pre><code id="code-1">export function computeFailureFingerprint(command: string, info: FailureInfo): string {
+  const parts = [
+    command.trim(),
+    [...info.testNames].sort().join(&quot;|&quot;),
+    info.errorType ?? &quot;&quot;,
+    info.normalizedMessage,
+  ];
+  return sha256Hex(parts.join(&quot;||&quot;));
+}</code></pre></figure>
+<p><code>normalizedMessage</code> 是整个机制的命门。原始测试输出是不可哈希的：时间戳每秒不同，耗时毫秒级抖动，内存地址每次分配都变，ANSI 颜色码看终端心情。规范化干四件事：剥离五类易变模式（时间戳 / 耗时 / 内存地址 / 长十六进制 / ANSI 残留）、只保留含 <code>error|fail|expect|assert|exception|not ok|timeout|traceback…</code> 关键词的行、去重、40 行封顶。</p>
+<p>还有一个刻意的取舍：<strong>行号不参与哈希</strong>。<code>src/cart.js:42</code> 的失败在代码位移后会变成 <code>:47</code>——同一根因的两个 run 会因为行号不同而得到不同指纹，熔断器将永不跳闸。指纹绑定的是逻辑失败（哪个测试、什么异常、什么消息），不是文本失败。</p>
+<p><strong>第二层：整轮验证的签名。</strong> 一轮 FAST 验证可能挂多条命令、每条命令可能报多个失败。整轮的签名定义为：把本轮所有失败指纹收集起来、排序、拼接：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-2"><span>复制</span></button></figcaption><pre><code id="code-2">export function runFailureSignature(run: VerificationRun): string {
+  const parts = [...fingerprintSet(run)].sort();
+  return parts.length === 0 ? &quot;&quot; : parts.join(&quot;|&quot;);
+}</code></pre></figure>
+<p>为什么要整轮签名而不是只比失败条数？因为&quot;2 个失败&quot;和&quot;2 个失败&quot;可能根本不是同一堵墙——上一轮挂的是超时和断言，这一轮挂的是另外两个断言，条数没变，问题换了。签名同时编码了<strong>哪些失败</strong>和<strong>失败集合的恒定性</strong>，排序保证了与出现顺序无关。</p>
+<p>指纹的质量决定熔断器的精度上限，这是一对必须直面的两难：归一化太弱（比如直接哈希原始输出），时间戳和行号会让同因失败每次都&quot;不同&quot;，熔断器永不动作；归一化太强（比如只比错误类型），两个不同根因会被压成同一个指纹，熔断器会误杀。40 行封顶加关键词过滤是我们在&quot;丢掉噪声&quot;和&quot;保留根因特征&quot;之间反复调整后落下的位置。</p>
+<h2>四、进展的四种状态：模型无权自评</h2>
+<p>有了签名，&quot;有没有进展&quot;就变成一个可以纯确定性回答的问题。<code>progress-detector.ts</code> 全文核心只有一个函数：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-3"><span>复制</span></button></figcaption><pre><code id="code-3">export function evaluateProgress(previousFailedRun, currentRun): ProgressDecision {
+  if (currentRun.ok) return { progress: &quot;IMPROVING&quot;, reason: &quot;verification run passed&quot; };
+
+  const currentFailures = failedResults(currentRun).length;
+  if (!previousFailedRun) return { progress: &quot;UNKNOWN&quot;, reason: &quot;first observed failure for this candidate line&quot; };
+
+  const previousFailures = failedResults(previousFailedRun).length;
+  const sameSignature =
+    runFailureSignature(currentRun) !== &quot;&quot; &amp;&amp;
+    runFailureSignature(currentRun) === runFailureSignature(previousFailedRun);
+
+  if (currentFailures &gt; previousFailures) return { progress: &quot;REGRESSING&quot;, ... };
+  if (currentFailures &lt; previousFailures) return { progress: &quot;IMPROVING&quot;, ... };
+  if (sameSignature)             return { progress: &quot;UNCHANGED&quot;, ... };
+  return { progress: &quot;UNKNOWN&quot;, ... };  // 数量相同但失败不同：横向移动
+}</code></pre></figure>
+<p>四种状态的语义值得逐个咂摸：</p>
+<ul><li><strong>IMPROVING</strong>：通过，或失败数下降。哪怕只少了一个失败，也算——量变值得继续投入。</li><li><strong>REGRESSING</strong>：失败数上升。改坏了。</li><li><strong>UNCHANGED</strong>：失败数不变<strong>且签名完全相同</strong>。这是熔断器的信号态：不仅没有变好，连失败的&quot;内容&quot;都一模一样——这一轮和上一轮在验证器眼里是不可区分的两次世界状态。</li><li><strong>UNKNOWN</strong>：失败数相同但失败不同。在横跳，既没变好也没变坏，但也谈不上原地踏步——给它在置信区间外留的位置。</li></ul>
+<p>两条设计公理藏在其中。<strong>其一，判定只消费验证记录，不消费模型的任何自述。</strong> agent 在 repair 输出里说&quot;这轮我找到了真正的根因&quot;——熔断器对此没有耳朵，它只看下一轮验证的签名。<strong>其二，状态必须能反过来终止模型的行为</strong>（下一节），否则判定只是仪式。</p>
+<h2>五、三段式处置：轻推、观察、熔断</h2>
+<p>检测到&quot;原地踏步&quot;之后怎么办？Veriforge 不是一刀切，而是一个三段式的梯度，全部由 harness 代码拥有，模型只接收结果。</p>
+<p><strong>第一段：轻推（同签名第 2 次）。</strong> 同一签名连续出现 2 次时，系统还不动手，但会把一个明确的信号写进下一轮 REPAIR 的运行时上下文：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-4"><span>复制</span></button></figcaption><pre><code id="code-4">// context-builder.ts —— 注入 RuntimeContext 的字段
+latestFailures,        // 最新失败的命令、指纹、输出摘录、pre-existing 标注
+repeatedFailure: state.progress.repeatedFailureCount &gt;= 2,
+noProgressIterations: state.progress.noProgressIterations,
+knownFailureMemory,    // 跨 run 的失败记忆：同一指纹过去在哪些 run 出现过</code></pre></figure>
+<p><code>repeatedFailure: true</code> 翻译成人话就是：&quot;你上一轮的假设错了，换一个。&quot;同时注入的还有最近 3 次尝试的摘要（<code>attemptSummaries.slice(-3)</code>）——让 agent 看见自己走过的弯路，而不是只在同一个坑附近打转。这一段是给模型的机会，成本几乎为零。</p>
+<p><strong>第二段：观察。</strong> 轻推之后再给一轮。如果 agent 换了假设，签名会变（UNCHANGED 打断，计数归零）；如果它没换，签名第三次原样出现。</p>
+<p><strong>第三段：熔断。</strong> <code>UNCHANGED</code> 累计到 3，<code>decideRepair</code> 直接转向 BLOCKED：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-5"><span>复制</span></button></figcaption><pre><code id="code-5">// worker.ts
+const NO_PROGRESS_BLOCK_THRESHOLD = 3;
+
+if (this.state.progress.noProgressIterations &gt;= NO_PROGRESS_BLOCK_THRESHOLD) {
+  const reason =
+    `no measurable progress for ${this.state.progress.noProgressIterations} consecutive failed verification runs ` +
+    `(last failure signature ${this.state.progress.previousFailureFingerprint?.slice(0, 16) ?? &quot;n/a&quot;})`;
+  this.state.blockReason = reason;
+  this.state.pendingUnresolved.push({ type: &quot;NO_PROGRESS&quot;, description: reason });
+  await this.transitionTo(&quot;BLOCKED&quot;, `${fromPhase} FAIL -&gt; BLOCKED (no progress)`);
+  return;
+}</code></pre></figure>
+<p>三个实现细节都是有意为之。<strong>其一，熔断结论自带证据指针</strong>：blockReason 里带失败签名的前 16 位十六进制，拿着它去事件库一查，就能看到这三次失败每一次的完整命令、输出摘录和指纹——熔断不是黑箱判决，是可以重放的裁定。<strong>其二，检查顺序在预算检查之前</strong>：先判&quot;没进展&quot;再判&quot;没预算&quot;，所以卡死的任务终态是 BLOCKED 而不是 BUDGET_EXCEEDED。这两个终态在人工收件箱里的语义完全不同——BLOCKED 的意思是&quot;这个任务值得一个人看一眼，它卡住了，证据在这里&quot;；BUDGET_EXCEEDED 的意思只是&quot;钱花完了&quot;。让卡死的任务披着&quot;超预算&quot;的外衣沉底，是最可惜的一种浪费：明明已经有了完整的诊断材料，却没有人去看它。<strong>其三，<code>NO_PROGRESS</code> 同时作为 WARNING 级 finding 和 unresolved 项留痕</strong>，进入最终 WorkerResult。</p>
+<p><strong>为什么是 3，不是 2 或 5？</strong> 论证是一个简单的期望收益计算：当签名完全相同时，第 N 轮的初始信息状态与第 N−1 轮几乎一致（仅多了一句&quot;你已经失败过一次&quot;），其期望产出约等于上一轮——上一轮的产出是零。边际期望收益为零、成本恒正的行动，多执行一轮都是纯亏损。但第 2 次与第 1 次之间有一个例外：第 2 次失败时 agent 还没收到&quot;你在重复&quot;的信号，它的循环可能只是缺一面镜子。所以 2 次触发轻推、3 次熔断，把&quot;给机会&quot;压缩到恰好一次。至于 5——每一次额外的等待都是在为&quot;也许下轮就好&quot;支付确定性成本，而这句话在签名相同时没有任何信息含量。</p>
+<h2>六、省下 42% 的账</h2>
+<p>现在兑现标题。先说清楚口径：下面是一次<strong>算例</strong>（仓库自己的商业方案文档同款惯例——数字是算例，不是实测基准），但成本结构来自 Veriforge 真实记录的分阶段用量遥测（<code>WorkerResult.usage.byPhase</code> 按阶段记 token 与费用），任何人拿自己的数据两行脚本就能算出自己的版本。</p>
+<p><strong>成本模型。</strong> 一次运行的成本 = 前情固定成本 F + 每轮修复成本 R × 轮数：</p>
+<ul><li><strong>F（前情）</strong>：BASELINE（基线命令执行，无模型费但占墙钟）+ DISCOVER + PLAN + 首次 EDIT；</li><li><strong>R（每轮）</strong>：一次 REPAIR 调用 + 一次 FAST 验证。注意 R 往往<strong>贵过</strong> F 里的任何单项——REPAIR 是全流程携带上下文最重的调用（失败摘要 + 当前 diff + 尝试历史 + 失败记忆全部注入）。</li></ul>
+<p><strong>算例参数</strong>（<code>maxIterations = 6</code>，与示例契约一致）：</p>
+<div class="table-scroll"><table><thead><tr><th>项</th><th>模型费</th><th>墙钟</th></tr></thead><tbody><tr><td>前情 F（DISCOVER 0.9 + PLAN 0.6 + EDIT 1.0；墙钟 2+1+3+基线 4）</td><td>¥2.5</td><td>10 min</td></tr><tr><td>每轮 R（REPAIR 2.2；墙钟 3+FAST 套件 4）</td><td>¥2.2</td><td>7 min</td></tr></tbody></table></div>
+<p><strong>两条命运的分岔</strong>：</p>
+<div class="table-scroll"><table><thead><tr><th></th><th>无熔断（烧穿）</th><th>有熔断（3 轮 BLOCKED）</th></tr></thead><tbody><tr><td>模型费</td><td>2.5 + 6×2.2 = <strong>¥15.7</strong></td><td>2.5 + 3×2.2 = <strong>¥9.1</strong></td></tr><tr><td>墙钟</td><td>10 + 6×7 = <strong>52 min</strong></td><td>10 + 3×7 = <strong>31 min</strong></td></tr><tr><td>迭代预算</td><td>6 轮</td><td>3 轮</td></tr></tbody></table></div>
+<p>节省：模型费 <strong>42%</strong>（6.6 / 15.7），墙钟 40%，迭代预算 50%。标题取的是模型费那一项。</p>
+<p><strong>这个数字的敏感性边界</strong>值得摆出来，免得读者拿去当普适常数。一般化公式：<code>节省 = (N−T)·R / (F + N·R)</code>，其中 N 是迭代上限、T 是熔断阈值。两个极限：当 R 远大于 F（repair 极贵），节省趋近轮数比 <code>(N−T)/N</code> = 50%；当 F 远大于 R（前情极重、修复极便宜），节省趋近 0。42% 对应 R ≈ 0.88F——&quot;一轮带全套失败上下文的 repair，略贵于理解任务并做完首次修改的总和&quot;，这恰好是 REPAIR 调用上下文最重这一结构性事实的合理投影。<strong>你的 N、T、F、R 与你的契约和模型定价一一对应，请代入你自己的遥测</strong>——但只要 R 不是小到可以忽略，三倍于熔断阈值的烧穿 waste 就稳定存在。</p>
+<p>比数字更重要的，是被省下的那部分成本的<strong>性质</strong>：它不是&quot;为了省钱省掉的验证&quot;，而是<strong>预期收益为零的支出</strong>。签名相同时，第 N 轮买到的是一张已知不会中奖的彩票。熔断器省下的每一分钱，都是拒绝购买这种彩票的钱。</p>
+<h2>七、熔断之后：从黑洞变成工单</h2>
+<p>熔断不是把失败的任务扔掉，而是把一个<strong>无限烧钱的黑洞</strong>转换成一个<strong>带完整证据的人工决策点</strong>。到达 BLOCKED 时，这个 run 已经拥有：</p>
+<ul><li><code>blockReason</code>：可读的原因，带签名指针；</li><li>完整的三轮失败记录：每轮的命令、指纹、输出摘录、时长，全部持久化在 append-only 事件库里；</li><li><code>NO_PROGRESS</code> finding 与 unresolved 项，进入 WorkerResult；</li><li>一个仍然保留的隔离 worktree（默认 <code>--keep-workspace</code>），agent 最后一次尝试的现场原样可查。</li></ul>
+<p>Web 控制台的收件箱把 BLOCKED 归入&quot;需要处理&quot;类，人工介入后有两条路：直接接手修复（现场都在），或者点击 retry——以<strong>冻结的契约</strong>开启一个全新 <code>runId</code>，旧 run 原样保留、永不覆盖。新 run 不是从零开始：跨 run 的失败记忆会把旧 run 里同指纹的失败历史注入新 run 的 REPAIR 上下文——第 N 次尝试的人类与机器，都站在前 N−1 次的肩膀上，而不是重复前 N−1 次的坑。</p>
+<p>还有一条更长的回声：当<strong>同一个指纹</strong>跨 ≥3 个独立 run 反复出现，失败记忆会生成一条 flaky 隔离提案。这一刻，单次运行里&quot;看似原地踏步&quot;的失败，在跨运行的视角下被重新归类——它可能根本不是 agent 的问题，而是一个间歇性测试在污染所有经过它的修复任务。</p>
+<h2>八、诚实的边界</h2>
+<p>熔断器不是免费午餐，四个已知边界我们都踩到过：</p>
+<p><strong>指纹交替绕过熔断。</strong> 熔断触发条件是签名<strong>完全相同</strong>。如果一个 flaky 测试导致失败集合在 A、B 两种状态间交替（A→B→A→B），每轮签名都不同，判定落在 UNKNOWN——既非 IMPROVING 也非 UNCHANGED——计数不增不减，最终烧穿预算，以 BUDGET_EXCEEDED 终结。这是当前真实存在的漏洞，缓解手段是跨 run 的 flaky 提案机制（上面第七节），但那是事后追认，不是实时熔断。更彻底的方案（把 UNKNOWN 也纳入加权计数）会增加误杀横跳型 agent 的风险，我们选择保留这个边界并如实呈现。</p>
+<p><strong>慢爬行不受保护。</strong> 每轮只要失败数下降哪怕 1，就是 IMPROVING，计数清零，永不熔断。一个&quot;每轮修好一个失败、总共 500 个失败&quot;的任务会一路爬到预算耗尽。这是有意的设计而非疏忽：有可测量改善就继续投入是熔断器的另一面承诺，病态案例由预算上限兜底——两道防线各司其职。</p>
+<p><strong>归一化碰撞的残余风险。</strong> 规范化丢掉的信息里，理论上可能包含区分两个不同根因的细节（40 行封顶之后的报错堆栈被截断）。后果是误熔断——把两次不同的失败判成同因。我们把这类错误的代价设计为可恢复：BLOCKED 只是终态之一，人工看一眼证据就能推翻，重开新 run 的成本远低于误熔断省下的成本。</p>
+<p><strong>指纹依赖输出的可解析性。</strong> 极端格式化的测试框架（或严重交织的并行输出）可能让测试名提取失败，退化后指纹只由命令 + 错误消息构成，精度下降。这也是我们把 <code>verification.reproduce</code> 命令放进契约的原因——它今天已经采集、尚未参与判定（这是 README 里如实承认的待办），未来用于把&quot;同因&quot;的判定从输出特征推进到复现特征。</p>
+<h2>九、结语：乐观的是模型，悲观的是账本</h2>
+<p>三篇文章到这里可以合成一句话了。</p>
+<p>第一篇说：<strong>验证结论不能由被验证的一方书写</strong>——所以测试弱化要被检测、完成判定权要收归 harness。第二篇说：<strong>每条结论都要能还原成可重放的证据</strong>——所以要有五级阶梯、失败指纹和哈希链。而这一篇说的是第三件事：<strong>验证体系不仅要说&quot;对不对&quot;，还要说&quot;值不值&quot;</strong>。</p>
+<p>修复循环是一个优化器，而一切没有止损机制的优化器最终都会把预算花在零收益的路径上——这不是智能水平问题，是任何 optimizers 的通病，加多少算力都一样。熔断器的全部哲学浓缩起来是一组不对称：<strong>对&quot;是否继续&quot;保持悲观（签名相同就停），对&quot;如何修复&quot;保持乐观（轻推之后给足机会），对&quot;为什么停&quot;保持诚实（结论自带可重放的证据链）。</strong></p>
+<p>模型负责乐观。账本负责悲观。而让账本有资格在正确的时刻开口说出那个数字——是治理的工作。</p>
+      </article>
+      <nav class="series-nav" aria-label="系列文章">
+        <a class="series-nav__item series-nav__item--prev" href="/articles/verification-ladder"><span>上一篇</span><b>我们如何用五级验证阶梯让 AI 交付可复现</b></a><span class="series-nav__item series-nav__item--next is-empty" aria-hidden="true">系列待续</span>
+      </nav>
+      <p class="card-link mt-20 series-back"><a class="link-more" href="/articles">返回全部文章<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="Veriforge 首页">
+          <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+          <span>
+            <span class="brand-name">Veriforge</span>
+            <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+          </span>
+        </a>
+        <p>生产级可验证 AI 编码工人 Harness 与控制平面。Coding Runtime 负责理解和修改代码，Harness 独占验证、预算与完成判定。</p>
+      </div>
+      <nav class="foot-col" aria-label="产品">
+        <h3>产品</h3>
+        <ul>
+          <li><a href="/products">产品与服务</a></li>
+          <li><a href="/cases">用户案例</a></li>
+          <li><a href="/help">帮助中心</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="项目">
+        <h3>项目</h3>
+        <ul>
+          <li><a href="/project">项目介绍</a></li>
+          <li><a href="/articles">技术文章</a></li>
+          <li><a href="https://github.com/nano-factory/veriforge" rel="noopener">GitHub 仓库</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="联系">
+        <h3>联系</h3>
+        <ul>
+          <li><a href="/about#contact">申请试点</a></li>
+          <li><a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a></li>
+          <li><a href="/about">关于实验室</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 NANOFACTORY · Veriforge 基于 MIT 许可证开源</span>
+      <span>全站 HTTPS 加密 · <a href="/help">无障碍说明</a></span>
+      <!-- TODO 上线前：替换为真实 ICP 备案号 -->
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=20261007j" defer></script>
+</body>
+</html>
+

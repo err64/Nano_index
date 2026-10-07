@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Veriforge · 可验证的 AI 编码工人引擎 | NANOFACTORY</title>
 <meta name="description" content="Veriforge 在隔离的 Git Worktree 中驱动 Codex、Claude Code 等编码模型完成真实代码修改，以五级防篡改验证阶梯与机器证据链裁决每一次 AI 交付。">
 <link rel="canonical" href="https://veriforge.nanofactory.dev/">
@@ -22,7 +23,7 @@
 <link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
-<link rel="stylesheet" href="/assets/css/main.css?v=20261007j">
+<link rel="stylesheet" href="/assets/css/main.css?v=20261007l">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"shiganghai@gmail.com"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
 
 </head>
@@ -40,8 +41,8 @@
       <a href="/project" data-nav="project">项目介绍</a>
       <a href="/products" data-nav="products">产品与服务</a>
       <a href="/cases" data-nav="cases">用户案例</a>
-      <a href="/news" data-nav="news">新闻动态</a>
-      <a href="/about" data-nav="about">关于我们</a>
+      <a href="/articles" data-nav="articles">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
       <a href="/help" data-nav="help">帮助中心</a>
     </nav>
     <div class="header-actions">
@@ -59,8 +60,8 @@
       <a href="/project" data-nav="project">项目介绍</a>
       <a href="/products" data-nav="products">产品与服务</a>
       <a href="/cases" data-nav="cases">用户案例</a>
-      <a href="/news" data-nav="news">新闻动态</a>
-      <a href="/about" data-nav="about">关于我们</a>
+      <a href="/articles" data-nav="articles">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
       <a href="/help" data-nav="help">帮助中心</a>
     </nav>
     <div class="mobile-menu__actions">
@@ -89,8 +90,8 @@
       <div class="hero__content">
         <p class="hero__badge">
           <span class="hero__badge-row">
-            <span class="hero__badge-label">出品方</span>
-            <span class="hero__badge-logo">NANOFACTORY · MIT 开源</span>
+            <span class="hero__badge-label">独立实验室</span>
+            <span class="hero__badge-logo">NANOFACTORY · MIT</span>
           </span>
         </p>
         <h1 class="hero__title">
@@ -98,6 +99,7 @@
           <span class="line"><span class="line__in"><span class="steel">证据</span>负责放行<span class="hang">。</span></span></span>
         </h1>
         <p class="hero__subtitle">在隔离的 Git Worktree 中驱动真实编码运行时，以五级防篡改验证与机器证据链裁决每一次 AI 交付。</p>
+        <p class="hero__cred">NANOFACTORY 是独立实验室，由一人维护。MIT 协议，公开构建，所有验证证据可复现。</p>
       </div>
 
       <div class="platform__content">
@@ -395,48 +397,40 @@
     </div>
   </section>
 
-  <!-- 新闻速览 -->
-  <section class="section" aria-labelledby="news-h">
+  <!-- 技术长文速览 -->
+  <section class="section" aria-labelledby="articles-h">
     <div class="container">
       <div class="section-head reveal">
-        <h2 id="news-h">项目动态</h2>
+        <h2 id="articles-h">技术长文</h2>
+        <p>不承诺魔法，只拆解证据：防作弊、可复现、成本治理，全部机制来自真实实现。</p>
       </div>
       
   <article class="newsitem news-feat reveal">
-    <time datetime="2026-10-06">2026-10-06</time>
+    <time datetime="2026-10-05">2026-10-05</time>
     <div>
-      <h3><a href="/news#2026-10-06-production-docker">容器化生产就绪：Docker 编排更新，单机运维手册定稿</a></h3>
-      <p>Dockerfile 与生产编排文件更新，发布覆盖备份、保留期与调度器常驻的单机运维手册，私有化部署收敛为一条 compose 命令。</p>
+      <h3><a href="/articles/test-weakening">AI 编码最危险的不是写错，是改测试凑通过</a></h3>
+      <p>写错代码是能力问题，会随模型升级缓解；改测试凑通过是激励结构问题，模型越强越隐蔽。拆解五种篡改手法，以及 diff 形状检测、保护验证、变异自检与红绿合成的四层反制。</p>
     </div>
-    <span class="chip chip-accent">产品动态</span>
+    <span class="chip chip-danger">防作弊</span>
   </article>
   <article class="newsitem reveal">
-    <time datetime="2026-10-01">2026-10-01</time>
+    <time datetime="2026-10-07">2026-10-07</time>
     <div>
-      <h3><a href="/news#2026-10-01-review-round2">第二轮系统性审查完成：首轮整改逐项核验通过</a></h3>
-      <p>对首轮 8 项高危问题的修复质量逐项核验，CSRF 防护、状态守卫与命令注入面等关键项确认收敛，新发现按高危、中危、低危分级跟进。</p>
+      <h3><a href="/articles/circuit-breaker">同因失败 3 次就熔断，省下 42% 预算</a></h3>
+      <p>agent 不会喊停：同一失败签名连续 3 轮无可测量进展即熔断。失败指纹的数学化、三段式处置、42% 的账，以及它诚实的边界。</p>
     </div>
-    <span class="chip ">工程纪事</span>
+    <span class="chip chip-warn">成本治理</span>
   </article>
 
   <article class="newsitem reveal">
-    <time datetime="2026-09-30">2026-09-30</time>
+    <time datetime="2026-10-07">2026-10-07</time>
     <div>
-      <h3><a href="/news#2026-09-30-review-round1">首轮系统性代码审查：架构评级「高」，8 项高危进入整改</a></h3>
-      <p>以第三方视角完成全量评审：技术选型与业务匹配度获「高」评级；同时诚实列出 8 项高危问题与整改路线图。</p>
+      <h3><a href="/articles/verification-ladder">我们如何用五级验证阶梯让 AI 交付可复现</a></h3>
+      <p>把「AI 改完了代码」从一句主观陈述，变成一条可重放、可对账、可审计的证据链：五级验证阶梯与四个共享地基的完整拆解。</p>
     </div>
-    <span class="chip ">工程纪事</span>
+    <span class="chip chip-ok">可复现性</span>
   </article>
-
-  <article class="newsitem reveal">
-    <time datetime="2026-09-24">2026-09-24</time>
-    <div>
-      <h3><a href="/news#2026-09-24-commercial-loop">发布产品优化升级与商业闭环方案</a></h3>
-      <p>明确「审批约束交付」的产品承诺：人工审批不再只是界面按钮，而是约束交付管道的事务状态。试点协议、指标口径与定价试验同步公开。</p>
-    </div>
-    <span class="chip chip-accent">产品动态</span>
-  </article>
-      <p class="card-link reveal"><a class="link-more" href="/news">全部动态<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+      <p class="card-link reveal"><a class="link-more" href="/articles">全部文章<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
     </div>
   </section>
 
@@ -482,7 +476,7 @@
         <h3>项目</h3>
         <ul>
           <li><a href="/project">项目介绍</a></li>
-          <li><a href="/news">新闻动态</a></li>
+          <li><a href="/articles">技术文章</a></li>
           <li><a href="https://github.com/nano-factory/veriforge" rel="noopener">GitHub 仓库</a></li>
         </ul>
       </nav>
@@ -491,7 +485,7 @@
         <ul>
           <li><a href="/about#contact">申请试点</a></li>
           <li><a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a></li>
-          <li><a href="/about">关于我们</a></li>
+          <li><a href="/about">关于实验室</a></li>
         </ul>
       </nav>
     </div>

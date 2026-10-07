@@ -1,0 +1,33 @@
+{{>head}}
+{{>header}}
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <a href="/articles">技术文章</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">正文</span>
+      </nav>
+      <p class="article-kicker">{{ARTICLE_CHIP}}</p>
+      <h1 id="ph-h">{{ARTICLE_TITLE}}</h1>
+      <p class="article-meta">{{ARTICLE_META}}</p>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="ph-h">
+    <div class="container">
+      <article class="article">
+{{ARTICLE_BODY}}
+      </article>
+      <nav class="series-nav" aria-label="系列文章">
+        {{ARTICLE_SERIES_NAV}}
+      </nav>
+      <p class="card-link mt-20 series-back"><a class="link-more" href="/articles">返回全部文章<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+    </div>
+  </section>
+
+</main>
+{{>footer}}

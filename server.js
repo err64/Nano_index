@@ -26,7 +26,7 @@ const PORT = Number(process.env.PORT || 8080);
 const HOST = process.env.HOST || "127.0.0.1";
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const HTTPS_ON = process.env.HTTPS === "1";
-const CONTENT_FILES = ["news.json", "cases.json", "faq.json"];
+const CONTENT_FILES = ["cases.json", "faq.json"];
 
 const MIME = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
@@ -160,15 +160,10 @@ function runBuild() {
 }
 
 /* 内容 schema 校验：在写入入口收敛坏数据与注入面。
-   news 数组为空会使 newsTeaser 构建崩溃，三个文件统一拒绝空数组；
-   id 限 [\w-]+、date 限 ISO 日期，杜绝其进入 HTML 属性位。 */
+   三个文件统一拒绝空数组；
+   id 限 [\w-]+、date 限 ISO 日期，杜绝其进入 HTML 属性位。
+   （技术文章走 src/articles/*.md，由 git 管理，不经内容后台） */
 const SCHEMAS = {
-  "news.json": (n) => n && typeof n === "object"
-    && typeof n.id === "string" && /^[\w-]+$/.test(n.id)
-    && typeof n.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(n.date)
-    && typeof n.title === "string" && n.title.length > 0
-    && typeof n.summary === "string"
-    && Array.isArray(n.body) && n.body.every((s) => typeof s === "string"),
   "cases.json": (c) => c && typeof c === "object"
     && typeof c.id === "string" && /^[\w-]+$/.test(c.id)
     && typeof c.industry === "string"

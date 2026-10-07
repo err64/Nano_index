@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>我们如何用五级验证阶梯让 AI 交付可复现 | Veriforge 实践系列</title>
+<meta name="description" content="把「AI 改完了代码」从一句主观陈述，变成一条可重放、可对账、可审计的证据链：五级验证阶梯与四个共享地基的完整拆解。">
+<link rel="canonical" href="https://veriforge.nanofactory.dev/articles/verification-ladder">
+<meta name="theme-color" content="#080A19">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Veriforge">
+<meta property="og:title" content="我们如何用五级验证阶梯让 AI 交付可复现 | Veriforge 实践系列">
+<meta property="og:description" content="把「AI 改完了代码」从一句主观陈述，变成一条可重放、可对账、可审计的证据链：五级验证阶梯与四个共享地基的完整拆解。">
+<meta property="og:url" content="https://veriforge.nanofactory.dev/articles/verification-ladder">
+<meta property="og:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="我们如何用五级验证阶梯让 AI 交付可复现 | Veriforge 实践系列">
+<meta name="twitter:description" content="把「AI 改完了代码」从一句主观陈述，变成一条可重放、可对账、可审计的证据链：五级验证阶梯与四个共享地基的完整拆解。">
+<meta name="twitter:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
+<link rel="stylesheet" href="/assets/css/main.css?v=20261007l">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"shiganghai@gmail.com"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"我们如何用五级验证阶梯让 AI 交付可复现","description":"把「AI 改完了代码」从一句主观陈述，变成一条可重放、可对账、可审计的证据链：五级验证阶梯与四个共享地基的完整拆解。","datePublished":"2026-10-07","url":"https://veriforge.nanofactory.dev/articles/verification-ladder","mainEntityOfPage":"https://veriforge.nanofactory.dev/articles/verification-ladder","author":{"@id":"https://veriforge.nanofactory.dev/#org"},"publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Veriforge 首页">
+      <img class="brand__mark" src="/assets/brand/icon.svg" alt="" width="38" height="38" aria-hidden="true">
+      <span class="brand__name">Veriforge</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="菜单">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="移动端导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <a href="/articles">技术文章</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">正文</span>
+      </nav>
+      <p class="article-kicker"><span class="chip chip-ok">可复现性</span></p>
+      <h1 id="ph-h">我们如何用五级验证阶梯让 AI 交付可复现</h1>
+      <p class="article-meta">发表于 <time datetime="2026-10-07">2026-10-07</time> · Veriforge 实践系列 第 2 篇 · 阅读约 21 分钟</p>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="ph-h">
+    <div class="container">
+      <article class="article">
+<blockquote><p>这是 Veriforge 实践系列的第二篇。第一篇讲的是对抗面（AI 改测试凑通过），这一篇讲建设面：如何把&quot;AI 改完了代码&quot;从一句主观陈述，变成一条可重放、可对账、可审计的证据链。所有机制均已实现，本文写作当天（2026-10-07）在 Windows 上实测 53 个测试文件、337 个用例全部通过。</p></blockquote>
+<h2>一、先看不可复现的交付长什么样</h2>
+<p>一个团队接入编码 agent 之后，通常会经历三个阶段的幻灭：</p>
+<p><strong>第一阶段：结果不可复现。</strong> 同一个任务跑两次，得到两个不同的 diff。第一次全绿，第二次有一个测试挂了。没有人能回答&quot;哪个才是对的&quot;——因为根本没有&quot;对&quot;的参照物，只有两次各自为政的生成。</p>
+<p><strong>第二阶段：结论不可复核。</strong> agent 报告&quot;任务完成，所有验收标准已满足&quot;。reviewer 问：哪个验收标准由哪条命令证明？agent 开始复述它做过什么，但那些话既不能重放，也无法与真实运行记录对账。reviewer 最终只能自己把整套测试重跑一遍——AI 省下的时间，又在验证环节原样还了回去。</p>
+<p><strong>第三阶段：失败不可归因。</strong> 修复&quot;完成&quot;后某个测试挂了。是 agent 改坏了？还是这个测试在我把任务交给它之前就挂着？没人知道，因为<strong>动手之前没有人量化过现状</strong>。于是要么冤枉 agent（把存量失败记成回归），要么放过 agent（把回归当成存量失败）。</p>
+<p>这三个问题指向同一个根因：<strong>&quot;完成&quot;是一个没有证据支撑的断言。</strong> 我们对可复现的定义因此非常具体，不是&quot;跑两遍结果一样&quot;这种玄学，而是：</p>
+<blockquote><p><strong>Worker 产出的每一条结论——通过、失败、阻塞、验收——都必须能还原为一条真实运行过、结果被持久化、且可被第三方重放的命令证据。</strong></p></blockquote>
+<p>在 Veriforge 里，支撑这个定义的骨架是五级验证阶梯。它不是五个并行的检查工具，而是一条有严格顺序、严格触发时机、严格语义的流水线。五级的名字直接来自领域模型的一行代码：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-1"><span>复制</span></button></figcaption><pre><code id="code-1">// src/domain/verification.ts
+export const VERIFICATION_RUN_KINDS =
+  [&quot;BASELINE&quot;, &quot;FAST&quot;, &quot;FULL&quot;, &quot;FULL_PROTECTED&quot;, &quot;FULL_WITH_NEW_TESTS&quot;] as const;</code></pre></figure>
+<h2>二、五级阶梯总览</h2>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>text</span><button class="copy-btn" type="button" data-copy="code-2"><span>复制</span></button></figcaption><pre><code id="code-2">INIT → BASELINE ──► DISCOVER ──► PLAN ──► EDIT ──► FAST_VERIFY
+        (L1)                                    │        │
+                                                │    pass?──否──► REPAIR ──► FAST_VERIFY
+                                                │        │              (预算内循环)
+                                                │       是（可选 SYNTHESIZE 阶段：L5 红绿验证）
+                                                ▼        ▼
+                                             FULL_VERIFY ──► SELF_REVIEW ──► CompletionPolicy
+                                             (L3 + L4 成对)                     │
+                                                     全部失败均为 pre-existing ──┘
+                                                                        READY_FOR_REVIEW</code></pre></figure>
+<p>每一级只回答一个问题，谁也不许越权替别的级作答：</p>
+<div class="table-scroll"><table><thead><tr><th>级</th><th>名字</th><th>触发时机</th><th>回答的问题</th></tr></thead><tbody><tr><td>L1</td><td><code>BASELINE</code></td><td>动第一行代码之前</td><td>哪些失败在我动手之前就存在？</td></tr><tr><td>L2</td><td><code>FAST</code></td><td>每一轮编辑/修复之后</td><td>这一轮修改有没有把事情变得更糟？</td></tr><tr><td>L3</td><td><code>FULL</code></td><td>仅候选版本</td><td>候选版本整体上是否成立？</td></tr><tr><td>L4</td><td><code>FULL_PROTECTED</code></td><td>与 L3 成对执行</td><td>撤走你的测试改动，你的代码还能通过吗？</td></tr><tr><td>L5</td><td><code>FULL_WITH_NEW_TESTS</code></td><td>有新测试时</td><td>为这个 bug 新写的测试，是否在旧代码上红、新代码上绿？</td></tr></tbody></table></div>
+<p>阶梯的经济学意图写在 README 第一句里：&quot;验证阶梯（不是每次都跑 full suite）&quot;。全量套件只跑在候选版本上（L3/L4），修复循环由最快的 L2 驱动，L1 与 L2 默认共用同一组命令。<strong>贵的东西少跑，便宜的东西多跑，每一分验证成本都花在能改变决策的时点上。</strong></p>
+<p>下面逐级拆。</p>
+<h2>三、逐级拆解</h2>
+<h3>L1 BASELINE：先量化现状，再谈修复</h3>
+<p>Worker FSM 的第一站不是让 agent 读代码，而是建一个隔离的 git worktree，然后<strong>在未修改的代码上把基线命令跑一遍</strong>。产出持久化的 <code>BaselineSnapshot</code>：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-3"><span>复制</span></button></figcaption><pre><code id="code-3">type BaselineSnapshot = {
+  commit: string;          // 基线 commit
+  checks: VerificationResult[];  // 每条命令的真实运行结果
+  dirtyFiles: string[];    // 脏文件——默认直接 BLOCKED，除非契约显式 allowDirty
+  capturedAt: string;
+};</code></pre></figure>
+<p>基线命令默认取 <code>fastChecks</code>（契约里不写 <code>baseline</code> 字段就自动继承），所以&quot;回归检测开箱即用&quot;；显式传 <code>[]</code> 表示无基线。三个细节值得展开：</p>
+<p><strong>pre-existing 归因是逐条命令、逐个失败指纹的。</strong> 不是&quot;基线挂了 3 个、现在也挂 3 个&quot;这种总数对账，而是：每条失败结果按 <code>command + fingerprint</code> 与基线精确匹配（下文第四节的指纹机制）。同一个命令在基线失败、现在以<strong>完全相同的指纹</strong>失败 → 标注 <code>preExisting=true</code>。</p>
+<p><strong>pre-existing 不等于放行。</strong> 这是很多同类系统的第一个坑：既然失败是存量的，就当没看见。Veriforge 的 CompletionPolicy 把两者严格分开——存量失败<strong>如实标注但照样阻止 READY</strong>，它永远不会被误标为 worker 的回归，也永远不会被悄悄吞掉。归因影响的是&quot;谁的责任&quot;，不影响&quot;能不能交付&quot;。</p>
+<p><strong>基线顺带回答了&quot;任务是否成立&quot;。</strong> 一个声称&quot;修复 bug X&quot;的任务，如果基线（bug 所在的版本）上所有测试都是绿的，说明没有测试在观测这个 bug——这个事实会变成 <code>TESTS_CANNOT_DETECT_BUG</code> finding（第一篇详述过）。L1 在它自己的职责之外，免费提供了变异测试的判定。</p>
+<h3>L2 FAST：修复循环的心跳</h3>
+<p>agent 每完成一轮 EDIT 或 REPAIR，先跑 fastChecks（类型检查、lint、受影响的子集测试）。它的产出不是&quot;通过/不通过&quot;二元值，而是决策输入：</p>
+<ul><li>失败 → 进入 REPAIR（这是数据，不是异常，见第四节）；</li><li>通过 → 候选晋级，进入 L5（可选）或 L3；</li><li><strong>重复失败 → 强制换思路。</strong> 这是 L2 真正的独特之处。</li></ul>
+<p>修复循环最经典的失败模式是空转：agent 连续五轮&quot;修&quot;同一个失败，每轮都改一点无关痛痒的东西，烧完预算交差。Veriforge 的对策是 ProgressDetector——一个纯确定性函数，输入是连续两轮失败验证的记录：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-4"><span>复制</span></button></figcaption><pre><code id="code-4">export function evaluateProgress(previousFailedRun, currentRun): ProgressDecision {
+  // 失败计数增加 → REGRESSING（&quot;失败数 3 -&gt; 5&quot;）
+  // 失败计数减少 → IMPROVING
+  // 计数不变且失败签名完全相同 → UNCHANGED（原地踏步）
+  // 计数不变但失败不同 → UNKNOWN（横向移动）
+  // 通过 → IMPROVING
+}</code></pre></figure>
+<p>失败签名的比较靠指纹集合：<code>runFailureSignature = 把本轮所有失败指纹排序后拼接</code>。签名连续相同 → <code>noProgressIterations</code> 递增；<strong>累计 3 轮无可测量进展 → 直接 BLOCKED</strong>，不再进入下一轮 repair。注意阈值语义：不是&quot;重试 3 次&quot;，而是&quot;没有任何可测量改善的失败轮数达到 3&quot;。agent 可以一直 IMPROVING（失败数 10 → 6 → 2 → 通过）而不被拦，但&quot;每轮都换一种方式撞同一堵墙&quot;会在第三轮被叫停，终态 BLOCKED 的 blockReason 里写明&quot;连续 N 轮无可测量进展（最后失败签名 0x1a2b…）&quot;。</p>
+<p>这里体现的是一条设计公理：<strong>模型不能被信任去判断自己有没有进展</strong>。进展必须被外部测量，测量结果必须能反过来终止模型的行为。</p>
+<h3>L3 FULL：只有候选才配跑全量</h3>
+<p>fastChecks 通过后，候选版本获得一次全量验证的机会：完整的测试套件、类型检查、一切在契约里声明为 <code>fullChecks</code> 的命令。两条特殊路由：</p>
+<p><strong>全部失败均为 pre-existing → 不再空转 repair。</strong> 如果 FULL 挂掉的那几条，指纹全部与基线吻合，说明修复循环对它们无能为力也无义务——继续 repair 只会烧钱。此时 FSM 直接带着诚实的证据进 SELF_REVIEW，CompletionPolicy 会拒绝 READY 并如实标注。不做无意义的乐观主义。</p>
+<p><strong>TIMEOUT 永远是 TIMEOUT。</strong> 每条验证命令的结果是一个四值枚举：<code>PASS | FAIL | TIMEOUT | ERROR</code>。超时被 kill 的命令<strong>绝不会</strong>被记成&quot;测试失败&quot;——它没有产生任何关于代码的结论。这个看似吹毛求疵的区分，是审计时最常救命的一个：把超时当失败，agent 就会学会&quot;把测试跑慢&quot;来骗过重试逻辑。</p>
+<h3>L4 FULL_PROTECTED：旧测试对新代码的审判</h3>
+<p>这一级是第一篇的主角，从可复现的角度再看一眼：它解决的其实是<strong>&quot;验证结论与哪一版测试绑定&quot;</strong>的问题。</p>
+<p>普通 FULL 的结论，隐含了一个前提——&quot;测试集 = 候选工作区里现在的测试&quot;。一旦 agent 动过测试，这个前提就漂移了，同一个命令字符串在不同 run 里测的根本不是同一个东西，复现性从根上断了。FULL_PROTECTED 把前提钉死：<strong>在 <code>git restore --source=&lt;baseCommit&gt;</code> 还原后的测试集上重跑全量</strong>，agent 新增的测试文件被移除，跑完恢复现场。<code>ok = protectedRun.ok &amp;&amp; withNewTestsRun.ok</code>，两者缺一不可。</p>
+<p>于是任何一条&quot;full checks passed&quot;的记录都有明确无歧义的语义：它要么是&quot;基线测试集上通过&quot;，要么是&quot;候选测试集上通过&quot;，要么两者各有一条记录。reviewer 不需要猜。</p>
+<h3>L5 FULL_WITH_NEW_TESTS：新测试必须先红后绿</h3>
+<p>五级里最&quot;贵&quot;也最严格的一级，只在契约开启 <code>synthesizeRegressionTests</code> 时激活。agent 在 SYNTHESIZE 阶段被要求把为该任务新写的回归测试集中放到 <code>tests/synthesized/&lt;taskId&gt;/</code> 下，然后 harness 对每个新测试执行双世界审判：</p>
+<ul><li><strong>RED</strong>：把测试文件拷进一个从 <code>baseCommit</code> 新建的临时 worktree（旧代码 + 新测试）→ 必须 FAIL；</li><li><strong>GREEN</strong>：在候选工作区（新代码 + 新测试）→ 必须 PASS。</li></ul>
+<p>任何一侧不满足预期，产生 CRITICAL finding（<code>SYNTHESIZED_TEST_NOT_RED_GREEN</code>）。通过审判的测试，其红绿两个结果作为 <code>EvidenceRef</code>（<code>synthesized:&lt;path&gt;:RED</code> / <code>:GREEN</code>）写入验收证据——这条验收标准从此拥有了一个被证明&quot;能区分新旧代码&quot;的见证者。</p>
+<p>这一级回答的问题是 L1-L4 都回答不了的：<strong>你的证据本身有没有区分度？</strong> 一个在旧代码上也能绿的新测试，和一句&quot;我测过了&quot;没有区别。</p>
+<h2>四、让阶梯成立的地基</h2>
+<p>五级阶梯是一条流水线，但流水线能不能产出可复现的结果，取决于四个共享地基。这四块比阶梯本身更值得抄。</p>
+<h3>4.1 地基一：唯一的命令执行通道</h3>
+<p>整个 worker 里，所有会进入 shell 的命令——契约声明的验证命令、基线捕获、保护验证、红绿合成的双跑——都经过同一个 <code>CommandRunner</code>（git 操作另有一条专门的无 shell 封装，<code>execFile</code> 直连、不经 shell 解释）。它强制五件事：</p>
+<ul><li><strong>强制 cwd</strong>：命令永远在隔离 worktree 里执行，没有&quot;当前目录碰巧是哪&quot;这种偶然性；</li><li><strong>强制 timeout</strong>：超时触发跨平台进程树终止（POSIX 杀进程组，Windows <code>taskkill /T /F</code>），结果记为 TIMEOUT——验证永远不会挂死整个 run；</li><li><strong>输出捕获与截断</strong>：stdout/stderr 全量捕获（32MB 硬上限防内存爆），持久化时按 128KB 做 head+tail 截断——日志既存得进 SQLite，又保住了开头（环境信息）和结尾（失败摘要）两个最有价值的区域；</li><li><strong>AbortSignal</strong>：用户终止、预算终止、上游超时，一路传导到进程树；</li><li><strong>命令策略</strong>：<code>sudo</code>、<code>rm -rf /</code>、<code>git push --force</code>、<code>curl | sh</code>、fork bomb 等二十类危险模式在 spawn 前拒绝。代码注释里诚实标明了边界：&quot;这是纵深防御，不是沙箱&quot;——真正的隔离是 worktree 加进程边界，策略只是最后闸门。</li></ul>
+<p>另外一件事容易被忽略：<strong>环境清洗</strong>。spawn 时的环境变量经过 scrub，交付凭据、控制面 token 不会泄进验证进程。可复现性的另一面是&quot;不带入偶然的特权&quot;。</p>
+<h3>4.2 地基二：失败指纹——让&quot;同一个失败&quot;可被机器认定</h3>
+<p>整个阶梯的归因能力（pre-existing 判定、进展检测、flaky 记忆）都压在一个函数上：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-5"><span>复制</span></button></figcaption><pre><code id="code-5">export function computeFailureFingerprint(command: string, info: FailureInfo): string {
+  const parts = [
+    command.trim(),
+    [...info.testNames].sort().join(&quot;|&quot;),   // 从失败输出中提取的测试名，排序后拼接
+    info.errorType ?? &quot;&quot;,                    // TypeError / AssertionError / ...
+    info.normalizedMessage,                  // 规范化后的错误消息
+  ];
+  return sha256Hex(parts.join(&quot;||&quot;));
+}</code></pre></figure>
+<p><code>normalizedMessage</code> 是灵魂所在。原始测试输出是指纹杀手：时间戳每次不同、耗时每次不同、内存地址每次不同、ANSI 颜色码看终端心情。规范化做了四层剥离——</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-6"><span>复制</span></button></figcaption><pre><code id="code-6">const VOLATILE_PATTERNS: RegExp[] = [
+  /\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?Z?/g,  // 时间戳
+  /\b\d+(?:\.\d+)?\s?m?s\b/g,                              // 耗时 120ms / 1.5s
+  /\b0x[0-9a-fA-F]+\b/g,                                   // 内存地址
+  /\b[0-9a-f]{16,64}\b/g,                                  // 长十六进制（trace id 等）
+];</code></pre></figure>
+<p>——然后只保留包含 <code>error|fail|expect|assert|exception|not ok|timeout|traceback…</code> 等关键词的行，去重，上限 40 行。</p>
+<p>还有一个反直觉的取舍：<strong>行号不参与哈希</strong>。失败堆栈里的 <code>src/cart.js:42</code> 在代码位移后会变成 <code>:47</code>——同一根因的两个 run 会因为行号不同而指纹不同，归因机制整个失效。所以指纹绑定的是&quot;逻辑失败&quot;（什么测试、什么异常、什么消息），不是&quot;文本失败&quot;。代价是极端情况下两个不同根因可能指纹碰撞，但我们评估后认为：漏标 pre-existing 的代价（多修一次）远小于错标（归因错误动摇整个证据链）。</p>
+<p>指纹是&quot;L1 判 pre-existing&quot;和&quot;L2 判原地踏步&quot;的共同语言。没有它，五级阶梯就是五次彼此孤立的跑测试。</p>
+<h3>4.3 地基三：append-only 事件存储与哈希链证据</h3>
+<p>所有状态变化进入单个 SQLite 事件存储，三条铁律：</p>
+<ul><li><strong>append-only</strong>：事件只追加，永不更新。<code>runId ≠ taskId</code>，新的 run 永远拿新 id，旧 run（包括崩溃残留的未终结 run）原样保留，<code>inspect</code> 命令随时可查——崩溃不是错误状态，是被完整记录的一种历史；</li><li><strong>迁移即快照</strong>：FSM 每次状态迁移，持久化一份完整的 WorkerState JSON 快照。任何一个 run 在任何一个时刻的完整认知（基线、验证历史、findings、预算消耗）都可以被事后还原；</li><li><strong>终态与证据同事务</strong>：run 到达 READY_FOR_REVIEW 时，WorkerResult、证据清单、交付意图在<strong>同一个 SQLite 事务</strong>里落库。</li></ul>
+<p>证据清单本身是一条哈希链：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-7"><span>复制</span></button></figcaption><pre><code id="code-7">export function buildEvidenceManifest(runs: readonly VerificationRun[]): EvidenceManifest {
+  let previous = &quot;&quot;;
+  for (const run of runs) {
+    for (const result of run.results) {
+      const digest = sha256(JSON.stringify({ previous, runId: run.id, kind: run.kind, iteration: run.iteration, result }));
+      entries.push({ kind: run.kind, id: result.id, digest });
+      previous = digest;   // 链式：每条摘要包含前一条
+    }
+  }
+  return { algorithm: &quot;sha256-chain-v1&quot;, entries, root: previous };
+}</code></pre></figure>
+<p><code>sha256-chain-v1</code>：每条验证结果的摘要都掺入前一条的摘要，最终得到一个 root hash 与终态一起持久化。链式结构意味着<strong>任何一条历史验证记录被事后篡改，root 就对不上</strong>——第三方拿到事件库，可以独立重算整条链并核对 root。它不是密码学意义上的防管理员篡改（管理员可以连库一起改），但它把&quot;悄悄改一条记录&quot;变成了&quot;必须重写全部历史&quot;，配合 run 的 append-only 语义，审计成本被推到了不现实的高度。</p>
+<h3>4.4 地基四：错误分类学——失败也是可复现的</h3>
+<p>大多数 harness 的错误处理是一个大 catch。可复现的另一半恰恰在这里：<strong>失败路径本身必须是确定性的</strong>。Veriforge 把所有错误分成五类，每类有唯一确定的终态语义：</p>
+<div class="table-scroll"><table><thead><tr><th>错误类别</th><th>例子</th><th>确定性语义</th></tr></thead><tbody><tr><td>OperationalError</td><td>进程 spawn 失败、runtime 调用超时</td><td>该次调用重试 1 次，仍失败 → FAILED</td></tr><tr><td>VerificationFailure</td><td>测试/lint/typecheck 挂了</td><td><strong>不是异常，是数据</strong>——驱动 repair 循环</td></tr><tr><td>PolicyViolation</td><td>越界修改、危险命令、脏仓库</td><td>BLOCKED（范围违规给一次 revert 机会）</td></tr><tr><td>RuntimeFailure</td><td>runtime 异常退出（非零）</td><td>FAILED，不重试</td></tr><tr><td>BudgetExceeded</td><td>迭代数 / 墙钟 / 花费超限</td><td>BUDGET_EXCEEDED，<strong>绝不偷偷多跑</strong></td></tr></tbody></table></div>
+<p>几个细节值得点名。&quot;VerificationFailure 是数据&quot;意味着失败走的是和成功一样的持久化通道——每一轮失败都有指纹、有摘要、有归属，而不是一条丢失了上下文的 stderr。&quot;绝不偷偷多跑&quot;有一条专门的端到端测试（Case 6: <em>iteration budget exhausted -&gt; BUDGET_EXCEEDED (no sneak extra rounds)</em>）。还有一个刁钻场景被显式处理：runtime 调用在 deadline 之后才&quot;优雅&quot;返回——照样算超时，&quot;错过 deadline 的成功就是失败&quot;。</p>
+<p>预算的三个维度（<code>maxIterations</code>、<code>maxRuntimeMinutes</code>、<code>commandTimeoutSeconds</code>，可选 <code>maxCostUsd</code>）全部来自冻结的契约，不是环境变量里的可调旋钮。<strong>可复现的系统不允许运行时偷改自己的规则。</strong></p>
+<h2>五、最后一公里：从证据到交付</h2>
+<p>五级阶梯跑完、CompletionPolicy 七条门禁全部满足，worker 才给出 <code>READY_FOR_REVIEW</code>。但注意这个词的措辞——<strong>&quot;候选待审&quot;，不是&quot;成功&quot;</strong>。项目规则（AGENTS.md）里专门有一条：<em>Do not treat READY_FOR_REVIEW as PR/CI success</em>。</p>
+<p>从 READY 到真正的交付，还有三段可复现性工程：</p>
+<p><strong>契约冻结。</strong> 任务以强类型 CodingTaskContract 进入，Zod 校验发生在 worker 构造之前——非法契约直接 exit 2，runtime 从未被调用过一次。校验不只是类型检查，还包括防注入语义：<code>baseCommit</code> 禁止前导 <code>-</code>（防 git 参数注入）、<code>taskId</code> 受限字符集（防路径逃逸）、仓库默认必须干净（<code>allowDirty</code> 显式打开才放行——脏仓库是一切归因的天敌）。Web 控制台的需求流更进一步：需求对话确认（CONFIRMED）并编译（COMPILED）后字段锁定，启动运行只提交 <code>requirementId</code>，服务端直接取冻结契约——<strong>客户端根本没有机会篡改任务定义</strong>。</p>
+<p><strong>交付走事务性 outbox。</strong> READY 与&quot;交付意图&quot;（一条 PENDING 状态的 outbox 行）同事务落库，之后独立的 dispatcher 认领执行：推送 → 建草稿 PR → 观察 CI。幂等键是 <code>runId + provider</code>，PR 按确定性分支名（<code>veriforge/&lt;taskId&gt;-&lt;runId&gt;</code>）先查后建——进程在推送后崩溃，重启后对账会发现 PR 已经存在，而不会建出第二个。</p>
+<p><strong>CI 结论绑定精确 SHA。</strong> dispatcher 只接受与候选 <code>headCommit</code> 精确一致的 CI 结果；SHA 不匹配就保持 CI_PENDING 并留痕，绝不把&quot;main 分支上 CI 绿了&quot;误报成&quot;这个候选通过了 CI&quot;。HTTP 超时被记为 <code>DELIVERY_UNKNOWN</code>——一个专门的中间态，语义是&quot;事实未知，先对账，不重发&quot;，因为推送类操作的重试可能制造第二个 PR。<strong>超时既不是失败的证明，也不是成功的证明</strong>——这句话在验证（TIMEOUT ≠ FAIL）和交付（UNKNOWN ≠ FAILED）里说了两遍。</p>
+<p>还有一个跨 run 的可复现性机制值得单独说：<strong>失败记忆</strong>。同一失败指纹如果跨 ≥3 个独立 run 反复出现，系统生成一条 flaky 隔离提案——但注意它的类型签名：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-8"><span>复制</span></button></figcaption><pre><code id="code-8">export type FlakyIsolationProposal = {
+  fingerprint: string;
+  runIds: string[];
+  reason: string;             // &quot;同一失败指纹跨 N 个 run 出现&quot;
+  requiresHumanApproval: true;  // 字面量类型：人工审批不可缺省
+};</code></pre></figure>
+<p><code>requiresHumanApproval: true</code> 写进类型系统，隔离决策无法被自动化绕过。跨 run 的失败知识用来<strong>辅助</strong>修复（同一指纹的历史失败会进入 repair 上下文），但任何削弱验证的决策都保留在人手里。</p>
+<h2>六、实测</h2>
+<p>机制说得再多，最后要看真实输出。<code>pnpm demo</code> 会生成一个带真实 bug 的演示仓库（购物车税额计算漏了 20% 税），写入契约和脚本场景，然后调用真实 CLI（真实 <code>git worktree</code>、真实测试命令）。README 里记录的实测输出：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>text</span><button class="copy-btn" type="button" data-copy="code-9"><span>复制</span></button></figcaption><pre><code id="code-9">Task DEMO-1
+BASELINE      DONE
+DISCOVER      DONE
+PLAN          DONE
+EDIT          DONE
+FAST_VERIFY   PASS
+FULL_VERIFY   PASS
+SELF_REVIEW   PASS
+
+Status: READY_FOR_REVIEW
+
+Changed files:
+  src/cart.js
+
+Acceptance:
+  AC1     VERIFIED
+  AC2     VERIFIED
+
+Workspace: .../examples/demo/.run/workspaces/DEMO-1/ws-DEMO-1-&lt;runId&gt;
+Head commit: e3886496230457e70e108725ab989db49f76de2a   ← 候选 commit
+Run id: run-20260919181936-0478d9da</code></pre></figure>
+<p>换成 <code>--runtime codex</code> 指向同一个契约，真实 Codex CLI 在同一任务上自主定位根因并产出最小修复，同样 READY_FOR_REVIEW——Worker 逻辑零改动。这正是可复现性的外部信号：<strong>换掉&quot;谁在写代码&quot;，验证阶梯和证据链的语义一个字都不用变。</strong></p>
+<p>自动化侧，端到端用例直接以反模式命名：Case 3（重复相同失败 → BLOCKED，无无限循环）、Case 5（基线失败如实标注为 pre-existing，绝不误报为 worker 回归）、Case 6（预算耗尽 → BUDGET_EXCEEDED，绝不偷偷加轮）、Case 7（加 <code>.skip</code> → 检测为测试弱化，阻断 READY）。失败路径与成功路径拥有同等的测试覆盖——这是&quot;失败也复现&quot;在工程上的落法。</p>
+<p>本文写作当天，我们在 Windows 上完整跑了一遍套件：53 个文件、337 个用例、29 秒，全绿。CI 上同样的套件在 Node 22 与 24 双版本验证。</p>
+<h2>七、几条反直觉的经验</h2>
+<p><strong>贵的不是验证，是&quot;结论无法复现&quot;之后的人肉对账。</strong> 我们见过太多团队为了省 CI 时间砍掉全量验证，然后在每次 AI 交付后安排一小时人工复核。阶梯的全部经济学在于：全量验证每候选只跑一轮（L3/L4），修复循环由便宜的 L2 驱动，基线一次性付清归因成本。省的从来不是验证本身，是同一件事被验证第三遍。</p>
+<p><strong>每一次&quot;语义合并&quot;都是复利负债。</strong> 把超时记成失败、把 skip 记成通过、把 UNKNOWN 记成 FAILED、把&quot;全绿&quot;记成&quot;完成&quot;——每一个都是一两行代码的偷懒，每一个都会在几个月后的某次审计里变成事故。四值状态（PASS/FAIL/TIMEOUT/ERROR）、DELIVERY_UNKNOWN、UNVERIFIED 这些&quot;多余&quot;的状态，是可复现性的成本中心，也是它存在的理由。</p>
+<p><strong>机器能验的绝不留给模型，模型能说的必须向机器对账。</strong> 前半句是 CompletionPolicy 的七条门禁，后半句是 EvidenceBuilder 的 claim 对账——agent 声称&quot;AC1 已验证&quot;，那就去最近的验证记录里找它引用的命令：真跑过且 PASS 才升级为 VERIFIED，没跑过就降级 UNVERIFIED 并进人工审阅清单。诚实的不确定性是可复现系统的一等公民，伪确定性才是敌人。</p>
+<p><strong>可复现的敌人不是随机性，是隐藏状态。</strong> 脏仓库（默认 BLOCKED）、未清洗的环境变量、可变的运行时配置、被覆盖的历史 run——这些才是&quot;跑两遍结果不一样&quot;的真正来源。我们花在消灭隐藏状态上的精力，远多于花在&quot;让结果更确定&quot;上。</p>
+<p><strong>阶梯是长出来的，不是设计出来的。</strong> 最早的版本只有三级（BASELINE/FAST/FULL），直到我们抓到 agent 用 <code>it.skip</code> 凑通过，才有了 L4；直到我们发现&quot;永远绿&quot;的新测试可以充当伪证据，才有了 L5。每一级都对应一次真实的对抗。不要预先设计一个完美的验证体系，要让你上一次被骗的方式成为下一级阶梯。</p>
+<h2>八、结语</h2>
+<p>回到最初的问题：怎么让 AI 交付可复现？</p>
+<p>我们的答案浓缩成一张图：五级阶梯各自回答一个不可替代的问题（现状如何 / 有没有更糟 / 整体成立吗 / 旧测试认吗 / 新测试有效吗），四个地基保证每一级的输出可持久化、可对账、可重放（唯一执行通道、失败指纹、append-only + 哈希链、错误分类学），一个确定性门禁消费全部输出并独占&quot;完成&quot;的裁判权，一条事务性 outbox 把结论带进交付世界而不丢失、不重复、不冒进。</p>
+<p>而这一切的出发点朴素得近乎固执：</p>
+<blockquote><p>模型说的不算。跑过的不算数，算过的不作数——<strong>能被独立重放并复核的证据，才作数。</strong></p></blockquote>
+      </article>
+      <nav class="series-nav" aria-label="系列文章">
+        <a class="series-nav__item series-nav__item--prev" href="/articles/test-weakening"><span>上一篇</span><b>AI 编码最危险的不是写错，是改测试凑通过</b></a><a class="series-nav__item series-nav__item--next" href="/articles/circuit-breaker"><span>下一篇</span><b>同因失败 3 次就熔断，省下 42% 预算</b></a>
+      </nav>
+      <p class="card-link mt-20 series-back"><a class="link-more" href="/articles">返回全部文章<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="Veriforge 首页">
+          <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+          <span>
+            <span class="brand-name">Veriforge</span>
+            <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+          </span>
+        </a>
+        <p>生产级可验证 AI 编码工人 Harness 与控制平面。Coding Runtime 负责理解和修改代码，Harness 独占验证、预算与完成判定。</p>
+      </div>
+      <nav class="foot-col" aria-label="产品">
+        <h3>产品</h3>
+        <ul>
+          <li><a href="/products">产品与服务</a></li>
+          <li><a href="/cases">用户案例</a></li>
+          <li><a href="/help">帮助中心</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="项目">
+        <h3>项目</h3>
+        <ul>
+          <li><a href="/project">项目介绍</a></li>
+          <li><a href="/articles">技术文章</a></li>
+          <li><a href="https://github.com/nano-factory/veriforge" rel="noopener">GitHub 仓库</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="联系">
+        <h3>联系</h3>
+        <ul>
+          <li><a href="/about#contact">申请试点</a></li>
+          <li><a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a></li>
+          <li><a href="/about">关于实验室</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 NANOFACTORY · Veriforge 基于 MIT 许可证开源</span>
+      <span>全站 HTTPS 加密 · <a href="/help">无障碍说明</a></span>
+      <!-- TODO 上线前：替换为真实 ICP 备案号 -->
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=20261007j" defer></script>
+</body>
+</html>
+

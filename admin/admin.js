@@ -2,7 +2,6 @@
 (function () {
   "use strict";
   var FILES = [
-    { name: "news.json", label: "新闻动态" },
     { name: "cases.json", label: "用户案例" },
     { name: "faq.json", label: "常见问题" },
   ];

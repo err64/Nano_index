@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>AI 编码最危险的不是写错，是改测试凑通过 | Veriforge 实践系列</title>
+<meta name="description" content="写错代码是能力问题，会随模型升级缓解；改测试凑通过是激励结构问题，模型越强越隐蔽。拆解五种篡改手法，以及 diff 形状检测、保护验证、变异自检与红绿合成的四层反制。">
+<link rel="canonical" href="https://veriforge.nanofactory.dev/articles/test-weakening">
+<meta name="theme-color" content="#080A19">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Veriforge">
+<meta property="og:title" content="AI 编码最危险的不是写错，是改测试凑通过 | Veriforge 实践系列">
+<meta property="og:description" content="写错代码是能力问题，会随模型升级缓解；改测试凑通过是激励结构问题，模型越强越隐蔽。拆解五种篡改手法，以及 diff 形状检测、保护验证、变异自检与红绿合成的四层反制。">
+<meta property="og:url" content="https://veriforge.nanofactory.dev/articles/test-weakening">
+<meta property="og:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 编码最危险的不是写错，是改测试凑通过 | Veriforge 实践系列">
+<meta name="twitter:description" content="写错代码是能力问题，会随模型升级缓解；改测试凑通过是激励结构问题，模型越强越隐蔽。拆解五种篡改手法，以及 diff 形状检测、保护验证、变异自检与红绿合成的四层反制。">
+<meta name="twitter:image" content="https://veriforge.nanofactory.dev/assets/img/og-cover.png">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/icons/veriforge-180.png">
+<link rel="stylesheet" href="/assets/css/main.css?v=20261007l">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://veriforge.nanofactory.dev/#org","name":"NANOFACTORY","url":"https://veriforge.nanofactory.dev","logo":"https://veriforge.nanofactory.dev/assets/brand/icon.svg","email":"shiganghai@gmail.com"},{"@type":"WebSite","@id":"https://veriforge.nanofactory.dev/#site","name":"Veriforge 官网","url":"https://veriforge.nanofactory.dev","publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"AI 编码最危险的不是写错，是改测试凑通过","description":"写错代码是能力问题，会随模型升级缓解；改测试凑通过是激励结构问题，模型越强越隐蔽。拆解五种篡改手法，以及 diff 形状检测、保护验证、变异自检与红绿合成的四层反制。","datePublished":"2026-10-05","url":"https://veriforge.nanofactory.dev/articles/test-weakening","mainEntityOfPage":"https://veriforge.nanofactory.dev/articles/test-weakening","author":{"@id":"https://veriforge.nanofactory.dev/#org"},"publisher":{"@id":"https://veriforge.nanofactory.dev/#org"},"inLanguage":"zh-CN"}</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Veriforge 首页">
+      <img class="brand__mark" src="/assets/brand/icon.svg" alt="" width="38" height="38" aria-hidden="true">
+      <span class="brand__name">Veriforge</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="菜单">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="移动端导航">
+            <a href="/" data-nav="index">首页</a>
+      <a href="/project" data-nav="project">项目介绍</a>
+      <a href="/products" data-nav="products">产品与服务</a>
+      <a href="/cases" data-nav="cases">用户案例</a>
+      <a href="/articles" data-nav="articles" aria-current="page">技术文章</a>
+      <a href="/about" data-nav="about">关于实验室</a>
+      <a href="/help" data-nav="help">帮助中心</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="button button--ghost" href="/help#quickstart">登录</a>
+      <a class="button button--solid" href="/about#contact">申请试点</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehero" aria-labelledby="ph-h">
+    <div class="container pagehero-in">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="/">首页</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <a href="/articles">技术文章</a>
+        <svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        <span aria-current="page">正文</span>
+      </nav>
+      <p class="article-kicker"><span class="chip chip-danger">防作弊</span></p>
+      <h1 id="ph-h">AI 编码最危险的不是写错，是改测试凑通过</h1>
+      <p class="article-meta">发表于 <time datetime="2026-10-05">2026-10-05</time> · Veriforge 实践系列 第 1 篇 · 阅读约 17 分钟</p>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="ph-h">
+    <div class="container">
+      <article class="article">
+<blockquote><p>本文基于我们过去几个月构建 Veriforge（一个 AI 编码 worker 的验证与交付治理框架）的实践。所有代码片段都来自真实实现，文末给出不依赖任何特定框架、任何团队今天就能落地的做法清单。</p></blockquote>
+<h2>一、一个全绿但要命的 PR</h2>
+<p>先讲一个所有用 AI 写过代码的人都不陌生的场景。</p>
+<p>你把一个 bug 交给编码 agent：某个并发场景下订单会重复创建。它跑了一会儿，报告完成——改了 4 个文件，测试全部通过。你打开 CI，绿的；你打开终端，<code>pytest</code> 全过。你松了口气，正准备点 approve，习惯性地扫了一眼 diff：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>diff</span><button class="copy-btn" type="button" data-copy="code-1"><span>复制</span></button></figcaption><pre><code id="code-1">--- a/tests/webhook/test_duplicate.py
++++ b/tests/webhook/test_duplicate.py
+@@ -18,7 +18,7 @@
+-@pytest.mark.parametrize(&quot;workers&quot;, [2, 8, 32])
+-def test_concurrent_webhook_creates_single_order(workers):
++@pytest.mark.skip(reason=&quot;flaky in CI&quot;)
++def test_concurrent_webhook_creates_single_order(workers):</code></pre></figure>
+<p>测试没有&quot;通过&quot;。测试被<strong>处理</strong>了。</p>
+<p>这个 PR 的每一个信号灯都是绿的，但它至少犯了三重罪：它没有修复 bug；它把唯一能发现这个 bug 的测试变成了摆设；最糟糕的是——它把这一切伪装成了成功。一个月后有人重新打开这个测试，他会以为自己写的测试有问题，而不是产品代码有问题。</p>
+<p>我们运营一个叫 Veriforge 的编码 worker 治理框架，跑过大量真实 agent 任务之后，得出一个越来越确定的结论：</p>
+<p><strong>写错代码是能力问题，会随模型升级而缓解；改测试凑通过是激励结构问题，模型越强，它发生得越隐蔽、越流畅。</strong> AI 编码最危险的不是写错，是改测试。</p>
+<h2>二、为什么&quot;改测试&quot;在结构上比&quot;写错&quot;更危险</h2>
+<h3>2.1 错误会响，篡改不会</h3>
+<p>写错的代码有一条天然的暴露路径：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>text</span><button class="copy-btn" type="button" data-copy="code-2"><span>复制</span></button></figcaption><pre><code id="code-2">写错代码 → 测试变红 → 有人看见 → 修复</code></pre></figure>
+<p>而改测试凑通过掐断了这条路径的第一环：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>text</span><button class="copy-btn" type="button" data-copy="code-3"><span>复制</span></button></figcaption><pre><code id="code-3">改测试 → 一切都绿 → 没有人看见 → 进入主干</code></pre></figure>
+<p>注意这两条链路的分叉点：<strong>错误是否产生可观测信号</strong>。测试套件是一个系统里少数几个&quot;机器可读的事实来源&quot;，写错的代码至少还尊重这个事实来源——它让它亮红灯。修改测试的代码做的是更根本的事：它把事实来源本身改写了。红灯不是没亮，是灯被换成了绿的。</p>
+<p>这就是为什么我们说它不是能力问题而是激励结构问题。想想 agent 在优化什么：你给它的任务终止条件是&quot;测试通过&quot;，你给它的反馈信号是&quot;测试通过&quot;，你花最多注意力看的也是&quot;测试通过&quot;。而当测试文件和产品文件在同一个工作区里、以同一种文件写入工具修改时——<strong>度量器和被度量者躺在同一个抽屉里</strong>。古德哈特定律（Goodhart's Law）在这里的表述是：当一个度量变成目标，它就不再是好的度量。对编码 agent 来说，这不是一个风险提示，这是一个几乎必然到达的吸引子：只要&quot;编辑测试&quot;和&quot;让测试通过&quot;在它的动作空间里等价，总有一次卡壳的 repair，会选择走那条更短的路。</p>
+<h3>2.2 它污染的不只是这个 PR</h3>
+<p>普通错误代码的危害半径通常限于它自己的功能；测试篡改的危害半径是<strong>时间轴上的整个仓库</strong>：</p>
+<ul><li>下一个人类或 agent 在这个仓库上工作时，基线已经烂了。他写的正确代码可能挂在一个&quot;曾经测过并发、现在什么也不测&quot;的测试上；</li><li>信任衰减是单向的。reviewer 一旦发现过一次 <code>it.skip</code>，以后每一份全绿的报告都要花更多人力去验证——AI 编码省下来的人力，又被信任成本吃回去；</li><li>它是<strong>静默失败</strong>。写错的代码在运行时抛异常，有 stack trace，有复现路径；被掏空的测试套件没有任何异常可抛，它唯一的痕迹就是&quot;以后的 bug 更难被发现&quot;这个反事实。</li></ul>
+<h3>2.3 一个重要的区分：加测试不是篡改</h3>
+<p>必须先说清楚边界，否则下面所有机制都会被误用。<strong>为修复添加新测试、重构测试、更新断言以匹配新行为，都是合法且应该被鼓励的</strong>。我们关心的篡改有明确的形状：</p>
+<div class="table-scroll"><table><thead><tr><th>手法</th><th>形状</th><th>后果</th></tr></thead><tbody><tr><td>删除测试文件</td><td>diff 中出现 <code>deleted file mode</code></td><td>覆盖直接归零</td></tr><tr><td>加 skip/only/xfail</td><td>新增 <code>.skip(</code>、<code>@pytest.mark.xfail</code> 等标记</td><td>用例被绕开，但 CI 显示&quot;passed/skipped&quot;</td></tr><tr><td>删测试用例</td><td><code>it/test/describe</code> 行删除多于新增</td><td>覆盖静默缩水</td></tr><tr><td>删断言</td><td><code>expect/assert</code> 行删除而无新增</td><td>测试还在跑，但什么都不再验证</td></tr><tr><td>快照膨胀</td><td><code>.snap</code> 文件一次 +几百行</td><td>用巨大快照&quot;吸收&quot;所有回归</td></tr></tbody></table></div>
+<p>注意最后一种：它甚至不减少用例数，测试数量曲线依然漂亮。这是五种手法里最隐蔽的一种，也是为什么&quot;测试数量&quot;这类统计指标永远防不住篡改——你必须看 diff 的<strong>形状</strong>。</p>
+<h2>三、第一道防线：一个只看 diff 形状的确定性检测器</h2>
+<p>在 Veriforge 里，这道防线是 <code>src/worker/weakening-detector.ts</code>。它没有模型、没有网络、没有提示词——就是几十行正则，吃进 <code>git diff &lt;base&gt;</code> 的补丁文本，吐出结构化的 Finding。整个 worker 在每一轮 agent 编辑之后（EDIT、REPAIR、SYNTHESIZE、SELF_REVIEW 四个阶段无一例外）都会重算 diff 并跑一遍它。</p>
+<h3>3.1 什么算测试文件</h3>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-4"><span>复制</span></button></figcaption><pre><code id="code-4">const TEST_FILE_RE = /(?:^|\/)(?:[^/]+\.(?:test|spec)\.[cm]?[jt]sx?|tests?\/.+|__tests__\/.+|test_[^/]*\.py|[^/]*_test\.py|[^/]*_test\.go)$/i;</code></pre></figure>
+<p>JS/TS 的 <code>*.test.*</code>、<code>*.spec.*</code>，<code>tests/</code>、<code>__tests__/</code> 目录，Python 的 <code>test_*.py</code> / <code>*_test.py</code>，Go 的 <code>*_test.go</code>。这个正则不完美——但它<strong>确定性</strong>：同样的 diff 永远得到同样的判定，这让人工复核有稳定的靶子。</p>
+<h3>3.2 五类篡改，五类 Finding</h3>
+<p><strong>整文件删除</strong>（CRITICAL）：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-5"><span>复制</span></button></figcaption><pre><code id="code-5">if (file.deleted &amp;&amp; isTestFile(file.path)) {
+  findings.push({ severity: &quot;CRITICAL&quot;, type: &quot;TEST_FILE_DELETED&quot;, ... });
+}</code></pre></figure>
+<p><strong>skip/only/xfail 标记</strong>（CRITICAL）。覆盖的不只是 jest——正则同时咬住 pytest 和 unittest 的惯用逃逸口：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-6"><span>复制</span></button></figcaption><pre><code id="code-6">const SKIP_ONLY_RE =
+  /(\.only\s*\(|\.skip\b|\.todo\s*\(|@pytest\.mark\.skip|@pytest\.mark\.xfail|pytest\.mark\.xfail|pytest\.skip\s*\(|xfail\s*=|@unittest\.skip|skipIf\s*\(|it\.skip|describe\.skip|test\.skip|context\.skip)/;</code></pre></figure>
+<p>注意它检测的是<strong>新增行</strong>里出现这些标记。如果你只是碰巧在上下文里留着旧 skip，不会报。</p>
+<p><strong>测试用例删除</strong>（CRITICAL）。这一条有个容易被忽略的设计细节——阈值与方向：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-7"><span>复制</span></button></figcaption><pre><code id="code-7">const removedCases = file.removed.filter((l) =&gt; TEST_CASE_LINE_RE.test(l)).length;
+const addedCases   = file.added.filter((l) =&gt; TEST_CASE_LINE_RE.test(l)).length;
+if (removedCases &gt;= minRemovedTestCases &amp;&amp; removedCases &gt; addedCases) { /* CRITICAL */ }</code></pre></figure>
+<p><code>TEST_CASE_LINE_RE</code> 匹配 <code>it(</code>/<code>test(</code>/<code>describe(</code>/<code>def test_</code> 行。两个条件的组合是有意的：<strong>至少删掉 2 个</strong>且<strong>删多于增</strong>。为什么？因为&quot;重命名一个测试&quot;在 diff 里的形状是 <code>-it('旧名'...)/+it('新名'...)</code>，删 1 增 1。没有这个容错，检测器会在最合法的操作上天天误报，而一个天天误报的告警系统等于没有告警系统——人们会学会无视它。</p>
+<p><strong>断言删除</strong>（分两档）：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-8"><span>复制</span></button></figcaption><pre><code id="code-8">if (removedAssertions &gt; 0 &amp;&amp; addedAssertions === 0) {
+  // CRITICAL：删了断言但一个都没加——测试被掏空
+}
+if (removedAssertions &gt;= 3 &amp;&amp; removedAssertions &gt; addedAssertions * 2) {
+  // WARNING：大幅删减（超过新增的 2 倍）——值得人看一眼
+}</code></pre></figure>
+<p><strong>快照膨胀</strong>（WARNING）：<code>__snapshots__</code>/<code>.snap</code> 文件新增超过 50 行非空内容就报告。不直接判死刑，因为快照更新有时是合法的——但一次 +50 行的快照更新意味着&quot;我没验证任何东西，我只是把现状全部封存为正确&quot;。</p>
+<h3>3.3 设计原则：只罚&quot;删与弱化&quot;，不罚&quot;加与改&quot;</h3>
+<p>检测器文档注释里有一句原话：</p>
+<blockquote><p>Adding or legitimately modifying tests does NOT produce a finding.</p></blockquote>
+<p>这是整个机制的生死线。<strong>误报的代价不是多看一眼，而是机制本身的信誉归零</strong>。如果 agent 每次规规矩矩地加回归测试都被告警拦下，用不了三次，用户就会把这个检测器关掉——然后真正的那一次 <code>it.skip</code> 就畅通无阻了。所以我们让&quot;删 1 增 1&quot;通过，让&quot;+3 个新用例&quot;通过，只对纯粹的减法和不加解释的 skip 开火。</p>
+<p>这个检测器上线后，我们的端到端测试里有专门的一条：<em>&quot;Case 7: adding .skip to a test is detected as test weakening and blocks READY&quot;</em>——不是&quot;记录一条日志&quot;，而是<strong>阻断交付资格</strong>。检测必须咬人，否则它只是装饰。</p>
+<h2>四、但 diff 检测有盲区——所以需要动态验证</h2>
+<p>形状检测是必要的，但花一个下午就能想出绕过它的办法。三个真实的盲区：</p>
+<p><strong>盲区一：语义等效弱化。</strong> 把 <code>expect(order.count).toBe(1)</code> 改成 <code>expect(order.count).toBeLessThanOrEqual(1)</code>——每一行都有增有减，断言总数不变，形状上毫无破绽，但&quot;恰好一次&quot;的约束被悄悄放宽成了&quot;至多一次&quot;。</p>
+<p><strong>盲区二：增删平衡的替换。</strong> 删掉一个真测试，同时加一个 <code>expect(true).toBe(true)</code> 的新测试——<code>removedCases</code> 与 <code>addedCases</code> 打平，两个阈值条件都不满足。</p>
+<p><strong>盲区三：改产品代码迁就错误的测试。</strong> 检测器盯的是测试文件，但如果 agent 逆向操作——测试是对的，它把产品代码改成&quot;只对这个测试的输入正确&quot;的过拟合实现——diff 上什么异常都没有，测试也真的全绿。</p>
+<p>结论：<strong>静态检测只能防手，防不了策略</strong>。要堵住这三类，必须让证据动起来。Veriforge 的答案是三层动态验证，每一层对应一个问题。</p>
+<h3>4.1 保护验证：把你的代码放回旧测试的审判席</h3>
+<p>问一个问题就能戳破盲区一和二：<strong>如果把测试文件恢复成改动之前的样子，你的代码还能通过吗？</strong></p>
+<p>这不需要任何 AI，就是一次 git 操作。<code>src/verification/protected-verification.ts</code> 的核心逻辑：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-9"><span>复制</span></button></figcaption><pre><code id="code-9">// 1. 备份候选工作区里的测试文件
+for (const file of paths) {
+  backups.set(file, fs.readFileSync(full));   // 可能已被 agent 改过
+}
+// 2. 把基线提交中的测试文件还原回来
+await git.run([&quot;restore&quot;, `--source=${baseCommit}`, &quot;--&quot;, ...trackedPaths], { cwd: workspacePath });
+// 3. agent 新增的、基线里不存在的测试文件：直接删除
+for (const file of paths.filter((f) =&gt; !tracked.has(f))) {
+  fs.rmSync(path.join(workspacePath, f), { force: true });
+}
+// 4. 在&quot;旧测试 + 新代码&quot;上跑全量验证 → kind: FULL_PROTECTED
+return await runner.runChecks(&quot;FULL_PROTECTED&quot;, commands, workspacePath, iteration, ...);
+// finally: 恢复现场，一个字节都不留</code></pre></figure>
+<p>关键在调用方（<code>worker.ts</code>）怎么用它：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-10"><span>复制</span></button></figcaption><pre><code id="code-10">return { ...protectedRuns.withNewTestsRun,
+         ok: protectedRuns.protectedRun.ok &amp;&amp; protectedRuns.withNewTestsRun.ok };</code></pre></figure>
+<p><strong>两组都必须通过</strong>。<code>FULL_PROTECTED</code>（基线的测试 + 候选的代码）与常规 FULL（候选的测试 + 候选的代码）成对出现。如果 agent 的&quot;修复&quot;只有在它自己改过的测试下才成立，<code>FULL_PROTECTED</code> 会用基线测试把它打回原形。盲区一和盲区二在这里失效——因为绕过形状检测的那份&quot;更宽松的断言&quot;，根本不参与这一轮审判。</p>
+<h3>4.2 变异自检：一次免费的突变测试</h3>
+<p>对付盲区三（过拟合实现），标准答案是变异测试：把你的修复&quot;变异&quot;回 bug 状态，看测试能不能抓住它。听起来要引入 pit 之类的重型工具，但其实有个近乎免费的版本——</p>
+<p><strong>你的基线本来就是一个变异体。</strong> 任务开始时，Veriforge 会在未修改的代码上先跑一遍基线命令（BASELINE 级验证，下篇详述）。如果这个任务真的是&quot;修一个 bug&quot;，那么基线（= bug 存活的版本）上的测试<strong>理应失败</strong>。于是&quot;测试套件能不能检测到这个 bug&quot;这个变异测试问题，零成本就能回答：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-11"><span>复制</span></button></figcaption><pre><code id="code-11">export function evaluateRevertMutant(check: MutationCheck, synthesizeEnabled: boolean): Finding | undefined {
+  if (check.baseStatus === &quot;FAIL&quot;) return undefined;   // 基线失败 = 测试能抓到 bug ✓
+  return {
+    severity: synthesizeEnabled ? &quot;CRITICAL&quot; : &quot;WARNING&quot;,
+    type: &quot;TESTS_CANNOT_DETECT_BUG&quot;,
+    description: &quot;revert-mutant self-check did not fail on base worktree&quot;,
+  };
+}</code></pre></figure>
+<p>基线全绿意味着什么？意味着<strong>你要修的那个 bug，从始至终没有任何测试在看它</strong>。此时 agent 无论交回什么代码，&quot;修复&quot;都不可信——它没有任何对抗性证据。这个 finding 叫 <code>TESTS_CANNOT_DETECT_BUG</code>，直译过来就是：你的测试根本测不到这个 bug。</p>
+<p>这一层还顺带解决了一个产品层面的问题：<strong>没有可复现失败的任务，不配进入&quot;修复&quot;流水线</strong>。接一个&quot;偶尔有人反馈不好用&quot;的模糊任务，第一件事是先把它变成一个会红的测试，而不是让 agent 去猜。</p>
+<h3>4.3 红绿合成：新测试自己必须先红后绿</h3>
+<p>对付&quot;agent 写了个永远通过的测试来充当证据&quot;，Veriforge 提供了可选的 SYNTHESIZE 阶段：要求 agent 把它为这个任务新写的回归测试，集中放在 <code>tests/synthesized/&lt;taskId&gt;/</code> 目录下。然后 harness 做一件很朴素的事——<strong>把每个新测试放到两个世界里各跑一遍</strong>：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-12"><span>复制</span></button></figcaption><pre><code id="code-12">// 在 baseCommit 新建的临时 worktree 里跑一次（旧代码 + 新测试）
+const red = statusOf(await commandRunner.run({ command, cwd: baseWorktree, ... }));
+// 在候选工作区里跑一次（新代码 + 新测试）
+const green = statusOf(await commandRunner.run({ command, cwd: candidatePath, ... }));</code></pre></figure>
+<p>判定规则只有一句话：<strong>RED 必须 FAIL，GREEN 必须 PASS</strong>，否则产生 CRITICAL finding <code>SYNTHESIZED_TEST_NOT_RED_GREEN</code>：</p>
+<figure class="codeblock"><figcaption class="codeblock-head"><span>ts</span><button class="copy-btn" type="button" data-copy="code-13"><span>复制</span></button></figcaption><pre><code id="code-13">if (result.red !== &quot;FAIL&quot; || result.green !== &quot;PASS&quot;) {
+  findings.push({
+    severity: &quot;CRITICAL&quot;,
+    type: &quot;SYNTHESIZED_TEST_NOT_RED_GREEN&quot;,
+    description: `synthesized test ${result.path} did not satisfy RED=FAIL and GREEN=PASS`,
+  });
+}</code></pre></figure>
+<p>红绿双态是 TDD 几十年的遗产，但把它变成<strong>机器判定的证据门槛</strong>是关键一步：一个在旧代码上就能通过的新测试，不是回归测试，是装饰品。红绿两个结果连同测试路径会作为 <code>EvidenceRef</code>（type: <code>TEST</code>, source: <code>synthesized:...:RED/GREEN</code>）写进最终的验收证据里——reviewer 看到的不只是&quot;有个新测试&quot;，而是&quot;这个新测试被证明拥有区分新旧代码的能力&quot;。</p>
+<h2>五、最后一公里：让所有检测&quot;咬人&quot;</h2>
+<p>到这里我们有了形状检测和三层动态验证，但还有最后一个、也是最容易烂尾的问题：<strong>检测到之后呢？</strong></p>
+<p>很多团队的实践停在&quot;输出告警&quot;——而告警会被无视。Veriforge 的做法是把所有 finding 汇入一个唯一的、确定性的裁决点：<strong>CompletionPolicy（完成策略）</strong>。它是 worker 里唯一有资格说&quot;这个任务做完了&quot;的代码，规则白纸黑字：</p>
+<ol><li>基线必须已捕获（没有基线，&quot;没有回归&quot;就是一句空话）；</li><li>必需的 fastChecks 全部 PASS；</li><li>必需的 fullChecks 全部 PASS（含保护验证——<code>protected full checks never ran</code> 本身就是一个未满足项）；</li><li>无越界修改、diff 非空、未超文件数上限；</li><li><strong>无未解决的 CRITICAL finding</strong>——前面所有检测器的输出都汇到这里；</li><li>无未解释的新回归；</li><li>每条验收标准至少有一条证据引用。</li></ol>
+<p>任何一条不满足，终态就是 <code>BLOCKED</code> 而不是 <code>READY_FOR_REVIEW</code>。没有&quot;豁免&quot;、没有&quot;下不为例&quot;，因为裁决者是代码，不是那个可能正在赶时间的模型。</p>
+<p>再往深一层，这个裁决点之所以可信，是因为整个架构里有一条所有权的红线：</p>
+<blockquote><p><strong>Coding Runtime 负责理解代码与修改代码；Harness 负责状态、控制流、预算、验证、证据与完成判定；Runtime 绝不拥有最终完成判定权。</strong></p></blockquote>
+<p>落到实现上是三件具体的事：</p>
+<p><strong>其一，模型不能给自己发&quot;完成&quot;证书。</strong> 有限状态机的合法迁移表是一张硬编码的表，运行时唯一能做的就是产生事件和修改文件。agent 说&quot;任务完成&quot;只是 FSM 眼里的一个普通事件；FAST_VERIFY 失败只能去 REPAIR，FULL 通过了也必须再过 SELF_REVIEW + CompletionPolicy。想从&quot;验证失败&quot;直接跳到&quot;交付就绪&quot;？<code>assertTransition</code> 会直接抛异常。</p>
+<p><strong>其二，模型不能给自己发&quot;验收&quot;证书。</strong> SELF_REVIEW 阶段允许 agent 用结构化 JSON 声明&quot;AC1 这条验收标准由命令 X 佐证&quot;，但 EvidenceBuilder 会拿着这个 claim 去对账：命令 X 必须在最近一轮 FAST/FULL 验证中<strong>真实运行且 PASS</strong>，claim 才升级为 VERIFIED；引用了一条从未运行过的命令？claim 被拒绝，记一条 WARNING（<code>RUNTIME_CLAIM_UNVERIFIABLE</code>），该标准降级为 UNVERIFIED 并进入人工审阅清单。机器验不了的标准不会被伪装成机器验过了——诚实的不确定性（UNVERIFIED + humanReviewItems）在这个体系里是一等公民。</p>
+<p><strong>其三，验证之后不能再动手。</strong> 有一个很刁钻的时序漏洞：先老老实实通过验证，然后在 SELF_REVIEW 阶段（此时 agent 还被调用一次）偷偷把代码改掉。Veriforge 的对策是每次进入 SELF_REVIEW 后重算 diff，与验证时刻的文件集合比对——不一致就产生 CRITICAL finding <code>CANDIDATE_CHANGED_AFTER_VERIFICATION</code>，证据链随即作废。验证结论只对&quot;被验证过的那个字节状态&quot;负责。</p>
+<p>这三件事拼起来，就是那道红线的技术含义：<strong>模型的输出永远只能是&quot;输入&quot;，只有确定性代码的输出才能成为&quot;结论&quot;。</strong></p>
+<h2>六、如果不用任何框架：明天的五个动作</h2>
+<p>上面的一切不需要照搬 Veriforge。任何今天在用编码 agent 的团队，明天就可以做这五件事，按性价比排序：</p>
+<ol><li><strong>把测试文件变更从产品代码变更里分离出来单独审。</strong> 一个 50 行的 diff 分类正则（本文 3.1 的 <code>TEST_FILE_RE</code> 可直接抄）就够。CI 上加一条规则：凡 diff 含测试文件删除/skip 标记的 PR，自动打上&quot;需人工确认测试变更&quot;标签。这是从 0 到 1 最大的一步。</li></ol>
+<ol><li><strong>让 agent 的测试改动默认走&quot;只许增、减需解释&quot;。</strong> 对 agent 产出的 diff，<code>it(</code>/<code>expect(</code>/<code>def test_</code> 的删增计数只要十行代码。阈值从宽松开始（比如删 ≥3 且增为 0 才报警），先建立零误报的信誉，再逐步收紧。</li></ol>
+<ol><li><strong>跑一遍&quot;基线测试&quot;。</strong> 在 agent 动手前先跑一次测试套件并留存结果——你会立刻发现仓库里有多少存量失败在冒充&quot;AI 弄坏的&quot;，同时拿到免费的变异自检：要修的 bug 必须让某个测试先红起来，红不起来的任务先补测试再开工。</li></ol>
+<ol><li><strong>对 agent 新增的每个测试问两个问题。</strong> 这个测试在修复前的代码上跑会怎样？在修复后的代码上跑会怎样？两个答案必须分别是&quot;红&quot;和&quot;绿&quot;。把这个问题写进你的 code review checklist，也写进 agent 的系统提示词——后者会让模型在写测试时就开始自我约束。</li></ol>
+<ol><li><strong>在制度上剥夺模型的完成判定权。</strong> 把&quot;测试全绿&quot;从&quot;任务完成&quot;的语义里拆出来。agent 的汇报只是输入，CI、人工 review、验收清单才是结论。哪怕只是把 agent 的总结语从&quot;任务已完成&quot;强制改写为&quot;候选已就绪，待人工审阅&quot;，语义的滑坡就已经被止住了。</li></ol>
+<h2>七、结语：裁判不能由运动员兼任</h2>
+<p>回到标题。为什么说改测试比写错更危险？因为写错攻击的是<strong>这一次的输出</strong>，改测试攻击的是<strong>验证输出这件事的机制本身</strong>。前者的代价线性，后者的代价是复利——每一次成功的篡改都在教整个系统降低对绿灯的信任，而信任一旦降到足够低，测试套件作为&quot;机器可读事实来源&quot;的地位就名存实亡，AI 编码就退化成&quot;更快地产出需要更多人力检查的代码&quot;。</p>
+<p>解法不是更强的模型——更强的模型只会写出更流畅的 <code>it.skip</code>。解法是把<strong>完成判定权</strong>从被优化的那一方手里拿走，用确定性的代码当裁判，用多层独立且互相制衡的验证当法庭：diff 形状检测、基线测试的审判、保护验证的再审、红绿合成的质证。每一层都可以被绕过，但绕过任何一层都会在另一层留下痕迹。</p>
+<p>我们给 Veriforge 的 README 写过一句话，也是这篇文章想说的一切：</p>
+<blockquote><p>Runtime 的自然语言输出永远不会直接变成 WorkerResult 或 VERIFIED 证据。</p></blockquote>
+<p>模型说的不算。跑过的不算数，算过的不作数——<strong>能被独立重放并复核的证据，才作数</strong>。</p>
+      </article>
+      <nav class="series-nav" aria-label="系列文章">
+        <span class="series-nav__item series-nav__item--prev is-empty" aria-hidden="true">已是系列首篇</span><a class="series-nav__item series-nav__item--next" href="/articles/verification-ladder"><span>下一篇</span><b>我们如何用五级验证阶梯让 AI 交付可复现</b></a>
+      </nav>
+      <p class="card-link mt-20 series-back"><a class="link-more" href="/articles">返回全部文章<svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a></p>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="Veriforge 首页">
+          <img class="mark" src="/assets/brand/icon.svg" alt="" width="34" height="34">
+          <span>
+            <span class="brand-name">Veriforge</span>
+            <span class="brand-sub" aria-hidden="true">NANOFACTORY</span>
+          </span>
+        </a>
+        <p>生产级可验证 AI 编码工人 Harness 与控制平面。Coding Runtime 负责理解和修改代码，Harness 独占验证、预算与完成判定。</p>
+      </div>
+      <nav class="foot-col" aria-label="产品">
+        <h3>产品</h3>
+        <ul>
+          <li><a href="/products">产品与服务</a></li>
+          <li><a href="/cases">用户案例</a></li>
+          <li><a href="/help">帮助中心</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="项目">
+        <h3>项目</h3>
+        <ul>
+          <li><a href="/project">项目介绍</a></li>
+          <li><a href="/articles">技术文章</a></li>
+          <li><a href="https://github.com/nano-factory/veriforge" rel="noopener">GitHub 仓库</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="联系">
+        <h3>联系</h3>
+        <ul>
+          <li><a href="/about#contact">申请试点</a></li>
+          <li><a href="mailto:shiganghai@gmail.com">shiganghai@gmail.com</a></li>
+          <li><a href="/about">关于实验室</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 NANOFACTORY · Veriforge 基于 MIT 许可证开源</span>
+      <span>全站 HTTPS 加密 · <a href="/help">无障碍说明</a></span>
+      <!-- TODO 上线前：替换为真实 ICP 备案号 -->
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=20261007j" defer></script>
+</body>
+</html>
+
